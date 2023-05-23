@@ -2,9 +2,15 @@ package objektwerks
 
 import scalafx.Includes.*
 import scalafx.geometry.{Insets, Pos}
-import scalafx.scene.control.{Button, Label, TextField}
+import scalafx.scene.control.{Button, Label, TextField, TitledPane}
 import scalafx.scene.input.{KeyCode, KeyEvent}
 import scalafx.scene.layout.{GridPane, HBox, Priority}
+
+object TitledTextNumberPane:
+  def apply(): TitledPane =
+    new TitledPane:
+      text = "Enter"
+      content = TextNumberPane()
 
 final class TextNumberPane extends HBox:
   spacing = 6
