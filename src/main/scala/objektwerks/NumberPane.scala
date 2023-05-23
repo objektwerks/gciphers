@@ -1,10 +1,16 @@
 package objektwerks
 
 import scalafx.geometry.{Insets, Pos}
-import scalafx.scene.control.Label
+import scalafx.scene.control.{Label, TitledPane}
 import scalafx.scene.layout.{GridPane, HBox, Priority}
 
 import Numbers.{isPrime, isStar, isTriangular, listFactors}
+
+object TitledNumberPane:
+  def apply(): TitledPane =
+    new TitledPane:
+      text = "Number Properties"
+      content = NumberPane()
 
 final class NumberPane extends HBox:
   spacing = 6

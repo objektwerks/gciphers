@@ -13,7 +13,7 @@ object View:
     prefHeight = View.height
     padding = Insets(6)
 
-  borderPane.top = NumberPane()
+  borderPane.top = TitledNumberPane()
   borderPane.center = EncodingsPane()
   borderPane.bottom = TextNumberPane()
 
