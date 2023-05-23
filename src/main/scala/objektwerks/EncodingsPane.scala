@@ -2,8 +2,14 @@ package objektwerks
 
 import scalafx.Includes.*
 import scalafx.geometry.Insets
-import scalafx.scene.control.{TableColumn, TableView}
+import scalafx.scene.control.{TableColumn, TableView, TitledPane}
 import scalafx.scene.layout.{Priority, VBox}
+
+object TitledEncodingsPane:
+  def apply(): TitledPane =
+    new TitledPane:
+      text = "Encodings"
+      content = EncodingsPane()
 
 final class EncodingsPane extends VBox:
   spacing = 6
