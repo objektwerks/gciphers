@@ -82,19 +82,3 @@ object Encodings:
       satanic = Satanic( encipher(satanicCipher, text) ),
       reverseSatanic = ReverseSatanic( encipher(reverseSatanicCipher, text) )
     )
-
-def encipher(cipher: Map[Char, Int], text: String): Int =
-  text
-    .toCharArray
-    .view
-    .filter(char => char.isLetter)
-    .map(letter => cipher.getOrElse(letter, 0))
-    .sum
-
-def encipherToMap(cipher: Map[Char, Int], text: String): List[(Char, Int)] =
-  text
-    .toCharArray
-    .view
-    .filter(char => char.isLetter)
-    .map(letter => letter -> cipher.getOrElse(letter, 0))
-    .toList

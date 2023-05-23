@@ -115,3 +115,19 @@ object Ciphers:
   val reverseSatanicCipher =
     Map( 'a' -> 61, 'b' -> 60, 'c' -> 59, 'd' -> 58, 'e' -> 57, 'f' -> 56, 'g' -> 55, 'h' -> 54, 'i' -> 53, 'j' -> 52, 'k' -> 51, 'l' -> 50, 'm' -> 49,
          'n' -> 48, 'o' -> 47, 'p' -> 46, 'q' -> 45, 'r' -> 44, 's' -> 43, 't' -> 42, 'u' -> 41, 'v' -> 40, 'w' -> 39, 'x' -> 38, 'y' -> 37, 'z' -> 36 )
+
+  def encipher(cipher: Map[Char, Int], text: String): Int =
+    text
+      .toCharArray
+      .view
+      .filter(char => char.isLetter)
+      .map(letter => cipher.getOrElse(letter, 0))
+      .sum
+
+  def encipherToMap(cipher: Map[Char, Int], text: String): List[(Char, Int)] =
+    text
+      .toCharArray
+      .view
+      .filter(char => char.isLetter)
+      .map(letter => letter -> cipher.getOrElse(letter, 0))
+      .toList
