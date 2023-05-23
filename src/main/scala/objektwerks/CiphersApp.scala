@@ -5,9 +5,8 @@ import scalafx.application.JFXApp3
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.Scene
-import scalafx.scene.control.{Button, Label, TableColumn, TextField, TableView}
+import scalafx.scene.control.{Label, TableColumn, TableView}
 import scalafx.scene.image.Image
-import scalafx.scene.input.{KeyCode, KeyEvent}
 import scalafx.scene.layout.{BorderPane, GridPane, HBox, Priority, VBox}
 
 import Numbers.*
@@ -188,44 +187,3 @@ final class EncodingsPane extends VBox:
 
   children = List(tableView)
   VBox.setVgrow(tableView, Priority.Always)
-
-final class TextNumberPane extends HBox:
-  spacing = 6
-  padding = Insets(6)
-
-  val textLabel = new Label:
-    alignment = Pos.CenterLeft
-    text = "Text:"
-
-  val textField = new TextField:
-    hgrow = Priority.Always
-    onKeyReleased = (event: KeyEvent) => if event.code == KeyCode.Enter then Model.encode(text.value)
-
-  val numberLabel = new Label:
-    alignment = Pos.CenterLeft
-    text = "Number:"
-
-  val numberField = new TextField:
-    hgrow = Priority.Always
-    onKeyReleased = (event: KeyEvent) => if event.code == KeyCode.Enter then Model.observableEncoding.value = text.value.toIntOption.getOrElse(0)
-
-  val clearButton = new Button:
-    text = "Clear"
-    onAction = { _ =>
-      textField.text = ""
-      numberField.text = ""
-      Model.clear()
-    }
-
-  val grid = new GridPane:
-    hgap = 6
-    vgap = 6
-    padding = Insets(top = 6, right = 6, bottom = 6, left = 6)
-    add(textLabel, columnIndex = 0, rowIndex = 0)
-    add(textField, columnIndex = 1, rowIndex = 0)
-    add(numberLabel, columnIndex = 2, rowIndex = 0)
-    add(numberField, columnIndex = 3, rowIndex = 0)
-    add(clearButton, columnIndex = 4, rowIndex = 0)
-
-  children = List(grid)
-  HBox.setHgrow(grid, Priority.Always)
