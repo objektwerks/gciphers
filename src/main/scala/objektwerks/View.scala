@@ -14,8 +14,8 @@ object View:
     padding = Insets(6)
 
   borderPane.top = TitledNumberPane()
-  borderPane.center = EncodingsPane()
-  borderPane.bottom = TextNumberPane()
+  borderPane.center = TitledEncodingsPane()
+  borderPane.bottom = TitledTextNumberPane()
 
   val scene = new Scene:
     root = borderPane
