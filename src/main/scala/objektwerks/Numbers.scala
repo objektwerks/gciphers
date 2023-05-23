@@ -23,7 +23,10 @@ object Numbers:
     range.filter(isPrime).toList.zipWithIndex.map( (prime, rank) => (rank + 1, prime) )
 
   def findPrimeRank(primes: List[(Rank, Prime)], target: Prime): Rank =
-    primes.filter{ (_, prime) => prime == target }.headOption.getOrElse( defaultRankPrime )._1
+    primes
+      .filter{ (_, prime) => prime == target }
+      .headOption
+      .getOrElse( defaultRankPrime )._1
 
   def isStar(n: Int): Boolean =
     val star = ( 6 + Math.sqrt( (24 * n) + 12 ) ) / 6
