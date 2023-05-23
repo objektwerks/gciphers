@@ -9,7 +9,7 @@ import Numbers.{isPrime, isStar, isTriangular, listFactors}
 object TitledNumberPane:
   def apply(): TitledPane =
     new TitledPane:
-      text = "Number Properties"
+      text = "Encoding"
       content = NumberPane()
 
 final class NumberPane extends HBox:
