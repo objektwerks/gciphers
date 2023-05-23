@@ -63,7 +63,7 @@ final class NumberPane extends HBox:
 
   val number = new Label:
     alignment = Pos.CenterLeft
-    text = ""
+    text = "0"
 
   Model.observableEncoding.onChange { (_, _, newValue) =>
     val prime = if isPrime(newValue) then s"Yes - #${Model.primeRank(newValue)}" else "No"
