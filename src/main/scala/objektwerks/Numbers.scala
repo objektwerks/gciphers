@@ -20,7 +20,11 @@ object Numbers:
     else loop(2)
 
   def listPrimes(range: Range): List[(Rank, Prime)] =
-    range.filter(isPrime).toList.zipWithIndex.map( (prime, rank) => (rank + 1, prime) )
+    range
+      .filter(isPrime)
+      .toList
+      .zipWithIndex
+      .map( (prime, rank) => (rank + 1, prime) )
 
   def findPrimeRank(primes: List[(Rank, Prime)], target: Prime): Rank =
     primes
