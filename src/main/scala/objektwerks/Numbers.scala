@@ -5,6 +5,11 @@ import Math.*
 import scala.annotation.tailrec
 
 object Numbers:
+  type Rank = Int
+  type Prime = Int
+
+  val defaultRankPrime = (0, 0)
+
   def isPrime(n: Int): Boolean =
     @tailrec
     def loop(current: Int): Boolean =
@@ -14,11 +19,11 @@ object Numbers:
     if n == -1 || n == 0 || n == 1 then false
     else loop(2)
 
-  def listPrimes(range: Range): List[(Int, Int)] =
+  def listPrimes(range: Range): List[(Rank, Prime)] =
     range.filter(isPrime).toList.zipWithIndex.map( (prime, rank) => (rank + 1, prime) )
 
-  def findPrimeRank(primes: List[(Int, Int)], target: Int): Int =
-    primes.filter{ (_, prime) => prime == target }.headOption.getOrElse( (0, 0) )._1
+  def findPrimeRank(primes: List[(Rank, Prime)], target: Prime): Rank =
+    primes.filter{ (_, prime) => prime == target }.headOption.getOrElse( defaultRankPrime )._1
 
   def isStar(n: Int): Boolean =
     val star = ( 6 + Math.sqrt( (24 * n) + 12 ) ) / 6
