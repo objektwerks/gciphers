@@ -24,8 +24,8 @@ object CiphersApp extends JFXApp3:
     stage.show()
 
 object Model:
-  val observableEncodings = ObservableBuffer[Encodings]()
   val observableEncoding = ObjectProperty[Int](0)
+  val observableEncodings = ObservableBuffer[Encodings]()
   val primes = listPrimes(0 to 1000)
 
   def primeRank(prime: Int): Int = findPrimeRank(primes, prime)
@@ -33,8 +33,8 @@ object Model:
   def encode(text: String): Unit = observableEncodings += Encodings.encode(text)
 
   def clear(): Unit =
-    observableEncodings.clear()
     observableEncoding.value = 0
+    observableEncodings.clear()
 
 object View:
   val width = 800
