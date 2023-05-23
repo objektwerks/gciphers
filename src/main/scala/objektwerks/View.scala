@@ -12,7 +12,7 @@ object View:
     prefWidth = View.width
     prefHeight = View.height
     padding = Insets(6)
-    children = List( TitledEncodingPane(), TitledEncodingsPane(), TitledTextNumberPane() )
+    children = List( TitledEncodingPane(), TitledEncodingsPane(), TitledEnterPane() )
 
   val scene = new Scene:
     root = vbox

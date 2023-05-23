@@ -6,13 +6,13 @@ import scalafx.scene.control.{Button, Label, TextField, TitledPane}
 import scalafx.scene.input.{KeyCode, KeyEvent}
 import scalafx.scene.layout.{GridPane, HBox, Priority}
 
-object TitledTextNumberPane:
+object TitledEnterPane:
   def apply(): TitledPane =
     new TitledPane:
       text = "Enter"
-      content = TextNumberPane()
+      content = EnterPane()
 
-final class TextNumberPane extends HBox:
+final class EnterPane extends HBox:
   spacing = 6
   padding = Insets(6)
 
