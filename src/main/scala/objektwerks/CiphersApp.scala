@@ -6,12 +6,11 @@ import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.Scene
-import scalafx.scene.control.{Button, Label, TableColumn, TableView, TextField}
+import scalafx.scene.control.{Button, Label, TableColumn, TextField, TableView}
 import scalafx.scene.image.Image
 import scalafx.scene.input.{KeyCode, KeyEvent}
 import scalafx.scene.layout.{BorderPane, GridPane, HBox, Priority, VBox}
 
-import Ciphers.*
 import Numbers.*
 
 object CiphersApp extends JFXApp3:
