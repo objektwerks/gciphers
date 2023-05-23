@@ -2,7 +2,6 @@ package objektwerks
 
 import scalafx.Includes.*
 import scalafx.application.JFXApp3
-import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.Scene
@@ -22,19 +21,6 @@ object CiphersApp extends JFXApp3:
       minHeight = View.height
       icons.add( new Image( Image.getClass.getResourceAsStream("/cipher.png") ) )
     stage.show()
-
-object Model:
-  val observableEncoding = ObjectProperty[Int](0)
-  val observableEncodings = ObservableBuffer[Encodings]()
-  val primes = listPrimes(0 to 1000)
-
-  def primeRank(prime: Int): Int = findPrimeRank(primes, prime)
-
-  def encode(text: String): Unit = observableEncodings += Encodings.encode(text)
-
-  def clear(): Unit =
-    observableEncoding.value = 0
-    observableEncodings.clear()
 
 object View:
   val width = 800
