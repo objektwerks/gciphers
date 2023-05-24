@@ -6,7 +6,7 @@ import Ciphers.*
 
 final case class Encoding(number: Int,
                           isPrime: Boolean,
-                          rank: Option[Int],
+                          primeRank: Option[Int],
                           isStar: Boolean,
                           isTriangular: Boolean,
                           factors: List[Int])
