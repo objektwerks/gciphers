@@ -4,6 +4,12 @@ import scalafx.beans.property.ObjectProperty
 
 import Ciphers.*
 
+final case class Encoding(prime: String,
+                          rank: String,
+                          star: String,
+                          triangular: String,
+                          factors: String)
+
 final case class Encodings(text: String,
                             ordinal: Ordinal,
                             reverseOrdinal: ReverseOrdinal,
