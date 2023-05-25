@@ -22,30 +22,30 @@ final class EncodingPane extends HBox:
     columns ++= List(
       new TableColumn[Encoding, Int]:
         text = "Number"
-        cellValueFactory = _.value.brushProperty
+        cellValueFactory = _.value.numberProperty
       ,
       new TableColumn[Encoding, Boolean]:
         text = "Prime"
-        cellValueFactory = _.value.netProperty
+        cellValueFactory = _.value.isPrimeProperty
         cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
       ,
       new TableColumn[Encoding, Int]:
         text = "Rank"
-        cellValueFactory = _.value.skimmerBasketProperty
+        cellValueFactory = _.value.rankProperty
       ,
       new TableColumn[Encoding, Boolean]:
         text = "Star"
-        cellValueFactory = _.value.pumpBasketProperty
+        cellValueFactory = _.value.isStarProperty
         cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
       ,
       new TableColumn[Encoding, Boolean]:
         text = "Triangular"
-        cellValueFactory = _.value.pumpFilterProperty
+        cellValueFactory = _.value.isTriangularProperty
         cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
       ,
       new TableColumn[Encoding, String]:
         text = "Factors"
-        cellValueFactory = _.value.vacuumProperty
+        cellValueFactory = _.value.factorsProperty
     )
     // items = model.observableCleanings
 
