@@ -7,9 +7,11 @@ object Model:
   val observableEncodings = ObservableBuffer[Encodings]()
   val primes = Numbers.listPrimes(0 to 1000)
 
-  def addNumber(number: Int): Unit =
+  def addNumber(number: Int): Boolean =
     val candidate = Number(primes, number)
-    if !observableNumbers.contains(candidate) then observableNumbers += Number(primes, number)
+    val isContained = observableNumbers.contains(candidate)
+    if !isContained then observableNumbers += Number(primes, number)
+    isContained
 
   def addEncoding(text: String): Unit = observableEncodings += Encodings.encode(text)
 
