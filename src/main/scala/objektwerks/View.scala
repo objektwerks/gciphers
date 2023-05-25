@@ -6,7 +6,7 @@ import scalafx.scene.layout.VBox
 
 object View:
   val width = 800
-  val height = 400
+  val height = 600
 
   val vbox = new VBox:
     prefWidth = View.width
