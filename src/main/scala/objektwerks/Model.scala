@@ -6,7 +6,7 @@ import scalafx.collections.ObservableBuffer
 import Numbers.{findPrimeRank, listPrimes}
 
 object Model:
-  val observableEncoding = ObjectProperty[Int](0)
+  val observableNumbers = ObservableBuffer[Number]()
   val observableEncodings = ObservableBuffer[Encodings]()
   val primes = listPrimes(0 to 1000)
 
@@ -15,5 +15,5 @@ object Model:
   def encode(text: String): Unit = observableEncodings += Encodings.encode(text)
 
   def clear(): Unit =
-    observableEncoding.value = 0
+    observableNumbers.clear()
     observableEncodings.clear()

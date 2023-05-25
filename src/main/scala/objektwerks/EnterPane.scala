@@ -32,7 +32,7 @@ final class EnterPane extends HBox:
     hgrow = Priority.Always
     onKeyReleased = (event: KeyEvent) =>
       if event.code == KeyCode.Enter
-      then Model.observableEncoding.value = text.value.toIntOption.getOrElse(0)
+      then Model.observableNumbers.value = text.value.toIntOption.getOrElse(0)
 
   val clearButton = new Button:
     text = "Clear"

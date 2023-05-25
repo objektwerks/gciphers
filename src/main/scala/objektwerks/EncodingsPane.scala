@@ -123,7 +123,7 @@ final class EncodingsPane extends VBox:
     if selectedCells.nonEmpty then 
       val tablePosition = selectedCells.get(0)
       val cellRow = tablePosition.getRow()
-      Model.observableEncoding.value = tablePosition.getTableColumn().getCellData(cellRow).asInstanceOf[Int]
+      Model.observableNumbers.value = tablePosition.getTableColumn().getCellData(cellRow).asInstanceOf[Int]
   }
 
   children = List(tableView)

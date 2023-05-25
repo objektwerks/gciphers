@@ -47,7 +47,7 @@ final class NumbersPane extends HBox:
         text = "Factors"
         cellValueFactory = _.value.factorsProperty
     )
-    // items = model.observableCleanings
+    items = Model.observableNumbers
 
   val label = new Label:
     alignment = Pos.CenterLeft
@@ -56,16 +56,6 @@ final class NumbersPane extends HBox:
   val number = new Label:
     alignment = Pos.CenterLeft
     text = "0"
-
-  Model.observableEncoding.onChange { (_, _, newValue) =>
-    if newValue <= 0 then number.text = "0"
-    else
-      val prime = if isPrime(newValue) then s"Yes - #${Model.primeRank(newValue)}" else "No"
-      val star = if isStar(newValue) then "Yes" else "No"
-      val triangular = if isTriangular(newValue) then "Yes" else "No"
-      val factors = listFactors(newValue).mkString(", ")
-      number.text = s"$newValue      Prime: $prime      Star: $star      Triangular: $triangular      Factors: $factors"
-  }
 
   val grid = new GridPane:
     hgap = 6
