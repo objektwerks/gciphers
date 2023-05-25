@@ -16,7 +16,7 @@ object Encoding:
 
 final case class Encoding(number: Int,
                           isPrime: Boolean,
-                          primeRank: Option[Int],
+                          primeRank: Int,
                           isStar: Boolean,
                           isTriangular: Boolean,
                           factors: List[Int])
