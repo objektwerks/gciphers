@@ -1,6 +1,5 @@
 package objektwerks
 
-import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 
 object Model:

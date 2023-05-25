@@ -4,8 +4,6 @@ import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.control.{Label, TableColumn, TableView, TitledPane}
 import scalafx.scene.layout.{GridPane, HBox, Priority}
 
-import Numbers.{isPrime, isStar, isTriangular, listFactors}
-
 object TitledNumbersPane:
   def apply(): TitledPane =
     new TitledPane:

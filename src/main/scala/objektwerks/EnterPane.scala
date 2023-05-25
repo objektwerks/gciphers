@@ -22,7 +22,7 @@ final class EnterPane extends HBox:
 
   val textField = new TextField:
     hgrow = Priority.Always
-    onKeyReleased = (event: KeyEvent) => if event.code == KeyCode.Enter then Model.encode(text.value)
+    onKeyReleased = (event: KeyEvent) => if event.code == KeyCode.Enter then Model.addEncoding( text.value )
 
   val numberLabel = new Label:
     alignment = Pos.CenterLeft
@@ -32,7 +32,7 @@ final class EnterPane extends HBox:
     hgrow = Priority.Always
     onKeyReleased = (event: KeyEvent) =>
       if event.code == KeyCode.Enter
-      then Model.observableNumbers.value = text.value.toIntOption.getOrElse(0)
+      then Model.addNumber( text.value.toIntOption.getOrElse(0) )
 
   val clearButton = new Button:
     text = "Clear"
