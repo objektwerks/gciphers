@@ -16,6 +16,8 @@ final class EncodingPane extends HBox:
   spacing = 6
   padding = Insets(6)
 
+  val yesOrNo = (bool: Boolean) => if bool then "Yes" else "No"
+
   val label = new Label:
     alignment = Pos.CenterLeft
     text = "Number:"
