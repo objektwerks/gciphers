@@ -1,7 +1,7 @@
 package objektwerks
 
 import scalafx.geometry.{Insets, Pos}
-import scalafx.scene.control.{Label, TitledPane}
+import scalafx.scene.control.{Label, TableColumn, TableView, TitledPane}
 import scalafx.scene.layout.{GridPane, HBox, Priority}
 
 import Numbers.{isPrime, isStar, isTriangular, listFactors}
@@ -17,6 +17,37 @@ final class EncodingPane extends HBox:
   padding = Insets(6)
 
   val yesOrNo = (bool: Boolean) => if bool then "Yes" else "No"
+
+  val tableView = new TableView[Encoding]():
+    columns ++= List(
+      new TableColumn[Encoding, Int]:
+        text = "Number"
+        cellValueFactory = _.value.brushProperty
+      ,
+      new TableColumn[Encoding, Boolean]:
+        text = "Prime"
+        cellValueFactory = _.value.netProperty
+        cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
+      ,
+      new TableColumn[Encoding, Int]:
+        text = "Rank"
+        cellValueFactory = _.value.skimmerBasketProperty
+      ,
+      new TableColumn[Encoding, Boolean]:
+        text = "Star"
+        cellValueFactory = _.value.pumpBasketProperty
+        cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
+      ,
+      new TableColumn[Encoding, Boolean]:
+        text = "Triangular"
+        cellValueFactory = _.value.pumpFilterProperty
+        cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
+      ,
+      new TableColumn[Encoding, String]:
+        text = "Factors"
+        cellValueFactory = _.value.vacuumProperty
+    )
+    // items = model.observableCleanings
 
   val label = new Label:
     alignment = Pos.CenterLeft
