@@ -4,7 +4,7 @@ import scalafx.application.JFXApp3
 import scalafx.collections.ObservableBuffer
 import scalafx.scene.image.Image
 
-object CiphersApp extends JFXApp3:
+object App extends JFXApp3:
   override def start(): Unit =
     stage = new JFXApp3.PrimaryStage:
       scene = View.scene

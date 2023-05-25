@@ -37,7 +37,7 @@ final class EnterPane extends HBox:
         val isListed = Model.addNumber(number)
         if isListed then
           new Alert(AlertType.Information) {
-            initOwner(CiphersApp.stage)
+            initOwner(App.stage)
             title = "Numbers"
             headerText = "Number Listed"
             contentText = s"$number is listed."
