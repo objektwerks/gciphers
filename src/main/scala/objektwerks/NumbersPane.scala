@@ -1,8 +1,8 @@
 package objektwerks
 
-import scalafx.geometry.{Insets, Pos}
-import scalafx.scene.control.{Label, TableColumn, TableView, TitledPane}
-import scalafx.scene.layout.{GridPane, HBox, Priority}
+import scalafx.geometry.Insets
+import scalafx.scene.control.{TableColumn, TableView, TitledPane}
+import scalafx.scene.layout.{Priority, VBox}
 
 object TitledNumbersPane:
   def apply(): TitledPane =
@@ -10,7 +10,7 @@ object TitledNumbersPane:
       text = "Numbers"
       content = NumbersPane()
 
-final class NumbersPane extends HBox:
+final class NumbersPane extends VBox:
   spacing = 6
   padding = Insets(6)
 
@@ -47,20 +47,5 @@ final class NumbersPane extends HBox:
     )
     items = Model.observableNumbers
 
-  val label = new Label:
-    alignment = Pos.CenterLeft
-    text = "Number:"
-
-  val number = new Label:
-    alignment = Pos.CenterLeft
-    text = "0"
-
-  val grid = new GridPane:
-    hgap = 6
-    vgap = 6
-    padding = Insets(top = 6, right = 6, bottom = 6, left = 6)
-    add(label, columnIndex = 0, rowIndex = 0)
-    add(number, columnIndex = 1, rowIndex = 0)
-
-  children = List(grid)
-  HBox.setHgrow(grid, Priority.Always)
+  children = List(tableView)
+  VBox.setVgrow(tableView, Priority.Always)
