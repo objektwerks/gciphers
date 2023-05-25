@@ -40,7 +40,7 @@ final class EnterPane extends HBox:
             initOwner(CiphersApp.stage)
             title = "Numbers"
             headerText = "Number Listed"
-            contentText = s"Number: $number is listed."
+            contentText = s"$number is listed."
           }.showAndWait()
 
   val clearButton = new Button:
