@@ -2,7 +2,8 @@ package objektwerks
 
 import scalafx.Includes.*
 import scalafx.geometry.{Insets, Pos}
-import scalafx.scene.control.{Button, Label, TextField, TitledPane}
+import scalafx.scene.control.{Alert, Button, Label, TextField, TitledPane}
+import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.input.{KeyCode, KeyEvent}
 import scalafx.scene.layout.{GridPane, HBox, Priority}
 
@@ -31,8 +32,16 @@ final class EnterPane extends HBox:
   val numberField = new TextField:
     hgrow = Priority.Always
     onKeyReleased = (event: KeyEvent) =>
-      if event.code == KeyCode.Enter
-      then Model.addNumber( text.value.toIntOption.getOrElse(0) )
+      if event.code == KeyCode.Enter then
+        val number = text.value.toIntOption.getOrElse(0)
+        val isListed = Model.addNumber(number)
+        if isListed then
+          new Alert(AlertType.Information) {
+            initOwner(CiphersApp.stage)
+            title = "Numbers"
+            headerText = "Number Listed"
+            contentText = s"Number: $number is listed."
+          }.showAndWait()
 
   val clearButton = new Button:
     text = "Clear"
