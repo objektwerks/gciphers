@@ -6,13 +6,13 @@ import scalafx.scene.layout.{GridPane, HBox, Priority}
 
 import Numbers.{isPrime, isStar, isTriangular, listFactors}
 
-object TitledEncodingPane:
+object TitledNumbersPane:
   def apply(): TitledPane =
     new TitledPane:
-      text = "Encoding"
-      content = EncodingPane()
+      text = "Numbers"
+      content = NumbersPane()
 
-final class EncodingPane extends HBox:
+final class NumbersPane extends HBox:
   spacing = 6
   padding = Insets(6)
 
