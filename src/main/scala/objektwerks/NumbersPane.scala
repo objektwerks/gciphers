@@ -18,32 +18,32 @@ final class NumbersPane extends HBox:
 
   val yesOrNo = (bool: Boolean) => if bool then "Yes" else "No"
 
-  val tableView = new TableView[Encoding]():
+  val tableView = new TableView[Number]():
     columns ++= List(
-      new TableColumn[Encoding, Int]:
+      new TableColumn[Number, Int]:
         text = "Number"
         cellValueFactory = _.value.numberProperty
       ,
-      new TableColumn[Encoding, Boolean]:
+      new TableColumn[Number, Boolean]:
         text = "Prime"
         cellValueFactory = _.value.isPrimeProperty
         cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
       ,
-      new TableColumn[Encoding, Int]:
+      new TableColumn[Number, Int]:
         text = "Rank"
         cellValueFactory = _.value.rankProperty
       ,
-      new TableColumn[Encoding, Boolean]:
+      new TableColumn[Number, Boolean]:
         text = "Star"
         cellValueFactory = _.value.isStarProperty
         cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
       ,
-      new TableColumn[Encoding, Boolean]:
+      new TableColumn[Number, Boolean]:
         text = "Triangular"
         cellValueFactory = _.value.isTriangularProperty
         cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
       ,
-      new TableColumn[Encoding, String]:
+      new TableColumn[Number, String]:
         text = "Factors"
         cellValueFactory = _.value.factorsProperty
     )
