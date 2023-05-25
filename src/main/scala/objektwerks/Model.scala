@@ -9,9 +9,9 @@ object Model:
 
   def addNumber(number: Int): Boolean =
     val candidate = Number(primes, number)
-    val isContained = observableNumbers.contains(candidate)
-    if !isContained then observableNumbers += Number(primes, number)
-    isContained
+    val isListed = observableNumbers.contains(candidate)
+    if !isListed then observableNumbers += Number(primes, number)
+    isListed
 
   def addEncoding(text: String): Unit = observableEncodings += Encodings.encode(text)
 
