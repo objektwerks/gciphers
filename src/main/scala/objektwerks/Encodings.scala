@@ -3,6 +3,16 @@ package objektwerks
 import scalafx.beans.property.ObjectProperty
 
 import Ciphers.*
+import Numbers.*
+
+object Encoding:
+  def apply(primes: List[(Rank, Prime)], number: Int): Encoding =
+    Encoding(number,
+             isPrime(number),
+             findPrimeRank(primes, number),
+             isStar(number),
+             isTriangular(number),
+             listFactors(number))
 
 final case class Encoding(number: Int,
                           isPrime: Boolean,
