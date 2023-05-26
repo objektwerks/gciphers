@@ -23,6 +23,14 @@ object Model:
 
   def remainingDaysInYear(): String = ( observableDate.value.lengthOfYear() - observableDate.value.getDayOfYear ).toString
 
+  def splitYear(): Int = // (5) + (25) + (20) + (23)
+    val date = observableDate.value
+    val month = date.getMonthValue()
+    val day = date.getDayOfMonth()
+    val year = date.getYear().toString
+    val (leftYear, rightYear) = year.splitAt(2)
+    month + day + leftYear.toInt + rightYear.toInt
+
   def clear(): Unit =
     observableNumbers.clear()
     observableEncodings.clear()
