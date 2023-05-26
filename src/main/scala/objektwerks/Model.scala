@@ -19,6 +19,8 @@ object Model:
 
   def addEncoding(text: String): Unit = observableEncodings += Encodings.encode(text)
 
+  def dayOfYear(): String = observableDate.value.getDayOfYear.toString
+
   def clear(): Unit =
     observableNumbers.clear()
     observableEncodings.clear()
