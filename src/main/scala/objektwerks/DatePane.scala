@@ -24,7 +24,8 @@ final class DatePane extends HBox:
     hgrow = Priority.Always
     value <==> Model.observableDate
     onAction = { _ =>
-      dayOfYearField.text = Model.observableDate.value.getDayOfYear().toString
+      dayOfYearField.text = Model.observableDate.value.getDayOfYear.toString
+      remainingDaysOfYearField.text = ( Model.observableDate.value.lengthOfYear() - Model.observableDate.value.getDayOfYear ).toString
     }
 
   val dayOfYearLabel = new Label:
@@ -37,10 +38,20 @@ final class DatePane extends HBox:
     alignment = Pos.CenterLeft
     text = LocalDate.now.getDayOfYear.toString
 
+  val remainingDaysOfYearLabel = new Label:
+    padding = Insets(6)
+    alignment = Pos.CenterLeft
+    text = "Day of Year:"
+
+  val remainingDaysOfYearField = new Label:
+    padding = Insets(6)
+    alignment = Pos.CenterLeft
+    text = LocalDate.now.getDayOfYear.toString
+
   val hbox = new HBox:
     spacing = 6
     padding = Insets(6)
-    children = List(dateLabel, dateField, dayOfYearLabel, dayOfYearField)
+    children = List(dateLabel, dateField, dayOfYearLabel, dayOfYearField, remainingDaysOfYearLabel, remainingDaysOfYearField)
 
   children = List(hbox)
   HBox.setHgrow(hbox, Priority.Always)
