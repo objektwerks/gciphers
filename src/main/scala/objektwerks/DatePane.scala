@@ -19,7 +19,7 @@ final class DatePane extends HBox:
     text = "Date:"
 
   val dateField = new DatePicker:
-    hgrow = Priority.Always
+    prefWidth = 110
     value <==> Model.observableDate
     onAction = { _ =>
       dayOfYearField.text = Model.dayOfYear()
