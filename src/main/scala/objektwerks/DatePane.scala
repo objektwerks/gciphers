@@ -21,6 +21,7 @@ final class DatePane extends HBox:
   val dateField = new DatePicker:
     hgrow = Priority.Always
     value <==> Model.observableDate
+    onAction = { _ =>  }
 
   val grid = new GridPane:
     hgap = 6
