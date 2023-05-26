@@ -25,7 +25,7 @@ object Model:
 
   def splitYear(): Int = Date.splitYear(observableDate.value)
 
-  def foreachYear(): Int = Date.foreachYear(observableDate.value)
+  def splitEachYear(): Int = Date.splitEachYear(observableDate.value)
   
   def clear(): Unit =
     observableNumbers.clear()
