@@ -10,12 +10,18 @@ object Date:
   def splitYear(date: LocalDate): Int = // (5) + (25) + (20) + (23)
     val month = date.getMonthValue()
     val day = date.getDayOfMonth()
-    val year = date.getYear().toString
+    val year = date.getYear.toString
     val (leftYear, rightYear) = year.splitAt(2)
     month + day + leftYear.toInt + rightYear.toInt
 
   def foreachYear(date: LocalDate): Int = // (5) + (25) + 2 + 0 + 2 + 3
     val month = date.getMonthValue()
     val day = date.getDayOfMonth()
-    val year = date.getYear().toString.toCharArray.map(c => c.toInt).sum
+    val year = date.getYear.toString.toCharArray.map(c => c.toInt).sum
+    month + day + year
+
+  def foreachMonthDayYear(date: LocalDate): Int = // 5 + 2 + 5 + 2 + 0 + 2 + 3
+    val month = date.getMonthValue.toString.toCharArray.map(c => c.toInt).sum
+    val day = date.getDayOfMonth.toString.toCharArray.map(c => c.toInt).sum
+    val year = date.getYear.toString.toCharArray.map(c => c.toInt).sum
     month + day + year
