@@ -23,6 +23,16 @@ final class DatePane extends HBox:
     value <==> Model.observableDate
     onAction = { _ =>  }
 
+  val dayOfYearLabel = new Label:
+    padding = Insets(6)
+    alignment = Pos.CenterLeft
+    text = "Day of Year:"
+
+  val dayOfYearField = new Label:
+    padding = Insets(6)
+    alignment = Pos.CenterLeft
+    text = "0"
+
   val grid = new GridPane:
     hgap = 6
     vgap = 6
