@@ -8,7 +8,7 @@ import scalafx.collections.ObservableBuffer
 object Model:
   val observableNumbers = ObservableBuffer[Number]()
   val observableEncodings = ObservableBuffer[Encodings]()
-  val observableDate = ObjectProperty[LocalDate](this, "date", LocalDate.now())
+  val observableDate = ObjectProperty[LocalDate](this, "date", LocalDate.now)
   val primes = Numbers.listPrimes(0 to 1000)
 
   def addNumber(number: Int): Boolean =
@@ -20,6 +20,8 @@ object Model:
   def addEncoding(text: String): Unit = observableEncodings += Encodings.encode(text)
 
   def dayOfYear(): String = observableDate.value.getDayOfYear.toString
+
+  def remainingDaysOfYear(): String = ( observableDate.value.lengthOfYear() - observableDate.value.getDayOfYear ).toString
 
   def clear(): Unit =
     observableNumbers.clear()
