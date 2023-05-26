@@ -19,25 +19,14 @@ object Model:
 
   def addEncoding(text: String): Unit = observableEncodings += Encodings.encode(text)
 
-  def dayOfYear(): String = observableDate.value.getDayOfYear.toString
+  def dayOfYear(): String = Date.dayOfYear(observableDate.value)
 
-  def remainingDaysInYear(): String = ( observableDate.value.lengthOfYear() - observableDate.value.getDayOfYear ).toString
+  def remainingDaysInYear(): String = Date.remainingDaysInYear(observableDate.value)
 
-  def splitYear(): Int = // (5) + (25) + (20) + (23)
-    val date = observableDate.value
-    val month = date.getMonthValue()
-    val day = date.getDayOfMonth()
-    val year = date.getYear().toString
-    val (leftYear, rightYear) = year.splitAt(2)
-    month + day + leftYear.toInt + rightYear.toInt
+  def splitYear(): Int = Date.splitYear(observableDate.value)
 
-  def foreachYear(): Int = // (5) + (25) + 2 + 0 + 2 + 3
-    val date = observableDate.value
-    val month = date.getMonthValue()
-    val day = date.getDayOfMonth()
-    val year = date.getYear().toString.toCharArray.map(c => c.toInt).sum
-    month + day + year
-
+  def foreachYear(): Int = Date.foreachYear(observableDate.value)
+  
   def clear(): Unit =
     observableNumbers.clear()
     observableEncodings.clear()
