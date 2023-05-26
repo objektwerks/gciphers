@@ -1,5 +1,7 @@
 package objektwerks
 
+import java.time.LocalDate
+
 import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.control.{DatePicker, Label, TitledPane}
 import scalafx.scene.layout.{HBox, Priority}
@@ -33,7 +35,7 @@ final class DatePane extends HBox:
   val dayOfYearField = new Label:
     padding = Insets(6)
     alignment = Pos.CenterLeft
-    text = "0"
+    text = LocalDate.now.getDayOfYear.toString
 
   val hbox = new HBox:
     spacing = 6
