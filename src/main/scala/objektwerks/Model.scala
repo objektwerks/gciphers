@@ -21,7 +21,7 @@ object Model:
 
   def dayOfYear(): String = observableDate.value.getDayOfYear.toString
 
-  def remainingDaysOfYear(): String = ( observableDate.value.lengthOfYear() - observableDate.value.getDayOfYear ).toString
+  def remainingDaysInYear(): String = ( observableDate.value.lengthOfYear() - observableDate.value.getDayOfYear ).toString
 
   def clear(): Unit =
     observableNumbers.clear()
