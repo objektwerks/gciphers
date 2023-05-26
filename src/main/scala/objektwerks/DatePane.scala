@@ -1,6 +1,5 @@
 package objektwerks
 
-import scalafx.Includes.*
 import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.control.{DatePicker, Label, TitledPane}
 import scalafx.scene.layout.{GridPane, HBox, Priority}
