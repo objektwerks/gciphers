@@ -31,6 +31,13 @@ object Model:
     val (leftYear, rightYear) = year.splitAt(2)
     month + day + leftYear.toInt + rightYear.toInt
 
+  def foreachYear(): Int = // (5) + (25) + 2 + 0 + 2 + 3
+    val date = observableDate.value
+    val month = date.getMonthValue()
+    val day = date.getDayOfMonth()
+    val year = date.getYear().toString.toCharArray.map(c => c.toInt).sum
+    month + day + year
+
   def clear(): Unit =
     observableNumbers.clear()
     observableEncodings.clear()
