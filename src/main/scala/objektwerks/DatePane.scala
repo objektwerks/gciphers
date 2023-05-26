@@ -1,7 +1,6 @@
 package objektwerks
 
-import java.time.LocalDate
-
+import scalafx.Includes.*
 import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.control.{DatePicker, Label, TitledPane}
 import scalafx.scene.layout.{GridPane, HBox, Priority}
@@ -22,7 +21,7 @@ final class DatePane extends HBox:
 
   val dateField = new DatePicker:
     hgrow = Priority.Always
-    value = LocalDate.now()
+    value <== Model.observableDate
 
   val grid = new GridPane:
     hgap = 6
