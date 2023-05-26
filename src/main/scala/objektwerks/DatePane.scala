@@ -2,7 +2,7 @@ package objektwerks
 
 import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.control.{DatePicker, Label, TitledPane}
-import scalafx.scene.layout.{GridPane, HBox, Priority}
+import scalafx.scene.layout.{HBox, Priority}
 
 object TitledDatePane:
   def apply(): TitledPane =
@@ -33,12 +33,10 @@ final class DatePane extends HBox:
     alignment = Pos.CenterLeft
     text = "0"
 
-  val grid = new GridPane:
-    hgap = 6
-    vgap = 6
-    padding = Insets(top = 6, right = 6, bottom = 6, left = 6)
-    add(dateLabel, columnIndex = 0, rowIndex = 0)
-    add(dateField, columnIndex = 1, rowIndex = 0)
+  val hbox = new HBox:
+    spacing = 6
+    padding = Insets(6)
+    children = List(dateLabel, dateField, dayOfYearLabel, dayOfYearField)
 
-  children = List(grid)
-  HBox.setHgrow(grid, Priority.Always)
+  children = List(hbox)
+  HBox.setHgrow(hbox, Priority.Always)
