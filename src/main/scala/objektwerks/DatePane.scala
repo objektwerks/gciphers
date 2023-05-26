@@ -21,7 +21,9 @@ final class DatePane extends HBox:
   val dateField = new DatePicker:
     hgrow = Priority.Always
     value <==> Model.observableDate
-    onAction = { _ =>  }
+    onAction = { _ =>
+      dayOfYearField.text = Model.observableDate.value.getDayOfYear().toString
+    }
 
   val dayOfYearLabel = new Label:
     padding = Insets(6)
