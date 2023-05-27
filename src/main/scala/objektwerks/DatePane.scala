@@ -1,7 +1,7 @@
 package objektwerks
 
 import scalafx.geometry.{Insets, Pos}
-import scalafx.scene.control.{DatePicker, Label, TitledPane}
+import scalafx.scene.control.{Button, DatePicker, Label, TitledPane}
 import scalafx.scene.layout.{HBox, Priority}
 
 object TitledDatePane:
@@ -46,10 +46,17 @@ final class DatePane extends HBox:
     alignment = Pos.CenterLeft
     text = Model.remainingDaysInYear()
 
+  val moreButton = new Button:
+    padding = Insets(6)
+    prefWidth = 75
+    text = "More..."
+    onAction = { _ =>
+    }
+
   val hbox = new HBox:
     spacing = 6
     padding = Insets(6)
-    children = List(dateLabel, dateField, dayOfYearLabel, dayOfYearField, remainingDaysInYearLabel, remainingDaysInYearField)
+    children = List(dateLabel, dateField, dayOfYearLabel, dayOfYearField, remainingDaysInYearLabel, remainingDaysInYearField, moreButton)
 
   children = List(hbox)
   HBox.setHgrow(hbox, Priority.Always)
