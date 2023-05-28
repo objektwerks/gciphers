@@ -10,7 +10,7 @@ import scalafx.scene.layout.{GridPane, VBox}
 final class DateDialog(date: LocalDate) extends Dialog[Unit]:
   initOwner(App.stage)
   title = "Date"
-  headerText = "Date Encodings"
+  headerText = "Encodings"
 
   val (splitYearExpression, splitYearEncoding) = Date.splitYear(date)
   val splitYearLabel = new Label:
