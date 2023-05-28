@@ -22,8 +22,8 @@ final class DatePane extends HBox:
     prefWidth = 110
     value <==> Model.observableDate
     onAction = { _ =>
-      dayOfYearField.text = Model.dayOfYear()
-      remainingDaysInYearField.text = Model.remainingDaysInYear()
+      dayOfYearField.text = Date.dayOfYear(Model.observableDate.value)
+      remainingDaysInYearField.text = Date.remainingDaysInYear(Model.observableDate.value)
     }
 
   val dayOfYearLabel = new Label:
@@ -34,7 +34,7 @@ final class DatePane extends HBox:
   val dayOfYearField = new Label:
     padding = Insets(6)
     alignment = Pos.CenterLeft
-    text = Model.dayOfYear()
+    text = Date.dayOfYear(Model.observableDate.value)
 
   val remainingDaysInYearLabel = new Label:
     padding = Insets(6)
@@ -44,7 +44,7 @@ final class DatePane extends HBox:
   val remainingDaysInYearField = new Label:
     padding = Insets(6)
     alignment = Pos.CenterLeft
-    text = Model.remainingDaysInYear()
+    text = Date.remainingDaysInYear(Model.observableDate.value)
 
   val moreButton = new Button:
     padding = Insets(6)
