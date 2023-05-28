@@ -7,22 +7,21 @@ import scalafx.Includes.*
 import scalafx.scene.control.{ButtonType, Dialog, Label}
 import scalafx.scene.layout.{GridPane, VBox}
 
-final class ChemicalDialog(date: LocalDate) extends Dialog[LocalDate]:
+final class DateDialog(date: LocalDate) extends Dialog[LocalDate]:
   initOwner(App.stage)
   title = "Date"
   headerText = "Date Encodings"
 
-  println(date)
-
+  val (splitYearExpression, splitYearEncoding) = Date.splitYear(date)
   val splitYearLabel = new Label:
     padding = Insets(6)
     alignment = Pos.CenterLeft
-    text = "Text:"
+    text = splitYearExpression
 
   val splitYearText = new Label:
     padding = Insets(6)
     alignment = Pos.CenterLeft
-    text = "Text:"
+    text = splitYearExpression
 
   val grid = new GridPane:
     hgap = 6
