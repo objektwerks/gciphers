@@ -3,6 +3,9 @@ package objektwerks
 import java.time.LocalDate
 
 object Date:
+  type Expression = String
+  type Encoding = String
+
   def dayOfYear(date: LocalDate): String = date.getDayOfYear.toString
 
   def remainingDaysInYear(date: LocalDate): String = ( date.lengthOfYear() - date.getDayOfYear ).toString
