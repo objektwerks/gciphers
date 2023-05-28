@@ -34,6 +34,17 @@ final class DateDialog(date: LocalDate) extends Dialog[LocalDate]:
     alignment = Pos.CenterLeft
     text = splitEachYearExpression
 
+  val (splitEachMonthDayYearExpression, splitEachMonthDayYearEncoding) = Date.splitEachYear(date)
+  val splitEachMonthDayYearLabel = new Label:
+    padding = Insets(6)
+    alignment = Pos.CenterLeft
+    text = splitEachMonthDayYearExpression
+
+  val splitEachMonthDayYearText = new Label:
+    padding = Insets(6)
+    alignment = Pos.CenterLeft
+    text = splitEachMonthDayYearExpression
+
   val grid = new GridPane:
     hgap = 6
     vgap = 6
@@ -41,7 +52,9 @@ final class DateDialog(date: LocalDate) extends Dialog[LocalDate]:
     add(splitYearLabel, columnIndex = 0, rowIndex = 0)
     add(splitYearText, columnIndex = 1, rowIndex = 0)
     add(splitEachYearLabel, columnIndex = 0, rowIndex = 1)
-    add(splitEachYearText, columnIndex = 1, rowIndex = 2)
+    add(splitEachYearText, columnIndex = 1, rowIndex = 1)
+    add(splitEachMonthDayYearLabel, columnIndex = 0, rowIndex = 2)
+    add(splitEachMonthDayYearText, columnIndex = 1, rowIndex = 2)
 
   dialogPane().buttonTypes = List(ButtonType.Close)
   dialogPane().content = new VBox:
