@@ -20,7 +20,7 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
 
   val splitYearText = new Label:
     padding = Insets(6)
-    alignment = Pos.CenterLeft
+    alignment = Pos.CENTER
     text = splitYearEncoding.toString
 
   val (splitEachYearExpression, splitEachYearEncoding) = Date.splitEachYear(date)
@@ -31,7 +31,7 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
 
   val splitEachYearText = new Label:
     padding = Insets(6)
-    alignment = Pos.CenterLeft
+    alignment = Pos.CENTER
     text = splitEachYearEncoding.toString
 
   val (splitEachMonthDayYearExpression, splitEachMonthDayYearEncoding) = Date.splitEachMonthDayYear(date)
@@ -42,7 +42,7 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
 
   val splitEachMonthDayYearText = new Label:
     padding = Insets(6)
-    alignment = Pos.CenterLeft
+    alignment = Pos.CENTER
     text = splitEachMonthDayYearEncoding.toString
 
   val grid = new GridPane:
