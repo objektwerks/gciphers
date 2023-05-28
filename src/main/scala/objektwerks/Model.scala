@@ -18,16 +18,6 @@ object Model:
     isListed
 
   def addEncoding(text: String): Unit = observableEncodings += Encodings.encode(text)
-
-  def dayOfYear(): String = Date.dayOfYear(observableDate.value)
-
-  def remainingDaysInYear(): String = Date.remainingDaysInYear(observableDate.value)
-
-  def splitYear(): Int = Date.splitYear(observableDate.value)
-
-  def splitEachYear(): Int = Date.splitEachYear(observableDate.value)
-
-  def splitEachMonthDayYear(): Int = Date.splitEachMonthDayYear(observableDate.value)
   
   def clear(): Unit =
     observableNumbers.clear()
