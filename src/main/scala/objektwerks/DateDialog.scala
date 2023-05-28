@@ -32,7 +32,7 @@ final class DateDialog(date: LocalDate) extends Dialog[LocalDate]:
 
   dialogPane().buttonTypes = List(ButtonType.Close)
   dialogPane().content = new VBox:
-    prefWidth = 600
+    prefWidth = 200
     prefHeight = 200
     spacing = 6
     children = List(grid)
