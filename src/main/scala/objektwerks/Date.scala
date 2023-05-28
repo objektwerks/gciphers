@@ -30,12 +30,7 @@ object Date:
     val months = date.getMonthValue.toString.toCharArray.map(c => c.toString)
     val days = date.getDayOfMonth.toString.toCharArray.map(c => c.toString)
     val years = date.getYear.toString.toCharArray.map(c => c.toString)
-    // fix for single digit months and days!
-    val expression = s"""
-                      (${months(0)}) + (${months(1)})
-                      (${days(0)}) + (${days(1)})
-                      (${years(0)}) + (${years(1)}) + (${years(2)}) + (${years(3)}))
-                      """.stripMargin
+    val expression = s"${format(months)} + ${format(days)} + (${years(0)}) + (${years(1)}) + (${years(2)}) + (${years(3)}))"
     val encoding = months.map(s => s.toInt).sum + days.map(s => s.toInt).sum + years.map(s => s.toInt).sum
     (expression, encoding)
 
