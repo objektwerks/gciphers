@@ -51,14 +51,15 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
     padding = Insets(top = 6, right = 6, bottom = 6, left = 6)
     add(splitYearLabel, columnIndex = 0, rowIndex = 0)
     add(splitYearText, columnIndex = 1, rowIndex = 0)
+    /*
     add(splitEachYearLabel, columnIndex = 0, rowIndex = 1)
     add(splitEachYearText, columnIndex = 1, rowIndex = 1)
     add(splitEachMonthDayYearLabel, columnIndex = 0, rowIndex = 2)
-    add(splitEachMonthDayYearText, columnIndex = 1, rowIndex = 2)
+    add(splitEachMonthDayYearText, columnIndex = 1, rowIndex = 2) */
 
   dialogPane().buttonTypes = List(ButtonType.Close)
   dialogPane().content = new VBox:
-    prefWidth = 600
+    prefWidth = 200
     prefHeight = 200
     spacing = 6
     children = List(grid)
