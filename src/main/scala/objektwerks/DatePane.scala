@@ -50,8 +50,7 @@ final class DatePane extends HBox:
     padding = Insets(6)
     prefWidth = 75
     text = "More..."
-    onAction = { _ =>
-    }
+    onAction = { _ => DateDialog(Model.observableDate.value).showAndWait() }
 
   val hbox = new HBox:
     spacing = 6
