@@ -7,6 +7,7 @@ object Date:
   type Encoding = Int
 
   val plus = "+"
+  val multiply = "*"
 
   def dayOfYear(date: LocalDate): String = date.getDayOfYear.toString
 
