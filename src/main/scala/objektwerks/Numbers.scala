@@ -34,16 +34,16 @@ object Numbers:
       .getOrElse( defaultRankPrime )
     rank
 
-  def fibonacci(n: Long): BigInt =
+  def fibonacci(n: Long): Fibonacci =
     @tailrec
-    def loop(n: Long, a: Long, b: Long): BigInt =
+    def loop(n: Long, a: Long, b: Long): Fibonacci =
       n match
         case 0 => a
         case _ => loop(n - 1, b, a + b)
 
     loop(n, 0, 1)
 
-  def listFibonaccis(range: Range): List[Fibonacci] = ???
+  def listFibonaccis(range: Range): List[Fibonacci] = range.map(n => fibonacci(n)).toList
 
   def isStar(n: Int): Boolean =
     val star = ( 6 + Math.sqrt( (24 * n) + 12 ) ) / 6
