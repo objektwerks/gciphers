@@ -48,8 +48,8 @@ final class DatePane extends HBox:
 
   val encodingsAndDiffButton = new Button:
     padding = Insets(6)
-    prefWidth = 120
-    text = "Encodings & Diff..."
+    prefWidth = 130
+    text = "Encodings and Diff"
     onAction = { _ => DateDialog(Model.observableDate.value).showAndWait() }
 
   val hbox = new HBox:
