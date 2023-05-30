@@ -10,7 +10,7 @@ Features
 --------
 1. **Enter:** Text encoding across multiple ciphers.
 2. **Encodings:** Encoded numbers across multiple ciphers.
-3. **Date:** Date properties detailed, encodings listed and date diff provided.
+3. **Date:** Date properties, encodings and date diff.
 4: **Numbers:** Mathematical properties.
 
 Build
