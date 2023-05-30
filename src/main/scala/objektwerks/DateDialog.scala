@@ -45,7 +45,7 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
     alignment = Pos.CENTER
     text = splitEachMonthDayYearEncoding.toString
 
-  val grid = new GridPane:
+  val encodingsGrid = new GridPane:
     hgap = 6
     vgap = 6
     padding = Insets(top = 6, right = 6, bottom = 6, left = 6)
@@ -65,4 +65,4 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
     prefWidth = 275
     prefHeight = 75
     spacing = 6
-    children = List(grid, separator)
+    children = List(encodingsGrid, separator)
