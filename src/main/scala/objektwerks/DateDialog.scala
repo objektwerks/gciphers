@@ -49,7 +49,6 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
   val encodingsGrid = new GridPane:
     hgap = 6
     vgap = 6
-    padding = Insets(top = 6, right = 6, bottom = 6, left = 6)
     add(splitYearLabel, columnIndex = 0, rowIndex = 0)
     add(splitYearText, columnIndex = 1, rowIndex = 0)
     add(splitEachYearLabel, columnIndex = 0, rowIndex = 1)
