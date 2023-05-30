@@ -2,9 +2,9 @@ package objektwerks
 
 import java.time.LocalDate
 
-import scalafx.geometry.{Insets, Pos}
+import scalafx.geometry.{Insets, Orientation, Pos}
 import scalafx.Includes.*
-import scalafx.scene.control.{ButtonType, Dialog, Label}
+import scalafx.scene.control.{ButtonType, Dialog, Label, Separator}
 import scalafx.scene.layout.{GridPane, VBox}
 
 final class DateDialog(date: LocalDate) extends Dialog[Unit]:
@@ -56,9 +56,13 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
     add(splitEachMonthDayYearLabel, columnIndex = 0, rowIndex = 2)
     add(splitEachMonthDayYearText, columnIndex = 1, rowIndex = 2)
 
+  val separator = new Separator:
+    orientation = Orientation.HORIZONTAL
+
+
   dialogPane().buttonTypes = List(ButtonType.Close)
   dialogPane().content = new VBox:
     prefWidth = 275
     prefHeight = 75
     spacing = 6
-    children = List(grid)
+    children = List(grid, separator)
