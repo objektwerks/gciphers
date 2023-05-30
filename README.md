@@ -9,7 +9,7 @@ _______
 Features
 --------
 1. **Enter:** Text encoding across multiple ciphers.
-2. **Encodings:** Encoded number properties listed and detailed.
+2. **Encodings:** Encoded numbers across multiple ciphers.
 3. **Date:** Date properties detailed, encodings listed and date diff provided.
 4: **Numbers:** Mathematical properties.
 
