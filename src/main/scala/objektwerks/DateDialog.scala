@@ -59,7 +59,7 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
   val separator = new Separator:
     orientation = Orientation.HORIZONTAL
 
-  val diffDateText = new Label:
+  val dateDiffText = new Label:
     alignment = Pos.Center
     text = ""
 
@@ -93,7 +93,7 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
     add(toDateField, columnIndex = 1, rowIndex = 1)
 
   val dateDiffVBox = new VBox:
-    children = List(dateDiffGrid)
+    children = List(dateDiffText, dateDiffGrid)
 
   dialogPane().buttonTypes = List(ButtonType.Close)
   dialogPane().content = new VBox:
