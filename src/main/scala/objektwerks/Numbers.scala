@@ -48,7 +48,7 @@ object Numbers:
     range
       .toList
       .zipWithIndex
-      .map( (fibonacci, rank) => (rank + 1, fibonacci) )
+      .map( (number, rank) => (rank + 1, fibonacci(number)) )
 
   def findFibonacciRank(fibonaccis: List[(Rank, Fibonacci)], targetFibonacci: Fibonacci): Rank =
     val (rank, fibbonaci) = fibonaccis

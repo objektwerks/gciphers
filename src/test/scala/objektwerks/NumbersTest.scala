@@ -29,6 +29,7 @@ class NumbersTest extends AnyFunSuite with Matchers:
 
   test("list fibonaccis") {
     listFibonaccis(0 to 6) shouldBe List((1,0), (2,1), (3,2), (4,3), (5,4), (6,5), (7,6))
+    println( listFibonaccis(0 to 100) )
   }
 
   test("find fibonacci rank") {
