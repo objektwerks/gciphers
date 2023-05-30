@@ -4,7 +4,8 @@ Ciphers
 
 Features
 --------
->Todo!
+>Include:
+1. Text enciphering across multiple cipers.
 
 Build
 -----
