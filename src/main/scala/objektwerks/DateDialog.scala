@@ -85,6 +85,8 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
     padding = Insets(top = 6, right = 6, bottom = 6, left = 6)
     add(fromDateLabel, columnIndex = 0, rowIndex = 0)
     add(fromDateField, columnIndex = 1, rowIndex = 0)
+    add(toDateLabel, columnIndex = 0, rowIndex = 1)
+    add(toDateField, columnIndex = 1, rowIndex = 1)
 
   dialogPane().buttonTypes = List(ButtonType.Close)
   dialogPane().content = new VBox:
