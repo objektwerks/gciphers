@@ -69,9 +69,16 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
     onAction = { _ =>
     }
 
+  val dateDiffGrid = new GridPane:
+    hgap = 6
+    vgap = 6
+    padding = Insets(top = 6, right = 6, bottom = 6, left = 6)
+    add(fromDateLabel, columnIndex = 0, rowIndex = 0)
+    add(fromDateField, columnIndex = 1, rowIndex = 0)
+
   dialogPane().buttonTypes = List(ButtonType.Close)
   dialogPane().content = new VBox:
     prefWidth = 275
     prefHeight = 75
     spacing = 6
-    children = List(encodingsGrid, separator)
+    children = List(encodingsGrid, separator, dateDiffGrid)
