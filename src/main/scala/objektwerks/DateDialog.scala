@@ -65,7 +65,7 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
 
   val dateDiffText = new Label:
     alignment = Pos.Center
-    text = ""
+    text = "0"
 
   val fromDateLabel = new Label:
     alignment = Pos.CenterLeft
