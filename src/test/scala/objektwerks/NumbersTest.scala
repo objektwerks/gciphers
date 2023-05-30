@@ -33,6 +33,7 @@ class NumbersTest extends AnyFunSuite with Matchers:
 
   test("find fibonacci rank") {
     findFibonacciRank( listFibonaccis(0 to 6), 5 ) shouldBe 6
+    findFibonacciRank( listFibonaccis(0 to 6), 7 ) shouldBe 0
   }
 
   test("is star") {
