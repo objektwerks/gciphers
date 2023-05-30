@@ -6,6 +6,7 @@ import scalafx.geometry.{Insets, Orientation, Pos}
 import scalafx.Includes.*
 import scalafx.scene.control.{ButtonType, DatePicker, Dialog, Label, Separator}
 import scalafx.scene.layout.{GridPane, VBox}
+import scalafx.beans.property.ObjectProperty
 
 final class DateDialog(date: LocalDate) extends Dialog[Unit]:
   initOwner(App.stage)
@@ -59,6 +60,9 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
   val separator = new Separator:
     orientation = Orientation.HORIZONTAL
 
+  val fromDate = ObjectProperty[LocalDate](this, "fromdate", Model.observableDate.value)
+  val toDate = ObjectProperty[LocalDate](this, "todate", Model.observableDate.value)
+
   val dateDiffLabel = new Label:
     alignment = Pos.CenterLeft
     text = "Diff:"
@@ -73,8 +77,9 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
 
   val fromDateField = new DatePicker:
     prefWidth = 110
-    value <==> Model.observableDate
+    value = Model.observableDate.value
     onAction = { _ =>
+      fromDate.value = value.value
     }
 
   val toDateLabel = new Label:
@@ -83,8 +88,9 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
 
   val toDateField = new DatePicker:
     prefWidth = 110
-    value <==> Model.observableDate
+    value = Model.observableDate.value
     onAction = { _ =>
+      toDate.value = value.value
     }
 
   val dateDiffGrid = new GridPane:
