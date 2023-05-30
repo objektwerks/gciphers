@@ -23,6 +23,10 @@ class NumbersTest extends AnyFunSuite with Matchers:
     findPrimeRank( listPrimes(0 to 100), 101 ) shouldBe 0
   }
 
+  test("fibbonaci") {
+    fibonacci(9) shouldBe 34
+  }
+
   test("is star") {
     isStar(37) shouldBe true
     isStar(10) shouldBe false
