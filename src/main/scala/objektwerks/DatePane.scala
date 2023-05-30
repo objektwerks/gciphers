@@ -46,16 +46,24 @@ final class DatePane extends HBox:
     alignment = Pos.CenterLeft
     text = Date.remainingDaysInYear(Model.observableDate.value)
 
-  val encodingsButton = new Button:
+  val encodingsAndDiffButton = new Button:
     padding = Insets(6)
-    prefWidth = 85
-    text = "Encodings..."
+    prefWidth = 120
+    text = "Encodings & Diff..."
     onAction = { _ => DateDialog(Model.observableDate.value).showAndWait() }
 
   val hbox = new HBox:
     spacing = 6
     padding = Insets(6)
-    children = List(dateLabel, dateField, dayOfYearLabel, dayOfYearField, remainingDaysInYearLabel, remainingDaysInYearField, encodingsButton)
+    children = List(
+      dateLabel,
+      dateField, 
+      dayOfYearLabel, 
+      dayOfYearField, 
+      remainingDaysInYearLabel, 
+      remainingDaysInYearField, 
+      encodingsAndDiffButton
+    )
 
   children = List(hbox)
   HBox.setHgrow(hbox, Priority.Always)
