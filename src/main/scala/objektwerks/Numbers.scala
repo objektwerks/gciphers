@@ -7,9 +7,10 @@ import scala.annotation.tailrec
 object Numbers:
   type Rank = Int
   type Prime = Int
-  type Fibonacci = BigInt
+  type Fibonacci = Long
 
   val defaultRankPrime = (0, 0)
+  val defaultRankFibonacci = (0, 0)
 
   def isPrime(n: Int): Boolean =
     @tailrec
@@ -43,7 +44,18 @@ object Numbers:
 
     loop(n, 0, 1)
 
-  def listFibonaccis(range: Range): List[Fibonacci] = range.map(n => fibonacci(n)).toList
+  def listFibonaccis(range: Range): List[(Rank, Fibonacci)] =
+    range
+      .toList
+      .zipWithIndex
+      .map( (fibonacci, rank) => (rank + 1, fibonacci) )
+
+  def findFibonacciRank(fibonaccis: List[(Rank, Fibonacci)], targetFibonacci: Fibonacci): Rank =
+    val (rank, fibbonaci) = fibonaccis
+      .filter{ (_, fibbonaci) => fibbonaci == targetFibonacci }
+      .headOption
+      .getOrElse( defaultRankFibonacci )
+    rank
 
   def isStar(n: Int): Boolean =
     val star = ( 6 + Math.sqrt( (24 * n) + 12 ) ) / 6
