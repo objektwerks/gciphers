@@ -63,6 +63,14 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
   val fromDate = ObjectProperty[LocalDate](this, "fromdate", Model.observableDate.value)
   val toDate = ObjectProperty[LocalDate](this, "todate", Model.observableDate.value)
 
+  fromDate.onChange { (_, _, _) =>
+    dateDiffText.text = Date.dateDiff( fromDate.value, toDate.value ).toString
+  }
+
+  toDate.onChange { (_, _, _) =>
+    dateDiffText.text = Date.dateDiff( fromDate.value, toDate.value ).toString
+  }
+
   val dateDiffLabel = new Label:
     alignment = Pos.CenterLeft
     text = "Diff:"
