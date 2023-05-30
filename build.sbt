@@ -1,6 +1,6 @@
 name := "ciphers"
 organization := "objektwerks"
-version := "1.5"
+version := "1.6-SNAPSHOT"
 scalaVersion := "3.3.0"
 mainClass := Some("objektwerks.App")
 libraryDependencies ++= {
