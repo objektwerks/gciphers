@@ -59,6 +59,10 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
   val separator = new Separator:
     orientation = Orientation.HORIZONTAL
 
+  val diffDateText = new Label:
+    alignment = Pos.Center
+    text = ""
+
   val fromDateLabel = new Label:
     alignment = Pos.CenterLeft
     text = "Date:"
