@@ -5,7 +5,8 @@ Ciphers
 Features
 --------
 >Include:
-1. Text enciphering across multiple ciphers.
+1. Text enciphering / encoding across multiple ciphers.
+2. Encoded number properties listed and detailed.
 
 Build
 -----
