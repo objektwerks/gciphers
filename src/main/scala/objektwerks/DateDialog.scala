@@ -4,7 +4,7 @@ import java.time.LocalDate
 
 import scalafx.geometry.{Insets, Orientation, Pos}
 import scalafx.Includes.*
-import scalafx.scene.control.{ButtonType, Dialog, Label, Separator}
+import scalafx.scene.control.{ButtonType, DatePicker, Dialog, Label, Separator}
 import scalafx.scene.layout.{GridPane, VBox}
 
 final class DateDialog(date: LocalDate) extends Dialog[Unit]:
@@ -59,6 +59,15 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
   val separator = new Separator:
     orientation = Orientation.HORIZONTAL
 
+  val fromDateLabel = new Label:
+    alignment = Pos.CenterLeft
+    text = "Date:"
+
+  val fromDateField = new DatePicker:
+    prefWidth = 110
+    value <==> Model.observableDate
+    onAction = { _ =>
+    }
 
   dialogPane().buttonTypes = List(ButtonType.Close)
   dialogPane().content = new VBox:
