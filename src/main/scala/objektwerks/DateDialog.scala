@@ -69,6 +69,16 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
     onAction = { _ =>
     }
 
+  val toDateLabel = new Label:
+    alignment = Pos.CenterLeft
+    text = "Date:"
+
+  val toDateField = new DatePicker:
+    prefWidth = 110
+    value <==> Model.observableDate
+    onAction = { _ =>
+    }
+
   val dateDiffGrid = new GridPane:
     hgap = 6
     vgap = 6
