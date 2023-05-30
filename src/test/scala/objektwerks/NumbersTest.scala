@@ -27,6 +27,10 @@ class NumbersTest extends AnyFunSuite with Matchers:
     fibonacci(9) shouldBe 34
   }
 
+  test("list fibonaccis") {
+    listFibonaccis(0 to 10) shouldBe List(0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55)
+  }
+
   test("is star") {
     isStar(37) shouldBe true
     isStar(10) shouldBe false
