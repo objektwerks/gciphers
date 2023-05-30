@@ -5,23 +5,23 @@ import scalafx.beans.property.ObjectProperty
 import Numbers.*
 
 object Number:
-  def apply(primes: List[(Rank, Prime)], number: Int): Number =
+  def apply(primes: List[(Rank, Prime)], fibonaccis: List[(Rank, Fibonacci)], number: Int): Number =
     Number(number,
-           isPrime(number),
            findPrimeRank(primes, number),
+           findFibonacciRank(fibonaccis, number),
            isStar(number),
            isTriangular(number),
            listFactors(number))
 
 final case class Number(number: Int,
-                        isPrime: Boolean,
                         primeRank: Int,
+                        fibonacciRank: Int,
                         isStar: Boolean,
                         isTriangular: Boolean,
                         factors: List[Int]):
   val numberProperty = ObjectProperty[Int](this, "number", number)
-  val isPrimeProperty = ObjectProperty[Boolean](this, "isprime", isPrime)
-  val rankProperty = ObjectProperty[Int](this, "primerank", primeRank)
-  val isStarProperty = ObjectProperty[Boolean](this, "isstar", isPrime)
-  val isTriangularProperty = ObjectProperty[Boolean](this, "istriangular", isPrime)
+  val primeRankProperty = ObjectProperty[Int](this, "primerank", primeRank)
+  val fibbonaciRankProperty = ObjectProperty[Int](this, "fibonaccirank", fibonacciRank)
+  val isStarProperty = ObjectProperty[Boolean](this, "isstar", isStar)
+  val isTriangularProperty = ObjectProperty[Boolean](this, "istriangular", isTriangular)
   val factorsProperty = ObjectProperty[String](this, "fators", factors.mkString(", "))
