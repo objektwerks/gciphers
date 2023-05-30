@@ -2,11 +2,11 @@ package objektwerks
 
 import java.time.LocalDate
 
+import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.{Insets, Orientation, Pos}
 import scalafx.Includes.*
 import scalafx.scene.control.{ButtonType, DatePicker, Dialog, Label, Separator}
 import scalafx.scene.layout.{GridPane, VBox}
-import scalafx.beans.property.ObjectProperty
 
 final class DateDialog(date: LocalDate) extends Dialog[Unit]:
   initOwner(App.stage)
