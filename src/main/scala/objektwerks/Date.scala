@@ -1,6 +1,7 @@
 package objektwerks
 
 import java.time.LocalDate
+import java.time.temporal.ChronoUnit
 
 object Date:
   type Expression = String
@@ -8,6 +9,8 @@ object Date:
 
   val plus = "+"
   val multiply = "*"
+
+  def dateDiff(fromLocalDate: LocalDate, toLocalDate: LocalDate): Long = ChronoUnit.DAYS.between(fromLocalDate, toLocalDate)
 
   def dayOfYear(date: LocalDate): String = date.getDayOfYear.toString
 
