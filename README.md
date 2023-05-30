@@ -8,9 +8,10 @@ _______
 
 Features
 --------
-1. Text encoding across multiple ciphers.
-2. Encoded number properties listed and detailed.
-3. Date properties detailed, encodings listed and date diff provided.
+1. **Enter:** Text encoding across multiple ciphers.
+2. **Encodings:** Encoded number properties listed and detailed.
+3. **Date:** Date properties detailed, encodings listed and date diff provided.
+4: **Numbers:** Mathematical properties.
 
 Build
 -----
