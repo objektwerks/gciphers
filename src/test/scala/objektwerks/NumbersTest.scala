@@ -28,13 +28,12 @@ class NumbersTest extends AnyFunSuite with Matchers:
   }
 
   test("list fibonaccis") {
-    listFibonaccis(0 to 6) shouldBe List((1,0), (2,1), (3,2), (4,3), (5,4), (6,5), (7,6))
-    println( listFibonaccis(0 to 100) )
+    listFibonaccis(0 to 6) shouldBe List((1,0), (2,1), (3,1), (4,2), (5,3), (6,5), (7,8))
   }
 
   test("find fibonacci rank") {
     findFibonacciRank( listFibonaccis(0 to 6), 5 ) shouldBe 6
-    findFibonacciRank( listFibonaccis(0 to 6), 7 ) shouldBe 0
+    findFibonacciRank( listFibonaccis(0 to 6), 10 ) shouldBe 0
   }
 
   test("is star") {
