@@ -2,6 +2,10 @@ Ciphers
 -------
 >Ciphers app.
 
+Ciphers
+_______
+1. Ordinal
+
 Features
 --------
 1. Text encoding across multiple ciphers.
