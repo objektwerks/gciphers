@@ -81,7 +81,7 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
 
   val fromDateLabel = new Label:
     alignment = Pos.CenterLeft
-    text = "Date:"
+    text = "From Date:"
 
   val fromDateField = new DatePicker:
     prefWidth = 110
@@ -92,7 +92,7 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
 
   val toDateLabel = new Label:
     alignment = Pos.CenterLeft
-    text = "Date:"
+    text = "To Date:"
 
   val toDateField = new DatePicker:
     prefWidth = 110
@@ -115,6 +115,6 @@ final class DateDialog(date: LocalDate) extends Dialog[Unit]:
   dialogPane().buttonTypes = List(ButtonType.Close)
   dialogPane().content = new VBox:
     prefWidth = 275
-    prefHeight = 100
+    //prefHeight = 100
     spacing = 6
     children = List(encodingsGrid, separator, dateDiffGrid)
