@@ -7,6 +7,7 @@ import scala.annotation.tailrec
 object Numbers:
   type Rank = Int
   type Prime = Int
+  type Fibonacci = BigInt
 
   val defaultRankPrime = (0, 0)
 
@@ -41,6 +42,8 @@ object Numbers:
         case _ => loop(n - 1, b, a + b)
 
     loop(n, 0, 1)
+
+  def listFibonaccis(range: Range): List[Fibonacci] = ???
 
   def isStar(n: Int): Boolean =
     val star = ( 6 + Math.sqrt( (24 * n) + 12 ) ) / 6
