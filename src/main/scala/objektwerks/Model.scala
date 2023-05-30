@@ -10,7 +10,7 @@ object Model:
   val observableEncodings = ObservableBuffer[Encodings]()
   val observableDate = ObjectProperty[LocalDate](this, "date", LocalDate.now)
   val primes = Numbers.listPrimes(0 to 1000)
-  val fibonaccis = Numbers.listFibonaccis(0 to 100)
+  val fibonaccis = Numbers.listFibonaccis(0 to 15)
 
   def addNumber(number: Int): Boolean =
     val candidate = Number(primes, number)
