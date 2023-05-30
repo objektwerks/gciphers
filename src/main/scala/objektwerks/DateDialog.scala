@@ -11,7 +11,7 @@ import scalafx.beans.property.ObjectProperty
 final class DateDialog(date: LocalDate) extends Dialog[Unit]:
   initOwner(App.stage)
   title = "Date"
-  headerText = "Encodings"
+  headerText = "Encodings and Diff"
 
   val (splitYearExpression, splitYearEncoding) = Date.splitYear(date)
   val splitYearLabel = new Label:
