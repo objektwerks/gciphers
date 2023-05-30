@@ -4,9 +4,9 @@ Ciphers
 
 Features
 --------
-1. Text enciphering / encoding across multiple ciphers.
+1. Text encoding across multiple ciphers.
 2. Encoded number properties listed and detailed.
-3. Date properties, encodings and diff.
+3. Date properties detailed, encodings listed and date diff provided.
 
 Build
 -----
