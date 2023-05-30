@@ -23,11 +23,11 @@ final class NumbersPane extends VBox:
         cellValueFactory = _.value.numberProperty
       ,
       new TableColumn[Number, Int]:
-        text = "Prime Rank"
+        text = "Prime\nRank"
         cellValueFactory = _.value.primeRankProperty
       ,
       new TableColumn[Number, Int]:
-        text = "Fibonacci Rank"
+        text = "Fibonacci\nRank"
         cellValueFactory = _.value.fibbonaciRankProperty
       ,
       new TableColumn[Number, Boolean]:
