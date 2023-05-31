@@ -5,28 +5,28 @@ Ciphers
 Ciphers
 _______
 1. Ordinal
-  ReverseOrdinal
-  Reduction 
-  ReverseReduction 
-  Standard
-  ReverseStandard
-  Latin  
-  Sumerian
-  ReverseSumerian
-  Primes
-  ReversePrimes
-  Fibonacci
-  Squares
-  ReverseSquares
-  Trigonal
-  ReverseTrigonal
-  SingleReduction
-  ReverseSingleReduction
-  Keypad
-  Chaldean
-  Septenary
-  Satanic
-  ReverseSatanic
+ReverseOrdinal
+Reduction 
+ReverseReduction 
+Standard
+ReverseStandard
+Latin  
+Sumerian
+ReverseSumerian
+Primes
+ReversePrimes
+Fibonacci
+Squares
+ReverseSquares
+Trigonal
+ReverseTrigonal
+SingleReduction
+ReverseSingleReduction
+Keypad
+Chaldean
+Septenary
+Satanic
+ReverseSatanic
 
 Features
 --------
