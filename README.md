@@ -5,28 +5,28 @@ Ciphers
 Ciphers
 _______
 1. Ordinal
-  ReverseOrdinal(value: Int) extends AnyVal
-  Reduction(value: Int) extends AnyVal 
-  ReverseReduction(value: Int) extends AnyVal 
-  Standard(value: Int) extends AnyVal
-  ReverseStandard(value: Int) extends AnyVal
-  Latin(value: Int) extends AnyVal  
-  Sumerian(value: Int) extends AnyVal
-  ReverseSumerian(value: Int) extends AnyVal
-  Primes(value: Int) extends AnyVal
-  ReversePrimes(value: Int) extends AnyVal
-  Fibonacci(value: Int) extends AnyVal
-  Squares(value: Int) extends AnyVal
-  ReverseSquares(value: Int) extends AnyVal
-  Trigonal(value: Int) extends AnyVal
-  ReverseTrigonal(value: Int) extends AnyVal
-  SingleReduction(value: Int) extends AnyVal
-  ReverseSingleReduction(value: Int) extends AnyVal
-  Keypad(value: Int) extends AnyVal
-  Chaldean(value: Int) extends AnyVal
-  Septenary(value: Int) extends AnyVal
-  Satanic(value: Int) extends AnyVal
-  ReverseSatanic(value: Int) extends AnyVal
+  ReverseOrdinal
+  Reduction 
+  ReverseReduction 
+  Standard
+  ReverseStandard
+  Latin  
+  Sumerian
+  ReverseSumerian
+  Primes
+  ReversePrimes
+  Fibonacci
+  Squares
+  ReverseSquares
+  Trigonal
+  ReverseTrigonal
+  SingleReduction
+  ReverseSingleReduction
+  Keypad
+  Chaldean
+  Septenary
+  Satanic
+  ReverseSatanic
 
 Features
 --------
