@@ -1,6 +1,6 @@
 Ciphers
 -------
->Ciphers app.
+>Cipher analysis app.
 
 Ciphers
 _______
