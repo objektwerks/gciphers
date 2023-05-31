@@ -3,7 +3,7 @@ Ciphers
 >Cipher analysis app.
 
 Ciphers
-_______
+-------
 1. Ordinal
 2. ReverseOrdinal
 3. Reduction 
