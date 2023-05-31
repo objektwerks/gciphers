@@ -33,7 +33,7 @@ Features
 1. **Enter:** Text encoding across multiple ciphers. Number check - see **Numbers** below.
 2. **Encodings:** Encoded numbers across multiple ciphers.
 3. **Date:** Date properties, encodings and date diff.
-4: **Numbers:** Math properties per enciphered number.
+4. **Numbers:** Math properties per enciphered number.
 
 Build
 -----
