@@ -2,6 +2,10 @@ Ciphers
 -------
 >Cipher analysis app.
 
+Todo
+----
+1. Change layout, moving date pane to left.
+
 Ciphers
 -------
 1. Ordinal
