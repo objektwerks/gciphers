@@ -15,22 +15,18 @@ object TitledEnterPane:
 
 final class EnterPane extends HBox:
   val textLabel = new Label:
-    padding = Insets(6)
     alignment = Pos.CenterLeft
     text = "Text:"
 
   val textField = new TextField:
-    padding = Insets(6)
     hgrow = Priority.Always
     onKeyReleased = (event: KeyEvent) => if event.code == KeyCode.Enter then Model.addEncoding( text.value )
 
   val numberLabel = new Label:
-    padding = Insets(6)
     alignment = Pos.CenterLeft
     text = "Number:"
 
   val numberField = new TextField:
-    padding = Insets(6)
     prefWidth = 100
     onKeyReleased = (event: KeyEvent) =>
       if event.code == KeyCode.Enter then
@@ -45,7 +41,6 @@ final class EnterPane extends HBox:
           }.showAndWait()
 
   val clearButton = new Button:
-    padding = Insets(6)
     prefWidth = 75
     text = "Clear"
     onAction = { _ =>
@@ -56,7 +51,6 @@ final class EnterPane extends HBox:
 
   val hbox = new HBox:
     spacing = 6
-    padding = Insets(6)
     children = List(textLabel, textField, numberLabel, numberField, clearButton)
 
   children = List(hbox)
