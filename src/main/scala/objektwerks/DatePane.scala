@@ -157,7 +157,6 @@ final class DatePane extends VBox:
   val dateDiffGrid = new GridPane:
     hgap = 6
     vgap = 6
-    padding = Insets(top = 6, right = 6, bottom = 6, left = 6)
     add(dateDiffLabel, columnIndex = 0, rowIndex = 0)
     add(dateDiffText, columnIndex = 1, rowIndex = 0)
     add(fromDateLabel, columnIndex = 0, rowIndex = 1)
