@@ -70,7 +70,7 @@ final class DatePane extends VBox:
   val (splitYearExpression, splitYearEncoding) = Date.splitYear(Model.observableDate.value)
   val splitYearLabel = new Label:
     alignment = Pos.CenterLeft
-    text = splitYearExpression
+    text = s"$splitYearExpression:"
 
   val splitYearText = new Label:
     alignment = Pos.Center
@@ -79,7 +79,7 @@ final class DatePane extends VBox:
   val (splitEachYearExpression, splitEachYearEncoding) = Date.splitEachYear(Model.observableDate.value)
   val splitEachYearLabel = new Label:
     alignment = Pos.CenterLeft
-    text = splitEachYearExpression
+    text = s"$splitEachYearExpression:"
 
   val splitEachYearText = new Label:
     alignment = Pos.Center
@@ -88,7 +88,7 @@ final class DatePane extends VBox:
   val (splitEachMonthDayYearExpression, splitEachMonthDayYearEncoding) = Date.splitEachMonthDayYear(Model.observableDate.value)
   val splitEachMonthDayYearLabel = new Label:
     alignment = Pos.CenterLeft
-    text = splitEachMonthDayYearExpression
+    text = s"$splitEachMonthDayYearExpression:"
 
   val splitEachMonthDayYearText = new Label:
     alignment = Pos.Center
