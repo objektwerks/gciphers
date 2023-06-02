@@ -11,6 +11,7 @@ import scalafx.scene.layout.{GridPane, HBox, Priority}
 object TitledDatePane:
   def apply(): TitledPane =
     new TitledPane:
+      collapsible = false
       text = "Date"
       content = DatePane()
 
