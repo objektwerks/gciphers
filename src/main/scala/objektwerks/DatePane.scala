@@ -6,7 +6,7 @@ import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.{Insets, Orientation, Pos}
 import scalafx.Includes.*
 import scalafx.scene.control.{DatePicker, Label, Separator, TitledPane}
-import scalafx.scene.layout.{GridPane, Priority, VBox}
+import scalafx.scene.layout.{GridPane, Priority, HBox}
 
 object TitledDatePane:
   def apply(): TitledPane =
@@ -14,7 +14,7 @@ object TitledDatePane:
       text = "Date"
       content = DatePane()
 
-final class DatePane extends VBox:
+final class DatePane extends HBox:
   spacing = 6
   padding = Insets(6)
   prefWidth = 275
@@ -167,4 +167,4 @@ final class DatePane extends VBox:
   // Date Diff section end.
 
   children = List(dateGrid, encodingsSeparator, encodingsGrid, dateDiffSeparator, dateDiffGrid)
-  VBox.setVgrow(this, Priority.Always)
+  HBox.setHgrow(this, Priority.Always)
