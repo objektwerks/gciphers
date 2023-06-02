@@ -6,7 +6,7 @@ import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.{Insets, Orientation, Pos}
 import scalafx.Includes.*
 import scalafx.scene.control.{DatePicker, Label, Separator, TitledPane}
-import scalafx.scene.layout.{GridPane, Priority, HBox}
+import scalafx.scene.layout.{GridPane, HBox, Priority}
 
 object TitledDatePane:
   def apply(): TitledPane =
@@ -65,7 +65,7 @@ final class DatePane extends HBox:
   // Encodings section begin.
 
   val encodingsSeparator = new Separator:
-    orientation = Orientation.Horizontal
+    orientation = Orientation.Vertical
 
   val (splitYearExpression, splitYearEncoding) = Date.splitYear(Model.observableDate.value)
   val splitYearLabel = new Label:
@@ -109,7 +109,7 @@ final class DatePane extends HBox:
   // Date Diff section begin.
 
   val dateDiffSeparator = new Separator:
-    orientation = Orientation.HORIZONTAL
+    orientation = Orientation.Vertical
 
   val fromDate = ObjectProperty[LocalDate](this, "fromdate", Model.observableDate.value)
   val toDate = ObjectProperty[LocalDate](this, "todate", Model.observableDate.value)
