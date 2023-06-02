@@ -1,23 +1,17 @@
 package objektwerks
 
-import scalafx.geometry.Insets
 import scalafx.scene.Scene
-import scalafx.scene.layout.{HBox, VBox}
+import scalafx.scene.layout.VBox
 
 object View:
   val width = 800
   val height = 600
 
-  val rightVBox = new VBox:
-    prefWidth = 525
-    children = List( TitledNumbersPane(), TitledEncodingsPane(), TitledEnterPane() )
-
-  val leftHBox = new HBox:
+  val rootBox = new VBox:
     prefWidth = View.width
     prefHeight = View.height
-    padding = Insets(6)
-    children = List( TitledDatePane(), rightVBox )
+    children = List( TitledDatePane(), TitledNumbersPane(), TitledEncodingsPane(), TitledEnterPane() )
 
   val scene = new Scene:
-    root = leftHBox
+    root = rootBox
     stylesheets = List("/style.css")
