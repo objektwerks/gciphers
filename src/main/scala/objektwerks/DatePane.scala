@@ -27,6 +27,7 @@ final class DatePane extends VBox:
 
   val dateField = new DatePicker:
     alignment = Pos.Center
+    prefWidth = 110
     value <==> Model.observableDate
     onAction = { _ =>
       dayOfYearField.text = Date.dayOfYear(Model.observableDate.value)
@@ -135,6 +136,7 @@ final class DatePane extends VBox:
 
   val fromDateField = new DatePicker:
     alignment = Pos.Center
+    prefWidth = 110
     value = Model.observableDate.value
     onAction = { _ =>
       fromDate.value = value.value
@@ -146,6 +148,7 @@ final class DatePane extends VBox:
 
   val toDateField = new DatePicker:
     alignment = Pos.Center
+    prefWidth = 110
     value = Model.observableDate.value
     onAction = { _ =>
       toDate.value = value.value
