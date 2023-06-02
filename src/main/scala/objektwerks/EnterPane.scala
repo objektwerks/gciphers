@@ -1,7 +1,7 @@
 package objektwerks
 
 import scalafx.Includes.*
-import scalafx.geometry.{Insets, Pos}
+import scalafx.geometry.Pos
 import scalafx.scene.control.{Alert, Button, Label, TextField, TitledPane}
 import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.input.{KeyCode, KeyEvent}
