@@ -4,7 +4,7 @@ import scalafx.scene.Scene
 import scalafx.scene.layout.VBox
 
 object View:
-  val width = 800
+  val width = 700
   val height = 600
 
   val rootBox = new VBox:
