@@ -30,10 +30,10 @@ Ciphers
 
 Features
 --------
-1. **Enter:** Text encoding across multiple ciphers. Number check - see **Numbers** below.
-2. **Encodings:** Encoded numbers across multiple ciphers.
-3. **Date:** Date properties, encodings and date diff.
-4. **Numbers:** Math properties per enciphered number.
+1. **Date:** Date properties, encodings and date diff.
+2. **Numbers:** Math properties per enciphered number.
+3. **Encodings:** Encoded numbers across multiple ciphers.
+4. **Enter:** Text and number data entry.
 
 Build
 -----
