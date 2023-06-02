@@ -10,6 +10,7 @@ import scalafx.scene.layout.{HBox, Priority}
 object TitledEnterPane:
   def apply(): TitledPane =
     new TitledPane:
+      collapsible = false
       text = "Enter"
       content = EnterPane()
 
