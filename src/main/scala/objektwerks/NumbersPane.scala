@@ -7,6 +7,7 @@ import scalafx.scene.layout.{Priority, VBox}
 object TitledNumbersPane:
   def apply(): TitledPane =
     new TitledPane:
+      collapsible = false
       text = "Numbers"
       content = NumbersPane()
 
