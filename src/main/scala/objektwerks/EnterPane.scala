@@ -1,7 +1,7 @@
 package objektwerks
 
 import scalafx.Includes.*
-import scalafx.geometry.Pos
+import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.control.{Alert, Button, Label, TextField, TitledPane}
 import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.input.{KeyCode, KeyEvent}
@@ -14,6 +14,9 @@ object TitledEnterPane:
       content = EnterPane()
 
 final class EnterPane extends HBox:
+  spacing = 6
+  padding = Insets(6)
+  
   val textLabel = new Label:
     alignment = Pos.CenterLeft
     text = "Text:"
