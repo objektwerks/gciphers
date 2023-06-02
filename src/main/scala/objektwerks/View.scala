@@ -8,16 +8,16 @@ object View:
   val width = 800
   val height = 600
 
-  val vbox = new VBox:
+  val rightVBox = new VBox:
     prefWidth = 525
     children = List( TitledNumbersPane(), TitledEncodingsPane(), TitledEnterPane() )
 
-  val hbox = new HBox:
+  val leftHBox = new HBox:
     prefWidth = View.width
     prefHeight = View.height
     padding = Insets(6)
-    children = List( TitledDatePane(), vbox )
+    children = List( TitledDatePane(), rightVBox )
 
   val scene = new Scene:
-    root = hbox
+    root = leftHBox
     stylesheets = List("/style.css")
