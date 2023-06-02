@@ -9,6 +9,7 @@ object View:
   val height = 600
 
   val vbox = new VBox:
+    prefWidth = 525
     children = List( TitledNumbersPane(), TitledEncodingsPane(), TitledEnterPane() )
 
   val hbox = new HBox:

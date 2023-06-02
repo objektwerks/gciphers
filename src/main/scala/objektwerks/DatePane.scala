@@ -17,6 +17,7 @@ object TitledDatePane:
 final class DatePane extends VBox:
   spacing = 6
   padding = Insets(6)
+  prefWidth = 275
 
   // Date section begin.
 
@@ -25,7 +26,7 @@ final class DatePane extends VBox:
     text = "Date:"
 
   val dateField = new DatePicker:
-    prefWidth = 110
+    alignment = Pos.Center
     value <==> Model.observableDate
     onAction = { _ =>
       dayOfYearField.text = Date.dayOfYear(Model.observableDate.value)
@@ -33,23 +34,19 @@ final class DatePane extends VBox:
     }
 
   val dayOfYearLabel = new Label:
-    padding = Insets(6)
     alignment = Pos.CenterLeft
     text = "Day of Year:"
 
   val dayOfYearField = new Label:
-    padding = Insets(6)
-    alignment = Pos.CenterLeft
+    alignment = Pos.Center
     text = Date.dayOfYear(Model.observableDate.value)
 
   val remainingDaysInYearLabel = new Label:
-    padding = Insets(6)
     alignment = Pos.CenterLeft
     text = "Remaining Days in Year:"
 
   val remainingDaysInYearField = new Label:
-    padding = Insets(6)
-    alignment = Pos.CenterLeft
+    alignment = Pos.Center
     text = Date.remainingDaysInYear(Model.observableDate.value)
 
   val dateGrid = new GridPane:
@@ -67,39 +64,33 @@ final class DatePane extends VBox:
   // Encodings section begin.
 
   val encodingsSeparator = new Separator:
-    orientation = Orientation.HORIZONTAL
+    orientation = Orientation.Horizontal
 
   val (splitYearExpression, splitYearEncoding) = Date.splitYear(Model.observableDate.value)
   val splitYearLabel = new Label:
-    padding = Insets(6)
     alignment = Pos.CenterLeft
     text = splitYearExpression
 
   val splitYearText = new Label:
-    padding = Insets(6)
-    alignment = Pos.CENTER
+    alignment = Pos.Center
     text = splitYearEncoding.toString
 
   val (splitEachYearExpression, splitEachYearEncoding) = Date.splitEachYear(Model.observableDate.value)
   val splitEachYearLabel = new Label:
-    padding = Insets(6)
     alignment = Pos.CenterLeft
     text = splitEachYearExpression
 
   val splitEachYearText = new Label:
-    padding = Insets(6)
-    alignment = Pos.CENTER
+    alignment = Pos.Center
     text = splitEachYearEncoding.toString
 
   val (splitEachMonthDayYearExpression, splitEachMonthDayYearEncoding) = Date.splitEachMonthDayYear(Model.observableDate.value)
   val splitEachMonthDayYearLabel = new Label:
-    padding = Insets(6)
     alignment = Pos.CenterLeft
     text = splitEachMonthDayYearExpression
 
   val splitEachMonthDayYearText = new Label:
-    padding = Insets(6)
-    alignment = Pos.CENTER
+    alignment = Pos.Center
     text = splitEachMonthDayYearEncoding.toString
 
   val encodingsGrid = new GridPane:
@@ -143,7 +134,7 @@ final class DatePane extends VBox:
     text = "From Date:"
 
   val fromDateField = new DatePicker:
-    prefWidth = 110
+    alignment = Pos.Center
     value = Model.observableDate.value
     onAction = { _ =>
       fromDate.value = value.value
@@ -154,7 +145,7 @@ final class DatePane extends VBox:
     text = "To Date:"
 
   val toDateField = new DatePicker:
-    prefWidth = 110
+    alignment = Pos.Center
     value = Model.observableDate.value
     onAction = { _ =>
       toDate.value = value.value
