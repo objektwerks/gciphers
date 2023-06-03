@@ -28,7 +28,7 @@ object Date:
     val month = date.getMonthValue()
     val day = date.getDayOfMonth()
     val years = date.getYear.toString.toCharArray.map(c => c.toString)
-    val expression = s"($month) + ($day) + (${years(0)}) + (${years(1)}) + (${years(2)}) + (${years(3)})"
+    val expression = s"($month) + ($day) + ${years(0)} + ${years(1)} + ${years(2)} + ${years(3)}"
     val encoding = month + day + years.map(s => s.toInt).sum
     (expression, encoding)
 
