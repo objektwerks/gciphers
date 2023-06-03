@@ -7,9 +7,6 @@ object Date:
   type Expression = String
   type Encoding = Int
 
-  val plus = "+"
-  val multiply = "*"
-
   def dateDiff(fromLocalDate: LocalDate, toLocalDate: LocalDate): Long = ChronoUnit.DAYS.between(fromLocalDate, toLocalDate)
 
   def dayOfYear(date: LocalDate): String = date.getDayOfYear.toString
@@ -36,7 +33,7 @@ object Date:
     val months = date.getMonthValue.toString.toCharArray.map(c => c.toString)
     val days = date.getDayOfMonth.toString.toCharArray.map(c => c.toString)
     val years = date.getYear.toString.toCharArray.map(c => c.toString)
-    val expression = s"${toExpression(months, plus)} + ${toExpression(days, plus)} + ${years(0)} + ${years(1)} + ${years(2)} + ${years(3)}"
+    val expression = s"${toExpression(months)} + ${toExpression(days)} + ${years(0)} + ${years(1)} + ${years(2)} + ${years(3)}"
     val encoding = months.map(s => s.toInt).sum + days.map(s => s.toInt).sum + years.map(s => s.toInt).sum
     (expression, encoding)
 
@@ -52,11 +49,11 @@ object Date:
     val months = date.getMonthValue.toString.toCharArray.map(c => c.toString)
     val days = date.getDayOfMonth.toString.toCharArray.map(c => c.toString)
     val years = date.getYear.toString.drop(2).toCharArray.map(c => c.toString)
-    val expression = s"${toExpression(months, plus)} + ${toExpression(days, plus)} + ${years(0)} + ${years(1)}"
+    val expression = s"${toExpression(months)} + ${toExpression(days)} + ${years(0)} + ${years(1)}"
     val encoding = months.map(s => s.toInt).sum + days.map(s => s.toInt).sum + years.map(s => s.toInt).sum
     (expression, encoding)
 
-  def toExpression(strings: Array[String], symbol: String): String =
-    if strings.length == 2 then s"${strings(0)} $symbol ${strings(1)}"
+  def toExpression(strings: Array[String]): String =
+    if strings.length == 2 then s"${strings(0)} + ${strings(1)}"
     else if strings.length == 1 then s"${strings(0)}"
     else "0"
