@@ -21,13 +21,19 @@ class DateTest extends AnyFunSuite with Matchers:
   }
 
   test("split each month day year") {
-    val (splitEachMonthDayYearExpression, splitEachMonthDayYearEncoding) = Date.splitEachMonthDayYear(Model.observableDate.value)
+    val (splitEachMonthDayYearExpression, splitEachMonthDayYearEncoding) = Date.splitEachMonthDayYear(date)
     splitEachMonthDayYearExpression shouldBe "6 + 3 + 2 + 0 + 2 + 3"
     splitEachMonthDayYearEncoding shouldBe 16
   }
 
   test("split right year") {
-    val (splitRightYearExpression, splitRightYearEncoding) = Date.splitRightYear(Model.observableDate.value)
+    val (splitRightYearExpression, splitRightYearEncoding) = Date.splitRightYear(date)
     splitRightYearExpression shouldBe "(6) + (3) + (23)"
     splitRightYearEncoding shouldBe 32
+  }
+
+  test("split each month day right year") {
+    val (splitEachMonthDayRightYearExpression, splitEachMonthDayRightYearEncoding) = Date.splitEachMonthDayRightYear(date)
+    splitEachMonthDayRightYearExpression shouldBe "6 + 3 + 2 + 3"
+    splitEachMonthDayRightYearEncoding shouldBe 14
   }
