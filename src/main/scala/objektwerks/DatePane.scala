@@ -136,6 +136,7 @@ final class DatePane extends HBox:
   Model.observableDate.onChange { (_, _, _) =>
     setEncodings
   }
+  setEncodings
 
   // Encodings section end.
 
