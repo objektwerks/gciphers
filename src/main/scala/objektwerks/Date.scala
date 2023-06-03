@@ -48,7 +48,7 @@ object Date:
     val encoding = month + day + rightYear.toInt
     (expression, encoding)
 
-  def splitEachMonthDayRightYear(date: LocalDate): (Expression, Encoding) = // (mm) + (dd) + (yy) - last 2 year digits
+  def splitEachMonthDayRightYear(date: LocalDate): (Expression, Encoding) = // m + m + d + d + y + y - last 2 year digits
     val months = date.getMonthValue.toString.toCharArray.map(c => c.toString)
     val days = date.getDayOfMonth.toString.toCharArray.map(c => c.toString)
     val years = date.getYear.toString.drop(2).toCharArray.map(c => c.toString)
@@ -57,6 +57,6 @@ object Date:
     (expression, encoding)
 
   def toExpression(strings: Array[String], symbol: String): String =
-    if strings.length == 2 then s"(${strings(0)}) $symbol (${strings(1)})"
-    else if strings.length == 1 then s"(${strings(0)})"
-    else "(0)"
+    if strings.length == 2 then s"${strings(0)} $symbol ${strings(1)}"
+    else if strings.length == 1 then s"${strings(0)}"
+    else "0"
