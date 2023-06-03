@@ -19,3 +19,9 @@ class DateTest extends AnyFunSuite with Matchers:
     splitEachYearExpression shouldBe "(6) + (3) + 2 + 0 + 2 + 3"
     splitEachYearEncoding shouldBe 16
   }
+
+  test("split each month day year") {
+    val (splitEachMonthDayYearExpression, splitEachMonthDayYearEncoding) = Date.splitEachMonthDayYear(Model.observableDate.value)
+    splitEachMonthDayYearExpression shouldBe "6 + 3 + 2 + 0 + 2 + 3"
+    splitEachMonthDayYearEncoding shouldBe 16
+  }
