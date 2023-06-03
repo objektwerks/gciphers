@@ -12,6 +12,10 @@ class DateTest extends AnyFunSuite with Matchers:
     Date.dayOfYear(date) shouldBe "154"
   }
 
+  test("remaining days in year") {
+    Date.remainingDaysInYear(date) shouldBe "211"
+  }
+
   test("split year") {
     val (splitYearExpression, splitYearEncoding) = Date.splitYear(date)
     splitYearExpression shouldBe "(6) + (3) + (20) + (23)"
