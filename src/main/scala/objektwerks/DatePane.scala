@@ -26,20 +26,20 @@ final class DatePane extends HBox:
     alignment = Pos.CenterLeft
     text = "Date:"
 
-  val dateField = new DatePicker:
+  val dateText = new DatePicker:
     alignment = Pos.Center
     prefWidth = 110
     value <==> Model.observableDate
     onAction = { _ =>
-      dayOfYearField.text = Date.dayOfYear(Model.observableDate.value)
-      remainingDaysInYearField.text = Date.remainingDaysInYear(Model.observableDate.value)
+      dayOfYearText.text = Date.dayOfYear(Model.observableDate.value)
+      remainingDaysInYearText.text = Date.remainingDaysInYear(Model.observableDate.value)
     }
 
   val dayOfYearLabel = new Label:
     alignment = Pos.CenterLeft
     text = "Day of Year:"
 
-  val dayOfYearField = new Label:
+  val dayOfYearText = new Label:
     alignment = Pos.Center
     text = Date.dayOfYear(Model.observableDate.value)
 
@@ -47,7 +47,7 @@ final class DatePane extends HBox:
     alignment = Pos.CenterLeft
     text = "Remaining Days in Year:"
 
-  val remainingDaysInYearField = new Label:
+  val remainingDaysInYearText = new Label:
     alignment = Pos.Center
     text = Date.remainingDaysInYear(Model.observableDate.value)
 
@@ -55,11 +55,11 @@ final class DatePane extends HBox:
     hgap = 6
     vgap = 6
     add(dateLabel, columnIndex = 0, rowIndex = 0)
-    add(dateField, columnIndex = 1, rowIndex = 0)
+    add(dateText, columnIndex = 1, rowIndex = 0)
     add(dayOfYearLabel, columnIndex = 0, rowIndex = 1)
-    add(dayOfYearField, columnIndex = 1, rowIndex = 1)
+    add(dayOfYearText, columnIndex = 1, rowIndex = 1)
     add(remainingDaysInYearLabel, columnIndex = 0, rowIndex = 2)
-    add(remainingDaysInYearField, columnIndex = 1, rowIndex = 2)
+    add(remainingDaysInYearText, columnIndex = 1, rowIndex = 2)
 
   // Date section end.
 
