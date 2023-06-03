@@ -95,6 +95,15 @@ final class DatePane extends HBox:
     alignment = Pos.Center
     text = splitEachMonthDayYearEncoding.toString
 
+  val (splitRightYearExpression, splitRightYearEncoding) = Date.splitRightYear(Model.observableDate.value)
+  val ssplitRightYearLabel = new Label:
+    alignment = Pos.CenterLeft
+    text = s"$splitRightYearExpression:"
+
+  val splitRightYearText = new Label:
+    alignment = Pos.Center
+    text = splitRightYearEncoding.toString
+
   val encodingsGrid = new GridPane:
     hgap = 6
     vgap = 6
