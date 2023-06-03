@@ -40,6 +40,14 @@ object Date:
     val encoding = months.map(s => s.toInt).sum + days.map(s => s.toInt).sum + years.map(s => s.toInt).sum
     (expression, encoding)
 
+  def splitRightYear(date: LocalDate): (Expression, Encoding) = // (mm) + (dd) + (yy) - last 2 year digits
+    val month = date.getMonthValue()
+    val day = date.getDayOfMonth()
+    val rightYear = date.getYear.toString.drop(2)
+    val expression = s"($month) + ($day) + ($rightYear)"
+    val encoding = month + day + rightYear.toInt
+    (expression, encoding)
+
   def toExpression(strings: Array[String], symbol: String): String =
     if strings.length == 2 then s"(${strings(0)}) $symbol (${strings(1)})"
     else if strings.length == 1 then s"(${strings(0)})"
