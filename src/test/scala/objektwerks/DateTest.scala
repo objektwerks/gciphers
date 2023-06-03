@@ -16,6 +16,10 @@ class DateTest extends AnyFunSuite with Matchers:
     Date.remainingDaysInYear(date) shouldBe "211"
   }
 
+  test("date diff") {
+    Date.dateDiff(date, LocalDate.of(2023, 6, 4)) shouldBe 1
+  }
+
   test("split year") {
     val (splitYearExpression, splitYearEncoding) = Date.splitYear(date)
     splitYearExpression shouldBe "(6) + (3) + (20) + (23)"
