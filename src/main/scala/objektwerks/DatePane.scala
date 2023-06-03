@@ -65,6 +65,10 @@ final class DatePane extends HBox:
 
   // Encodings section begin.
 
+  Model.observableDate.onChange { (_, _, _) =>
+    
+  }
+
   val encodingsSeparator = new Separator:
     orientation = Orientation.Vertical
 
