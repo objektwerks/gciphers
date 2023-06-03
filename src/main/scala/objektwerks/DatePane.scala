@@ -26,7 +26,7 @@ final class DatePane extends HBox:
     alignment = Pos.CenterLeft
     text = "Date:"
 
-  val dateText = new DatePicker:
+  val datePicker = new DatePicker:
     alignment = Pos.Center
     prefWidth = 110
     value <==> Model.observableDate
@@ -55,7 +55,7 @@ final class DatePane extends HBox:
     hgap = 6
     vgap = 6
     add(dateLabel, columnIndex = 0, rowIndex = 0)
-    add(dateText, columnIndex = 1, rowIndex = 0)
+    add(datePicker, columnIndex = 1, rowIndex = 0)
     add(dayOfYearLabel, columnIndex = 0, rowIndex = 1)
     add(dayOfYearText, columnIndex = 1, rowIndex = 1)
     add(remainingDaysInYearLabel, columnIndex = 0, rowIndex = 2)
@@ -168,7 +168,7 @@ final class DatePane extends HBox:
     alignment = Pos.CenterLeft
     text = "From Date:"
 
-  val fromDateField = new DatePicker:
+  val fromDatePicker = new DatePicker:
     alignment = Pos.Center
     prefWidth = 110
     value = Model.observableDate.value
@@ -180,7 +180,7 @@ final class DatePane extends HBox:
     alignment = Pos.CenterLeft
     text = "To Date:"
 
-  val toDateField = new DatePicker:
+  val toDatePicker = new DatePicker:
     alignment = Pos.Center
     prefWidth = 110
     value = Model.observableDate.value
@@ -194,9 +194,9 @@ final class DatePane extends HBox:
     add(dateDiffLabel, columnIndex = 0, rowIndex = 0)
     add(dateDiffText, columnIndex = 1, rowIndex = 0)
     add(fromDateLabel, columnIndex = 0, rowIndex = 1)
-    add(fromDateField, columnIndex = 1, rowIndex = 1)
+    add(fromDatePicker, columnIndex = 1, rowIndex = 1)
     add(toDateLabel, columnIndex = 0, rowIndex = 2)
-    add(toDateField, columnIndex = 1, rowIndex = 2)
+    add(toDatePicker, columnIndex = 1, rowIndex = 2)
 
   // Date Diff section end.
 
