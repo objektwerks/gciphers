@@ -8,6 +8,10 @@ import org.scalatest.matchers.should.Matchers
 class DateTest extends AnyFunSuite with Matchers:
   val date = LocalDate.of(2023, 6, 3)
 
+  test("day of year") {
+    Date.dayOfYear(date) shouldBe "154"
+  }
+
   test("split year") {
     val (splitYearExpression, splitYearEncoding) = Date.splitYear(date)
     splitYearExpression shouldBe "(6) + (3) + (20) + (23)"
