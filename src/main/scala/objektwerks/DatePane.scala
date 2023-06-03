@@ -74,14 +74,11 @@ final class DatePane extends HBox:
   val splitYearText = new Label:
     alignment = Pos.Center
 
-  val (splitEachYearExpression, splitEachYearEncoding) = Date.splitEachYear(Model.observableDate.value)
   val splitEachYearLabel = new Label:
     alignment = Pos.CenterLeft
-    text = s"$splitEachYearExpression:"
 
   val splitEachYearText = new Label:
     alignment = Pos.Center
-    text = splitEachYearEncoding.toString
 
   val (splitEachMonthDayYearExpression, splitEachMonthDayYearEncoding) = Date.splitEachMonthDayYear(Model.observableDate.value)
   val splitEachMonthDayYearLabel = new Label:
@@ -128,6 +125,10 @@ final class DatePane extends HBox:
     val (splitYearExpression, splitYearEncoding) = Date.splitYear(Model.observableDate.value)
     splitYearLabel.text = s"$splitYearExpression:"
     splitYearText.text = splitYearEncoding.toString
+
+    val (splitEachYearExpression, splitEachYearEncoding) = Date.splitEachYear(Model.observableDate.value)
+    splitEachYearLabel.text = s"$splitEachYearExpression:"
+    splitEachYearText.text = splitEachYearEncoding.toString
 
   Model.observableDate.onChange { (_, _, _) =>
     setEncodings
