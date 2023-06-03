@@ -124,6 +124,8 @@ final class DatePane extends HBox:
     add(splitEachMonthDayYearText, columnIndex = 1, rowIndex = 2)
     add(splitRightYearLabel, columnIndex = 0, rowIndex = 3)
     add(splitRightYearText, columnIndex = 1, rowIndex = 3)
+    add(splitEachMonthDayRightYearLabel, columnIndex = 0, rowIndex = 4)
+    add(splitEachMonthDayRightYearText, columnIndex = 1, rowIndex = 4)
 
   // Encodings section end.
 
