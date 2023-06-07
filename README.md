@@ -1,6 +1,6 @@
 Ciphers
 -------
->Cipher analysis app.
+>Cipher analysis app using Scala 3.
 
 Ciphers
 -------
