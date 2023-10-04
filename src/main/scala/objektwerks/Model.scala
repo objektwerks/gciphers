@@ -19,7 +19,7 @@ object Model:
     if !isListed then observableNumbers.prepend( Number(primes, fibonaccis, number) )
     isListed
 
-  def addEncoding(text: String): Unit = observableEncodings += Encodings.encode(text)
+  def addEncoding(text: String): Unit = observableEncodings.prepend( Encodings.encode(text) )
   
   def clear(): Unit =
     observableNumbers.clear()
