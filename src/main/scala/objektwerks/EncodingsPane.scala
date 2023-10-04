@@ -26,6 +26,7 @@ final class EncodingsPane extends VBox:
       new TableColumn[Encodings, Int]:
         text = "Ordinal"
         cellValueFactory = _.value.ordinalProperty
+        cellFactory = (cell, _) => cell.setOnMouseClicked( event => println(event) )
       ,
       new TableColumn[Encodings, Int]:
         text = "Reverse\nOrdinal"
