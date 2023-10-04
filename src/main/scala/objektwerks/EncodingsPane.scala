@@ -74,6 +74,7 @@ final class EncodingsPane extends VBox:
       new TableColumn[Encodings, Int]:
         text = "Reverse\nStandard"
         cellValueFactory = _.value.reverseStandardProperty
+        cellFactory = (cell, _) => cell.setOnMouseClicked( event => debug(event) )
       ,
       new TableColumn[Encodings, Int]:
         text = "Sumerian"
