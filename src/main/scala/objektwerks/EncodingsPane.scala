@@ -39,6 +39,7 @@ final class EncodingsPane extends VBox:
       new TableColumn[Encodings, Int]:
         text = "Reduction"
         cellValueFactory = _.value.reductionProperty
+        cellFactory = (cell, _) => cell.setOnMouseClicked( event => debug(event) )
       ,
       new TableColumn[Encodings, Int]:
         text = "Reverse\nReduction"
