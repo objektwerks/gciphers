@@ -6,9 +6,10 @@ import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 
 object Model:
-  val observableNumbers = ObservableBuffer[Number]()
   val observableEncodings = ObservableBuffer[Encodings]()
+  val observableNumbers = ObservableBuffer[Number]()
   val observableDate = ObjectProperty[LocalDate](this, "date", LocalDate.now)
+  
   val primes = Numbers.listPrimes(0 to 1000)
   val fibonaccis = Numbers.listFibonaccis(0 to 15)
 
