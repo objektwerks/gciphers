@@ -99,6 +99,7 @@ final class EncodingsPane extends VBox:
       new TableColumn[Encodings, Int]:
         text = "Fibonacci"
         cellValueFactory = _.value.fibonacciProperty
+        cellFactory = (cell, _) => cell.setOnMouseClicked( event => debug(event) )
       ,
       new TableColumn[Encodings, Int]:
         text = "Squares"
