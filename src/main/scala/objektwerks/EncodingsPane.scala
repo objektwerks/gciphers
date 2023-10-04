@@ -3,6 +3,7 @@ package objektwerks
 import scalafx.Includes.*
 import scalafx.geometry.Insets
 import scalafx.scene.control.{TableColumn, TableView, TitledPane}
+import scalafx.scene.input.MouseEvent
 import scalafx.scene.layout.{Priority, VBox}
 
 object TitledEncodingsPane:
@@ -16,6 +17,8 @@ final class EncodingsPane extends VBox:
   spacing = 6
   padding = Insets(6)
 
+  def debug(event: MouseEvent): Unit = println(event)
+
   val tableView = new TableView[Encodings]():
     columns ++= List(
       new TableColumn[Encodings, String]:
@@ -26,7 +29,7 @@ final class EncodingsPane extends VBox:
       new TableColumn[Encodings, Int]:
         text = "Ordinal"
         cellValueFactory = _.value.ordinalProperty
-        cellFactory = (cell, _) => cell.setOnMouseClicked( event => println(event) )
+        cellFactory = (cell, _) => cell.setOnMouseClicked( event => debug(event) )
       ,
       new TableColumn[Encodings, Int]:
         text = "Reverse\nOrdinal"
