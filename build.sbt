@@ -65,11 +65,11 @@ lazy val OS: String = sys.props.getOrElse("target", "") match {
   case _ => ""
 }
 
-if (OS == "mac") assemblyJarName := "pool-balance-mac-0.3.jar"
-else if (OS == "mac-aarch64") assemblyJarName := "pool-balance-m1-0.3.jar"
-else if (OS == "win") assemblyJarName := "pool-balance-win-0.3.jar"
-else if (OS == "linux") assemblyJarName := "pool-balance-linux-0.3.jar"
-else assemblyJarName := "pool-balance-no-valid-target-specified-0.3.jar"
+if (OS == "mac") assemblyJarName := "pool-balance-mac-2.4.jar"
+else if (OS == "mac-aarch64") assemblyJarName := "pool-balance-m1-2.4.jar"
+else if (OS == "win") assemblyJarName := "pool-balance-win-2.4.jar"
+else if (OS == "linux") assemblyJarName := "pool-balance-linux-2.4.jar"
+else assemblyJarName := "pool-balance-no-valid-target-specified-2.4.jar"
 
 lazy val javafxModules = Seq("base", "controls", "web")
 libraryDependencies ++= javafxModules.map( module =>
