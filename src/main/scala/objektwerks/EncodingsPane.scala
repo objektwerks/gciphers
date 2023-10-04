@@ -139,6 +139,7 @@ final class EncodingsPane extends VBox:
       new TableColumn[Encodings, Int]:
         text = "Reverse\nSatanic"
         cellValueFactory = _.value.reverseSatanicProperty
+        cellFactory = (cell, _) => cell.setOnMouseClicked( event => debug(event) )
     )
     items = Model.observableEncodings
 
