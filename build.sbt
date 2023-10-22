@@ -7,7 +7,7 @@ libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "20.0.0-R31",
     "ch.qos.logback" % "logback-classic" % "1.4.11",
-    "org.scalatest" %% "scalatest" % "3.2.16" % Test
+    "org.scalatest" %% "scalatest" % "3.2.17" % Test
   )
 }
 scalacOptions ++= Seq(
@@ -65,11 +65,11 @@ lazy val OS: String = sys.props.getOrElse("target", "") match {
   case _ => ""
 }
 
-if (OS == "mac") assemblyJarName := "pool-balance-mac-2.5.jar"
-else if (OS == "mac-aarch64") assemblyJarName := "pool-balance-m1-2.5.jar"
-else if (OS == "win") assemblyJarName := "pool-balance-win-2.5.jar"
-else if (OS == "linux") assemblyJarName := "pool-balance-linux-2.5.jar"
-else assemblyJarName := "pool-balance-no-valid-target-specified-2.5.jar"
+if (OS == "mac") assemblyJarName := "pool-balance-mac-2.6.jar"
+else if (OS == "mac-aarch64") assemblyJarName := "pool-balance-m1-2.6.jar"
+else if (OS == "win") assemblyJarName := "pool-balance-win-2.6.jar"
+else if (OS == "linux") assemblyJarName := "pool-balance-linux-2.6.jar"
+else assemblyJarName := "pool-balance-no-valid-target-specified-2.6.jar"
 
 lazy val javafxModules = Seq("base", "controls", "web")
 libraryDependencies ++= javafxModules.map( module =>
