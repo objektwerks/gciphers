@@ -59,10 +59,10 @@ Assembly
 Execute
 -------
 >To execute an assembled jar locally:
-1. java -jar .assembly/pool-balance-mac-2.5.jar
-2. java -jar .assembly/pool-balance-m1-2.5.jar
-3. java -jar .assembly/pool-balance-win-2.5.jar
-4. java -jar .assembly/pool-balance-linux-2.5.jar
+1. java -jar .assembly/pool-balance-mac-2.6.jar
+2. java -jar .assembly/pool-balance-m1-2.6.jar
+3. java -jar .assembly/pool-balance-win-2.6.jar
+4. java -jar .assembly/pool-balance-linux-2.6.jar
 
 Deploy
 ------
