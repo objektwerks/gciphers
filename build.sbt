@@ -1,7 +1,7 @@
 name := "ciphers"
 organization := "objektwerks"
 version := "2.6-SNAPSHOT"
-scalaVersion := "3.6.2-RC3"
+scalaVersion := "3.6.2"
 mainClass := Some("objektwerks.App")
 libraryDependencies ++= {
   Seq(
