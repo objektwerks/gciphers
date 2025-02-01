@@ -4,7 +4,6 @@ import java.time.LocalDate
 
 import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.{Insets, Orientation, Pos}
-import scalafx.Includes.*
 import scalafx.scene.control.{DatePicker, Label, Separator, TitledPane}
 import scalafx.scene.layout.{GridPane, HBox, Priority}
 
