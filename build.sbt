@@ -10,6 +10,9 @@ libraryDependencies ++= {
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
   )
 }
+scalacOptions ++= Seq(
+  "-Wunused:all"
+)
 
 // Begin: Assembly Tasks
 lazy val createAssemblyDir = taskKey[File]("Create assembly dir.")
