@@ -6,7 +6,7 @@ mainClass := Some("objektwerks.App")
 libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "23.0.1-R34",
-    "ch.qos.logback" % "logback-classic" % "1.5.16",
+    "ch.qos.logback" % "logback-classic" % "1.5.17",
     "org.scalatest" %% "scalatest" % "3.2.19" % Test
   )
 }
