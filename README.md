@@ -18,7 +18,7 @@ Ciphers
 12. Fibonacci
 13. Squares
 14. ReverseSquares
-15. trigonal
+15. Trigonal
 16. ReverseTrigonal
 17. SingleReduction
 18. ReverseSingleReduction
