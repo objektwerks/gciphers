@@ -27,6 +27,8 @@ final class Context(config: Config):
   val labelText = config.getString("label.text")
   val labelNumber = config.getString("label.number")
 
+  val buttonClear = config.getString("button.clear")
+
   val columnNumber = config.getString("column.number")
   val columnPrimeRank = config.getString("column.PrimeRank")
   val columnFibonacciRank = config.getString("column.fibonacciRank")
