@@ -48,6 +48,7 @@ final class Context(config: Config):
   val columnSumerian = config.getString("column.sumerian")
   val columnReverseSumerian = config.getString("column.reverseSumerian")
   val columnPrimes = config.getString("column.primes")
+  val columnReversePrimes = config.getString("column.reversePrimes")
 
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
