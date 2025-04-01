@@ -44,6 +44,7 @@ final class Context(config: Config):
   val columnChaldean = config.getString("column.chaldean")
   val columnSeptenary = config.getString("column.septenary")
   val columnKeypad = config.getString("column.keypad")
+  val columnStandard = config.getString("columnStandard")
 
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
