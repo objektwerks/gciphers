@@ -13,11 +13,11 @@ object Date:
 
   def remainingDaysInYear(date: LocalDate): String = ( date.lengthOfYear() - date.getDayOfYear ).toString
 
-  def splitYear(date: LocalDate): (Expression, Encoding) = // (mm) + (dd) + (yy) + (yy)
+  def splitYear(date: LocalDate): (Expression, Encoding) = // mm + dd + yy + yy
     val month = date.getMonthValue()
     val day = date.getDayOfMonth()
     val (leftYear, rightYear) = date.getYear.toString.splitAt(2)
-    val expression = s"($month) + ($day) + ($leftYear) + ($rightYear)"
+    val expression = s"$month + $day + $leftYear + $rightYear"
     val encoding = month + day + leftYear.toInt + rightYear.toInt
     (expression, encoding)
 
