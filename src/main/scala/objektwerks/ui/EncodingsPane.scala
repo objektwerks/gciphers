@@ -15,7 +15,7 @@ final class EncodingsPane(model: Model) extends VBox:
   val title = new Label:
     padding = Insets(6)
     style = "-fx-font-weight: bold"
-    text = "Encodings:"
+    text = "Encodings"
 
   val tableView = new TableView[Encodings]():
     columns ++= List(
