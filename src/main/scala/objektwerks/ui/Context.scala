@@ -2,7 +2,7 @@ package objektwerks.ui
 
 import com.typesafe.config.Config
 
-import scalafx.scene.image.{Image, ImageView}
+import scalafx.scene.image.Image
 
 final class Context(config: Config):
   val windowTitle = config.getString("window.title")
