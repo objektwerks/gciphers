@@ -54,9 +54,9 @@ Assembly
 
 Execute
 -------
-1. ```java -jar target/scala-3.6.4/ciphers-2.7-SNAPSHOT.jar```
+1. ```java -jar target/scala-3.6.4/ciphers-2.8-SNAPSHOT.jar```
 >or:
-1. ```java -jar .assembly/ciphers-2.7-SNAPSHOT.jar```
+1. ```java -jar .assembly/ciphers-2.8-SNAPSHOT.jar```
 
 Deploy
 ------
