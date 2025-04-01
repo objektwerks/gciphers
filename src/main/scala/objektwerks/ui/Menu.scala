@@ -24,7 +24,7 @@ final class Menu(context: Context) extends MenuBar:
       new Alert(AlertType.Information):
         initOwner(App.stage)
         title = context.windowTitle
-        headerText = "Todo: Header Text"
+        headerText = context.aboutAlertHeaderText
         dialogPane().content = gridPaneAbout
       .showAndWait()
 
