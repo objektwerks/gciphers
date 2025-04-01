@@ -54,11 +54,9 @@ Assembly
 
 Execute
 -------
->To execute an assembled jar locally:
-1. java -jar .assembly/pool-balance-mac-2.6.jar
-2. java -jar .assembly/pool-balance-m1-2.6.jar
-3. java -jar .assembly/pool-balance-win-2.6.jar
-4. java -jar .assembly/pool-balance-linux-2.6.jar
+1. ```java -jar target/scala-3.6.4/ciphers-2.6-SNAPSHOT.jar```
+>or:
+1. ```java -jar .assembly/ciphers-2.6-SNAPSHOT.jar```
 
 Deploy
 ------
