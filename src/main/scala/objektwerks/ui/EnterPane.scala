@@ -2,19 +2,12 @@ package objektwerks.ui
 
 import scalafx.Includes.*
 import scalafx.geometry.{Insets, Pos}
-import scalafx.scene.control.{Alert, Button, Label, TextField, TitledPane}
+import scalafx.scene.control.{Alert, Button, Label, TextField}
 import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.input.{KeyCode, KeyEvent}
 import scalafx.scene.layout.{HBox, Priority}
 
-object TitledEnterPane:
-  def apply(): TitledPane =
-    new TitledPane:
-      collapsible = false
-      text = "Enter"
-      content = EnterPane()
-
-final class EnterPane extends HBox:
+final class EnterPane(model: Model) extends HBox:
   spacing = 6
   padding = Insets(6)
   
@@ -24,7 +17,7 @@ final class EnterPane extends HBox:
 
   val textField = new TextField:
     hgrow = Priority.Always
-    onKeyReleased = (event: KeyEvent) => if event.code == KeyCode.Enter then Model.addEncoding( text.value )
+    onKeyReleased = (event: KeyEvent) => if event.code == KeyCode.Enter then model.addEncoding( text.value )
 
   val numberLabel = new Label:
     alignment = Pos.CenterLeft
@@ -35,7 +28,7 @@ final class EnterPane extends HBox:
     onKeyReleased = (event: KeyEvent) =>
       if event.code == KeyCode.Enter then
         val number = text.value.toIntOption.getOrElse(0)
-        val isListed = Model.addNumber(number)
+        val isListed = model.addNumber(number)
         if isListed then
           new Alert(AlertType.Information) {
             initOwner(App.stage)
@@ -50,7 +43,7 @@ final class EnterPane extends HBox:
     onAction = { _ =>
       textField.text = ""
       numberField.text = ""
-      Model.clear()
+      model.clear()
     }
 
   val hbox = new HBox:
@@ -58,4 +51,4 @@ final class EnterPane extends HBox:
     children = List(textLabel, textField, numberLabel, numberField, clearButton)
 
   children = List(hbox)
-  HBox.setHgrow(hbox, Priority.Always)
+  HBox.setHgrow(this, Priority.Always)
