@@ -17,5 +17,6 @@ final class Context(config: Config):
   val menuExit = config.getString("menu.exit")
 
   val labelDate = config.getString("label.date")
+  val labelDayOfYear = config.getString("label.dayOfYear")
 
   def appIcon = Image(Image.getClass.getResourceAsStream("/cipher.png"))
