@@ -5,24 +5,20 @@ import java.time.LocalDate
 import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.{Insets, Orientation, Pos}
 import scalafx.scene.control.{DatePicker, Label, Separator}
-import scalafx.scene.layout.{GridPane, HBox, Priority}
+import scalafx.scene.layout.{GridPane, Priority, VBox}
 
 import objektwerks.Date
 
-final class DatePane(model: Model) extends HBox:
+final class DatePane(model: Model) extends VBox:
   spacing = 6
   padding = Insets(6)
   prefWidth = 275
-
-  val paneLabel = new Label:
-    padding = Insets(6)
-    style = "-fx-font-weight: bold"
-    text = "Date"
 
   // Date section begin.
 
   val dateLabel = new Label:
     alignment = Pos.CenterLeft
+    style = "-fx-font-weight: bold"
     text = "Date:"
 
   val datePicker = new DatePicker:
@@ -65,7 +61,7 @@ final class DatePane(model: Model) extends HBox:
   // Encodings section begin.
 
   val encodingsSeparator = new Separator:
-    orientation = Orientation.Vertical
+    orientation = Orientation.Horizontal
 
   val splitYearLabel = new Label:
     alignment = Pos.CenterLeft
@@ -142,7 +138,7 @@ final class DatePane(model: Model) extends HBox:
   // Date Diff section begin.
 
   val dateDiffSeparator = new Separator:
-    orientation = Orientation.Vertical
+    orientation = Orientation.Horizontal
 
   val fromDate = ObjectProperty[LocalDate](this, "fromdate", model.observableDate.value)
   val toDate = ObjectProperty[LocalDate](this, "todate", model.observableDate.value)
@@ -200,4 +196,4 @@ final class DatePane(model: Model) extends HBox:
   // Date Diff section end.
 
   children = List(dateGrid, encodingsSeparator, encodingsGrid, dateDiffSeparator, dateDiffGrid)
-  HBox.setHgrow(this, Priority.Always)
+  VBox.setVgrow(this, Priority.Always)
