@@ -1,4 +1,4 @@
-package objektwerks
+package objektwerks.ui
 
 import scalafx.Includes.*
 import scalafx.geometry.{Insets, Pos}

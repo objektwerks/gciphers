@@ -1,4 +1,4 @@
-package objektwerks
+package objektwerks.ui
 
 import java.time.LocalDate
 
@@ -6,6 +6,8 @@ import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.{Insets, Orientation, Pos}
 import scalafx.scene.control.{DatePicker, Label, Separator, TitledPane}
 import scalafx.scene.layout.{GridPane, HBox, Priority}
+
+import objektwerks.Date
 
 object TitledDatePane:
   def apply(): TitledPane =

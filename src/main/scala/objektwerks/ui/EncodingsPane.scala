@@ -1,9 +1,11 @@
-package objektwerks
+package objektwerks.ui
 
 import scalafx.Includes.*
 import scalafx.geometry.Insets
 import scalafx.scene.control.{TableColumn, TableView, TitledPane}
 import scalafx.scene.layout.{Priority, VBox}
+
+import objektwerks.Encodings
 
 object TitledEncodingsPane:
   def apply(): TitledPane =

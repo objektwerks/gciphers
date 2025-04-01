@@ -1,8 +1,10 @@
-package objektwerks
+package objektwerks.ui
 
 import scalafx.geometry.Insets
 import scalafx.scene.control.{TableColumn, TableView, TitledPane}
 import scalafx.scene.layout.{Priority, VBox}
+
+import objektwerks.Number
 
 object TitledNumbersPane:
   def apply(): TitledPane =

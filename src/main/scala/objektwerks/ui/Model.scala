@@ -1,9 +1,11 @@
-package objektwerks
+package objektwerks.ui
 
 import java.time.LocalDate
 
 import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
+
+import objektwerks.{Encodings, Number, Numbers}
 
 object Model:
   val observableEncodings = ObservableBuffer[Encodings]()

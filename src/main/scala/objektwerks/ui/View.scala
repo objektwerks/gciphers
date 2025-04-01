@@ -1,4 +1,4 @@
-package objektwerks
+package objektwerks.ui
 
 import scalafx.scene.Scene
 import scalafx.scene.layout.VBox
