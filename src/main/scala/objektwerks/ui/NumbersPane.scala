@@ -1,7 +1,7 @@
 package objektwerks.ui
 
 import scalafx.geometry.Insets
-import scalafx.scene.control.{TableColumn, TableView}
+import scalafx.scene.control.{Label, TableColumn, TableView}
 import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.Number
@@ -9,6 +9,11 @@ import objektwerks.Number
 final class NumbersPane(model: Model) extends VBox:
   spacing = 6
   padding = Insets(6)
+
+  val title = new Label:
+    padding = Insets(6)
+    style = "-fx-font-weight: bold"
+    text = "Numbers:"
 
   val yesOrNo = (bool: Boolean) => if bool then "Yes" else "No"
 
@@ -42,5 +47,5 @@ final class NumbersPane(model: Model) extends VBox:
     )
     items = model.observableNumbers
 
-  children = List(tableView)
-  VBox.setVgrow(tableView, Priority.Always)
+  children = List(title, tableView)
+  VBox.setVgrow(this, Priority.Always)
