@@ -39,6 +39,7 @@ final class Context(config: Config):
   val columnOrdinal = config.getString("column.ordinal")
   val columnReverseOrdinal = config.getString("column.reverseOrdinal")
   val columnReduction = config.getString("column.reduction")
+  val columnReverseReduction = config.getString("column.reverseReduction")
 
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
