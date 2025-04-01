@@ -27,6 +27,7 @@ final class Context(config: Config):
   val columnNumber = config.getString("column.number")
   val columnPrimeRank = config.getString("column.PrimeRank")
   val columnFibonacciRank = config.getString("column.fibonacciRank")
+  val columnStar = config.getString("column.star")
 
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
