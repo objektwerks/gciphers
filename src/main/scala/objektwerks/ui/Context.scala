@@ -36,6 +36,7 @@ final class Context(config: Config):
   val columnStar = config.getString("column.star")
   val columnTriangular = config.getString("column.triangular")
   val columnFactors = config.getString("column.factors")
+  val columnText = config.getString("column.text")
 
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
