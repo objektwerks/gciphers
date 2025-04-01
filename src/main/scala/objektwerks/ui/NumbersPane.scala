@@ -1,19 +1,12 @@
 package objektwerks.ui
 
 import scalafx.geometry.Insets
-import scalafx.scene.control.{TableColumn, TableView, TitledPane}
+import scalafx.scene.control.{TableColumn, TableView}
 import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.Number
 
-object TitledNumbersPane:
-  def apply(): TitledPane =
-    new TitledPane:
-      collapsible = false
-      text = "Numbers"
-      content = NumbersPane()
-
-final class NumbersPane extends VBox:
+final class NumbersPane(model: Model) extends VBox:
   spacing = 6
   padding = Insets(6)
 
@@ -47,7 +40,7 @@ final class NumbersPane extends VBox:
         text = "Factors"
         cellValueFactory = _.value.factorsProperty
     )
-    items = Model.observableNumbers
+    items = model.observableNumbers
 
   children = List(tableView)
   VBox.setVgrow(tableView, Priority.Always)
