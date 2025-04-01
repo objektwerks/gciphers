@@ -22,10 +22,11 @@ final class Context(config: Config):
   val labelFrom = config.getString("label.from")
   val labelTo = config.getString("label.to")
   val labelDiff = config.getString("label.diff")
+  val labelNumber = config.getString("label.number")
   val labelNumbers = config.getString("label.numbers")
+  val labelNumberListed = config.getString("label.numberListed")
   val labelEncodings = config.getString("label.encodings")
   val labelText = config.getString("label.text")
-  val labelNumber = config.getString("label.number")
 
   val buttonClear = config.getString("button.clear")
 
