@@ -23,4 +23,6 @@ final class Context(config: Config):
   val labelTo = config.getString("label.to")
   val labelDiff = config.getString("label.diff")
 
+  val tabDate = config.getString("tab.date")
+
   def appIcon = Image(Image.getClass.getResourceAsStream("/cipher.png"))
