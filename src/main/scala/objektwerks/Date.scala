@@ -37,11 +37,11 @@ object Date:
     val encoding = months.map(s => s.toInt).sum + days.map(s => s.toInt).sum + years.map(s => s.toInt).sum
     (expression, encoding)
 
-  def splitRightYear(date: LocalDate): (Expression, Encoding) = // (mm) + (dd) + (yy) - last 2 year digits
+  def splitRightYear(date: LocalDate): (Expression, Encoding) = // mm + dd + yy - last 2 year digits
     val month = date.getMonthValue()
     val day = date.getDayOfMonth()
     val rightYear = date.getYear.toString.drop(2)
-    val expression = s"($month) + ($day) + ($rightYear)"
+    val expression = s"$month + $day + $rightYear"
     val encoding = month + day + rightYear.toInt
     (expression, encoding)
 
