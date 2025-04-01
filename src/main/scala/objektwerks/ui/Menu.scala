@@ -11,7 +11,7 @@ final class Menu(context: Context) extends MenuBar:
   val textAreaAbout = new TextArea():
     editable = false
     wrapText = true
-    text = "Todo: Text Area"
+    text = context.aboutAlertContentText
 
   val gridPaneAbout = new GridPane():
     prefHeight = 120
