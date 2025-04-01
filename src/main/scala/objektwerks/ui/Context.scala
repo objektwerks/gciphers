@@ -50,6 +50,7 @@ final class Context(config: Config):
   val columnPrimes = config.getString("column.primes")
   val columnReversePrimes = config.getString("column.reversePrimes")
   val columnFibonacci = config.getString("column.fibonacci")
+  val columnSquares = config.getString("column.squares")
 
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
