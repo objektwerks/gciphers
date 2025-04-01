@@ -21,7 +21,7 @@ object App extends JFXApp3 with LazyLogging:
       title = context.windowTitle
       minWidth = context.windowWidth
       minHeight = context.windowHeight
-      icons += Image( Image.getClass.getResourceAsStream("/cipher.png") )
+      icons += context.appIcon
 
     if Taskbar.isTaskbarSupported() then
       val taskbar = Taskbar.getTaskbar()
