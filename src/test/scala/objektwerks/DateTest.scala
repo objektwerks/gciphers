@@ -19,12 +19,12 @@ final class DateTest extends AnyFunSuite with Matchers:
 
   test("split year"):
     val (splitYearExpression, splitYearEncoding) = Date.splitYear(date)
-    splitYearExpression shouldBe "(6) + (3) + (20) + (23)"
+    splitYearExpression shouldBe "6 + 3 + 20 + 23"
     splitYearEncoding shouldBe 52
 
   test("split each year"):
     val (splitEachYearExpression, splitEachYearEncoding) = Date.splitEachYear(date)
-    splitEachYearExpression shouldBe "(6) + (3) + 2 + 0 + 2 + 3"
+    splitEachYearExpression shouldBe "6 + 3 + 2 + 0 + 2 + 3"
     splitEachYearEncoding shouldBe 16
 
   test("split each month day year"):
@@ -34,7 +34,7 @@ final class DateTest extends AnyFunSuite with Matchers:
 
   test("split right year"):
     val (splitRightYearExpression, splitRightYearEncoding) = Date.splitRightYear(date)
-    splitRightYearExpression shouldBe "(6) + (3) + (23)"
+    splitRightYearExpression shouldBe "6 + 3 + 23"
     splitRightYearEncoding shouldBe 32
 
   test("split each month day right year"):
