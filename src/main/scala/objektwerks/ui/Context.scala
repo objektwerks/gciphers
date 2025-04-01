@@ -55,7 +55,8 @@ final class Context(config: Config):
   val columnTrigonal = config.getString("column.trigonal")
   val columnReverseTrigonal = config.getString("column.reverseTrigonal")
   val columnSingleReduction = config.getString("column.singleReduction")
-  val columnReverseSingleReduction = config.getString("colum.reverseSingleReduction")
+  val columnReverseSingleReduction = config.getString("column.reverseSingleReduction")
+  val columnSatanic = config.getString("column.satanic")
 
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
