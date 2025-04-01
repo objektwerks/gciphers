@@ -13,7 +13,7 @@ final class NumbersPane(model: Model) extends VBox:
   val title = new Label:
     padding = Insets(6)
     style = "-fx-font-weight: bold"
-    text = "Numbers:"
+    text = "Numbers"
 
   val yesOrNo = (bool: Boolean) => if bool then "Yes" else "No"
 
