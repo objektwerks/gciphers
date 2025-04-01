@@ -14,6 +14,11 @@ final class DatePane(model: Model) extends HBox:
   padding = Insets(6)
   prefWidth = 275
 
+  val paneLabel = new Label:
+    padding = Insets(6)
+    style = "-fx-font-weight: bold"
+    text = "Date:"
+
   // Date section begin.
 
   val dateLabel = new Label:
