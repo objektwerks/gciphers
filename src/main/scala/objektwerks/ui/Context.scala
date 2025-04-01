@@ -21,5 +21,6 @@ final class Context(config: Config):
   val labelRemainingDaysInYear = config.getString("label.remainingDaysInYear")
   val labelFrom = config.getString("label.from")
   val labelTo = config.getString("label.to")
+  val labelDiff = config.getString("label.diff")
 
   def appIcon = Image(Image.getClass.getResourceAsStream("/cipher.png"))
