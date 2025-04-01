@@ -26,8 +26,6 @@ final class Context(config: Config):
   val labelNumbers = config.getString("label.numbers")
   val labelNumberListed = config.getString("label.numberListed")
   val labelEncodings = config.getString("label.encodings")
-  val labelText = config.getString("label.text")
-  val labelOrdinal = config.getString("label.ordinal")
 
   val buttonClear = config.getString("button.clear")
 
@@ -38,6 +36,8 @@ final class Context(config: Config):
   val columnTriangular = config.getString("column.triangular")
   val columnFactors = config.getString("column.factors")
   val columnText = config.getString("column.text")
+  val columnOrdinal = config.getString("column.ordinal")
+  val columnReverseOrdinal = config.getString("column.reverseOrdinal")
 
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
