@@ -150,17 +150,9 @@ final class DatePane(model: Model) extends VBox:
     dateDiffText.text = Date.dateDiff( fromDate.value, toDate.value ).toString
   }
 
-  val dateDiffLabel = new Label:
-    alignment = Pos.CenterLeft
-    text = "Diff:"
-
-  val dateDiffText = new Label:
-    alignment = Pos.Center
-    text = "0"
-
   val fromDateLabel = new Label:
     alignment = Pos.CenterLeft
-    text = "From Date:"
+    text = "From:"
 
   val fromDatePicker = new DatePicker:
     prefWidth = 110
@@ -171,7 +163,7 @@ final class DatePane(model: Model) extends VBox:
 
   val toDateLabel = new Label:
     alignment = Pos.CenterLeft
-    text = "To Date:"
+    text = "To:"
 
   val toDatePicker = new DatePicker:
     prefWidth = 110
@@ -180,10 +172,18 @@ final class DatePane(model: Model) extends VBox:
       toDate.value = value.value
     }
 
+  val dateDiffLabel = new Label:
+    alignment = Pos.CenterLeft
+    text = "Diff:"
+
+  val dateDiffText = new Label:
+    alignment = Pos.Center
+    text = "0"
+
   val dateDiffControls = List[(Label, Node)](
-    dateDiffLabel -> dateDiffText,
     fromDateLabel -> fromDatePicker,
-    toDateLabel -> toDatePicker
+    toDateLabel -> toDatePicker,
+    dateDiffLabel -> dateDiffText
   )
 
   val dateDiffControlsGrid = ControlGrid(dateDiffControls)
