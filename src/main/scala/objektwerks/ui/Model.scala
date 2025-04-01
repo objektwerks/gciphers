@@ -7,7 +7,7 @@ import scalafx.collections.ObservableBuffer
 
 import objektwerks.{Encodings, Number, Numbers}
 
-object Model:
+final class Model():
   val observableEncodings = ObservableBuffer[Encodings]()
   val observableNumbers = ObservableBuffer[Number]()
   val observableDate = ObjectProperty[LocalDate](this, "date", LocalDate.now)
