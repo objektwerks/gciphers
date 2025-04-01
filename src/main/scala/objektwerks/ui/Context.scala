@@ -53,6 +53,7 @@ final class Context(config: Config):
   val columnSquares = config.getString("column.squares")
   val columnReverseSquares = config.getString("column.reverseSquares")
   val columnTrigonal = config.getString("column.trigonal")
+  val columnReverseTrigonal = config.getString("column.reverseTrigonal")
 
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
