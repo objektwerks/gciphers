@@ -25,5 +25,6 @@ final class Context(config: Config):
 
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
+  val tabDateDif = config.getString("tab.dateDiff")
 
   def appIcon = Image(Image.getClass.getResourceAsStream("/cipher.png"))
