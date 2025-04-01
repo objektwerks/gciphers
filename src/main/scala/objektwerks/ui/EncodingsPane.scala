@@ -2,7 +2,7 @@ package objektwerks.ui
 
 import scalafx.Includes.*
 import scalafx.geometry.Insets
-import scalafx.scene.control.{TableColumn, TableView}
+import scalafx.scene.control.{Label, TableColumn, TableView}
 import scalafx.scene.layout.{Priority, VBox}
 import scala.util.Try
 
@@ -11,6 +11,11 @@ import objektwerks.Encodings
 final class EncodingsPane(model: Model) extends VBox:
   spacing = 6
   padding = Insets(6)
+
+  val title = new Label:
+    padding = Insets(6)
+    style = "-fx-font-weight: bold"
+    text = "Encodings:"
 
   val tableView = new TableView[Encodings]():
     columns ++= List(
@@ -125,5 +130,5 @@ final class EncodingsPane(model: Model) extends VBox:
       }
   }
 
-  children = List(tableView)
-  VBox.setVgrow(tableView, Priority.Always)
+  children = List(title, tableView)
+  VBox.setVgrow(this, Priority.Always)
