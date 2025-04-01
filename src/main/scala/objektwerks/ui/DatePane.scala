@@ -4,19 +4,12 @@ import java.time.LocalDate
 
 import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.{Insets, Orientation, Pos}
-import scalafx.scene.control.{DatePicker, Label, Separator, TitledPane}
+import scalafx.scene.control.{DatePicker, Label, Separator}
 import scalafx.scene.layout.{GridPane, HBox, Priority}
 
 import objektwerks.Date
 
-object TitledDatePane:
-  def apply(): TitledPane =
-    new TitledPane:
-      collapsible = false
-      text = "Date"
-      content = DatePane()
-
-final class DatePane extends HBox:
+final class DatePane(model: Model) extends HBox:
   spacing = 6
   padding = Insets(6)
   prefWidth = 275
@@ -30,10 +23,10 @@ final class DatePane extends HBox:
   val datePicker = new DatePicker:
     alignment = Pos.Center
     prefWidth = 110
-    value <==> Model.observableDate
+    value <==> model.observableDate
     onAction = { _ =>
-      dayOfYearText.text = Date.dayOfYear(Model.observableDate.value)
-      remainingDaysInYearText.text = Date.remainingDaysInYear(Model.observableDate.value)
+      dayOfYearText.text = Date.dayOfYear(model.observableDate.value)
+      remainingDaysInYearText.text = Date.remainingDaysInYear(model.observableDate.value)
     }
 
   val dayOfYearLabel = new Label:
@@ -42,7 +35,7 @@ final class DatePane extends HBox:
 
   val dayOfYearText = new Label:
     alignment = Pos.Center
-    text = Date.dayOfYear(Model.observableDate.value)
+    text = Date.dayOfYear(model.observableDate.value)
 
   val remainingDaysInYearLabel = new Label:
     alignment = Pos.CenterLeft
@@ -50,7 +43,7 @@ final class DatePane extends HBox:
 
   val remainingDaysInYearText = new Label:
     alignment = Pos.Center
-    text = Date.remainingDaysInYear(Model.observableDate.value)
+    text = Date.remainingDaysInYear(model.observableDate.value)
 
   val dateGrid = new GridPane:
     hgap = 6
@@ -114,27 +107,27 @@ final class DatePane extends HBox:
     add(splitEachMonthDayRightYearText, columnIndex = 1, rowIndex = 4)
 
   def setEncodings: Unit =
-    val (splitYearExpression, splitYearEncoding) = Date.splitYear(Model.observableDate.value)
+    val (splitYearExpression, splitYearEncoding) = Date.splitYear(model.observableDate.value)
     splitYearLabel.text = s"$splitYearExpression:"
     splitYearText.text = splitYearEncoding.toString
 
-    val (splitEachYearExpression, splitEachYearEncoding) = Date.splitEachYear(Model.observableDate.value)
+    val (splitEachYearExpression, splitEachYearEncoding) = Date.splitEachYear(model.observableDate.value)
     splitEachYearLabel.text = s"$splitEachYearExpression:"
     splitEachYearText.text = splitEachYearEncoding.toString
 
-    val (splitEachMonthDayYearExpression, splitEachMonthDayYearEncoding) = Date.splitEachMonthDayYear(Model.observableDate.value)
+    val (splitEachMonthDayYearExpression, splitEachMonthDayYearEncoding) = Date.splitEachMonthDayYear(model.observableDate.value)
     splitEachMonthDayYearLabel.text = s"$splitEachMonthDayYearExpression:"
     splitEachMonthDayYearText.text = splitEachMonthDayYearEncoding.toString
 
-    val (splitRightYearExpression, splitRightYearEncoding) = Date.splitRightYear(Model.observableDate.value)
+    val (splitRightYearExpression, splitRightYearEncoding) = Date.splitRightYear(model.observableDate.value)
     splitRightYearLabel.text = s"$splitRightYearExpression:"
     splitRightYearText.text = splitRightYearEncoding.toString
 
-    val (splitEachMonthDayRightYearExpression, splitEachMonthDayRightYearEncoding) = Date.splitEachMonthDayRightYear(Model.observableDate.value)
+    val (splitEachMonthDayRightYearExpression, splitEachMonthDayRightYearEncoding) = Date.splitEachMonthDayRightYear(model.observableDate.value)
     splitEachMonthDayRightYearLabel.text = s"$splitEachMonthDayRightYearExpression:"
     splitEachMonthDayRightYearText.text = splitEachMonthDayRightYearEncoding.toString
 
-  Model.observableDate.onChange { (_, _, _) =>
+  model.observableDate.onChange { (_, _, _) =>
     setEncodings
   }
   setEncodings
@@ -146,8 +139,8 @@ final class DatePane extends HBox:
   val dateDiffSeparator = new Separator:
     orientation = Orientation.Vertical
 
-  val fromDate = ObjectProperty[LocalDate](this, "fromdate", Model.observableDate.value)
-  val toDate = ObjectProperty[LocalDate](this, "todate", Model.observableDate.value)
+  val fromDate = ObjectProperty[LocalDate](this, "fromdate", model.observableDate.value)
+  val toDate = ObjectProperty[LocalDate](this, "todate", model.observableDate.value)
 
   fromDate.onChange { (_, _, _) =>
     dateDiffText.text = Date.dateDiff( fromDate.value, toDate.value ).toString
@@ -172,7 +165,7 @@ final class DatePane extends HBox:
   val fromDatePicker = new DatePicker:
     alignment = Pos.Center
     prefWidth = 110
-    value = Model.observableDate.value
+    value = model.observableDate.value
     onAction = { _ =>
       fromDate.value = value.value
     }
@@ -184,7 +177,7 @@ final class DatePane extends HBox:
   val toDatePicker = new DatePicker:
     alignment = Pos.Center
     prefWidth = 110
-    value = Model.observableDate.value
+    value = model.observableDate.value
     onAction = { _ =>
       toDate.value = value.value
     }
