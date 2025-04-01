@@ -13,7 +13,7 @@ import objektwerks.Date
 final class DatePane(model: Model) extends VBox:
   spacing = 6
   padding = Insets(6)
-  minHeight = 160
+  minHeight = 155
 
   // Date tab begin.
 
