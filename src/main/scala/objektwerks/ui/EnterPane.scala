@@ -13,6 +13,7 @@ final class EnterPane(model: Model) extends HBox:
   
   val textLabel = new Label:
     alignment = Pos.CenterLeft
+    style = "-fx-font-weight: bold"
     text = "Text:"
 
   val textField = new TextField:
@@ -21,6 +22,7 @@ final class EnterPane(model: Model) extends HBox:
 
   val numberLabel = new Label:
     alignment = Pos.CenterLeft
+    style = "-fx-font-weight: bold"
     text = "Number:"
 
   val numberField = new TextField:
