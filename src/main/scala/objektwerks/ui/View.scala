@@ -3,13 +3,10 @@ package objektwerks.ui
 import scalafx.scene.Scene
 import scalafx.scene.layout.VBox
 
-object View:
-  val width = 700
-  val height = 600
-
+final class View(context: Context):
   val rootBox = new VBox:
-    prefWidth = View.width
-    prefHeight = View.height
+    prefWidth = context.windowWidth
+    prefHeight = context.windowHeight
     children = List( TitledDatePane(), TitledNumbersPane(), TitledEncodingsPane(), TitledEnterPane() )
 
   val scene = new Scene:

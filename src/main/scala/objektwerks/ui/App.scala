@@ -16,10 +16,10 @@ object App extends JFXApp3 with LazyLogging:
 
   override def start(): Unit =
     stage = new JFXApp3.PrimaryStage:
-      scene = View.scene
-      title = "Ciphers"
-      minWidth = View.width
-      minHeight = View.height
+      scene = View(context).scene
+      title = context.windowTitle
+      minWidth = context.windowWidth
+      minHeight = context.windowHeight
       icons += Image( Image.getClass.getResourceAsStream("/cipher.png") )
 
     if Taskbar.isTaskbarSupported() then
