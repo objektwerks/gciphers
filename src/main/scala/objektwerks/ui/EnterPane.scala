@@ -48,9 +48,5 @@ final class EnterPane(model: Model) extends HBox:
       model.clear()
     }
 
-  val hbox = new HBox:
-    spacing = 6
-    children = List(textLabel, textField, numberLabel, numberField, clearButton)
-
-  children = List(hbox)
+  children = List(textLabel, textField, numberLabel, numberField, clearButton)
   HBox.setHgrow(this, Priority.Always)
