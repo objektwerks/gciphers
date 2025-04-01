@@ -12,4 +12,8 @@ final class Context(config: Config):
   val aboutAlertHeaderText = config.getString("about.alert.headerText")
   val aboutAlertContentText = config.getString("about.alert.contentText")
 
+  val menuMenu = config.getString("menu.menu")
+  val menuAbout = config.getString("menu.about")
+  val menuExit = config.getString("menu.exit")
+
   def appIcon = Image(Image.getClass.getResourceAsStream("/cipher.png"))
