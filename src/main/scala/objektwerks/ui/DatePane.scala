@@ -4,8 +4,9 @@ import java.time.LocalDate
 
 import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.{Insets, Orientation, Pos}
+import scalafx.scene.Node
 import scalafx.scene.control.{DatePicker, Label, Separator}
-import scalafx.scene.layout.{GridPane, Priority, VBox}
+import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.Date
 
@@ -45,15 +46,13 @@ final class DatePane(model: Model) extends VBox:
     alignment = Pos.Center
     text = Date.remainingDaysInYear(model.observableDate.value)
 
-  val dateGrid = new GridPane:
-    hgap = 6
-    vgap = 6
-    add(dateLabel, columnIndex = 0, rowIndex = 0)
-    add(datePicker, columnIndex = 1, rowIndex = 0)
-    add(dayOfYearLabel, columnIndex = 0, rowIndex = 1)
-    add(dayOfYearText, columnIndex = 1, rowIndex = 1)
-    add(remainingDaysInYearLabel, columnIndex = 0, rowIndex = 2)
-    add(remainingDaysInYearText, columnIndex = 1, rowIndex = 2)
+  val dateControls = List[(Label, Node)](
+    dateLabel -> datePicker,
+    dayOfYearLabel -> dayOfYearText,
+    remainingDaysInYearLabel -> remainingDaysInYearText
+  )
+
+  val dateControlsGrid = ControlGrid(dateControls)
 
   // Date section end.
 
@@ -92,19 +91,15 @@ final class DatePane(model: Model) extends VBox:
   val splitEachMonthDayRightYearText = new Label:
     alignment = Pos.Center
 
-  val encodingsGrid = new GridPane:
-    hgap = 6
-    vgap = 6
-    add(splitYearLabel, columnIndex = 0, rowIndex = 0)
-    add(splitYearText, columnIndex = 1, rowIndex = 0)
-    add(splitEachYearLabel, columnIndex = 0, rowIndex = 1)
-    add(splitEachYearText, columnIndex = 1, rowIndex = 1)
-    add(splitEachMonthDayYearLabel, columnIndex = 0, rowIndex = 2)
-    add(splitEachMonthDayYearText, columnIndex = 1, rowIndex = 2)
-    add(splitRightYearLabel, columnIndex = 0, rowIndex = 3)
-    add(splitRightYearText, columnIndex = 1, rowIndex = 3)
-    add(splitEachMonthDayRightYearLabel, columnIndex = 0, rowIndex = 4)
-    add(splitEachMonthDayRightYearText, columnIndex = 1, rowIndex = 4)
+  val encodingsControls = List[(Label, Node)](
+    splitYearLabel -> splitYearText,
+    splitEachYearLabel -> splitEachYearText,
+    splitEachMonthDayYearLabel -> splitEachMonthDayYearText,
+    splitRightYearLabel -> splitRightYearText,
+    splitEachMonthDayRightYearLabel -> splitEachMonthDayRightYearText
+  )
+
+  val encodingsControlsGrid = ControlGrid(encodingsControls)
 
   def setEncodings: Unit =
     val (splitYearExpression, splitYearEncoding) = Date.splitYear(model.observableDate.value)
@@ -182,17 +177,15 @@ final class DatePane(model: Model) extends VBox:
       toDate.value = value.value
     }
 
-  val dateDiffGrid = new GridPane:
-    hgap = 6
-    vgap = 6
-    add(dateDiffLabel, columnIndex = 0, rowIndex = 0)
-    add(dateDiffText, columnIndex = 1, rowIndex = 0)
-    add(fromDateLabel, columnIndex = 0, rowIndex = 1)
-    add(fromDatePicker, columnIndex = 1, rowIndex = 1)
-    add(toDateLabel, columnIndex = 0, rowIndex = 2)
-    add(toDatePicker, columnIndex = 1, rowIndex = 2)
+  val dateDiffControls = List[(Label, Node)](
+    dateDiffLabel -> dateDiffText,
+    fromDateLabel -> fromDatePicker,
+    toDateLabel -> toDatePicker
+  )
+
+  val dateDiffControlsGrid = ControlGrid(dateDiffControls)
 
   // Date Diff section end.
 
-  children = List(dateGrid, encodingsSeparator, encodingsGrid, dateDiffSeparator, dateDiffGrid)
+  children = List(dateControlsGrid, encodingsSeparator, encodingsControlsGrid, dateDiffSeparator, dateDiffControlsGrid)
   VBox.setVgrow(this, Priority.Always)
