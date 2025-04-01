@@ -15,9 +15,9 @@ object Model:
 
   def addNumber(number: Int): Boolean =
     val candidate = Number(primes, fibonaccis, number)
-    val isListed = observableNumbers.contains(candidate)
-    if !isListed then observableNumbers.prepend( Number(primes, fibonaccis, number) )
-    isListed
+    val isCandidateObservable = observableNumbers.contains(candidate)
+    if !isCandidateObservable then observableNumbers.prepend( Number(primes, fibonaccis, number) )
+    isCandidateObservable
 
   def addEncoding(text: String): Unit = observableEncodings.prepend( Encodings.encode(text) )
   
