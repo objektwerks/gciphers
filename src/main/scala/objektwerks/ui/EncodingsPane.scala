@@ -2,20 +2,13 @@ package objektwerks.ui
 
 import scalafx.Includes.*
 import scalafx.geometry.Insets
-import scalafx.scene.control.{TableColumn, TableView, TitledPane}
+import scalafx.scene.control.{TableColumn, TableView}
 import scalafx.scene.layout.{Priority, VBox}
 import scala.util.Try
 
 import objektwerks.Encodings
 
-object TitledEncodingsPane:
-  def apply(): TitledPane =
-    new TitledPane:
-      collapsible = false
-      text = "Encodings"
-      content = EncodingsPane()
-
-final class EncodingsPane extends VBox:
+final class EncodingsPane(model: Model) extends VBox:
   spacing = 6
   padding = Insets(6)
 
@@ -118,7 +111,7 @@ final class EncodingsPane extends VBox:
         text = "Reverse\nSatanic"
         cellValueFactory = _.value.reverseSatanicProperty
     )
-    items = Model.observableEncodings
+    items = model.observableEncodings
 
   val tableViewSelectionModel = tableView.selectionModel.apply()
   tableViewSelectionModel.setCellSelectionEnabled(true)
@@ -128,7 +121,7 @@ final class EncodingsPane extends VBox:
       val tablePosition = selectedCells.get(0)
       val cellRow = tablePosition.getRow()
       Try{
-        Model.addNumber( tablePosition.getTableColumn().getCellData(cellRow).asInstanceOf[Int] )
+        model.addNumber( tablePosition.getTableColumn().getCellData(cellRow).asInstanceOf[Int] )
       }
   }
 
