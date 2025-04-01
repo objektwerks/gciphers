@@ -40,6 +40,7 @@ final class Context(config: Config):
   val columnReverseOrdinal = config.getString("column.reverseOrdinal")
   val columnReduction = config.getString("column.reduction")
   val columnReverseReduction = config.getString("column.reverseReduction")
+  val columnLatin = config.getString("column.latin")
 
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
