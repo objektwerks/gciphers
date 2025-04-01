@@ -3,16 +3,14 @@ package objektwerks.ui
 import java.time.LocalDate
 
 import scalafx.beans.property.ObjectProperty
-import scalafx.geometry.{Insets, Orientation, Pos}
+import scalafx.geometry.Pos
 import scalafx.scene.Node
-import scalafx.scene.control.{DatePicker, Label, Separator}
-import scalafx.scene.layout.{Priority, VBox}
+import scalafx.scene.control.{DatePicker, Label, Tab, TabPane}
 
 import objektwerks.Date
 
-final class DatePane(model: Model) extends VBox:
-  spacing = 6
-  padding = Insets(6)
+final class DatePane(model: Model) extends TabPane:
+  prefHeight = 260
 
   // Date section begin.
 
@@ -22,7 +20,6 @@ final class DatePane(model: Model) extends VBox:
     text = "Date:"
 
   val datePicker = new DatePicker:
-    alignment = Pos.Center
     prefWidth = 110
     value <==> model.observableDate
     onAction = { _ =>
@@ -54,12 +51,15 @@ final class DatePane(model: Model) extends VBox:
 
   val dateControlsGrid = ControlGrid(dateControls)
 
+  val dateTab = new Tab:
+    style = "-fx-font-weight: bold"
+    text = "Date"
+    closable = false
+    content = dateControlsGrid
+
   // Date section end.
 
   // Encodings section begin.
-
-  val encodingsSeparator = new Separator:
-    orientation = Orientation.Horizontal
 
   val splitYearLabel = new Label:
     alignment = Pos.CenterLeft
@@ -101,6 +101,12 @@ final class DatePane(model: Model) extends VBox:
 
   val encodingsControlsGrid = ControlGrid(encodingsControls)
 
+  val encodingsTab = new Tab:
+    style = "-fx-font-weight: bold"
+    text = "Encodings"
+    closable = false
+    content = encodingsControlsGrid
+
   def setEncodings: Unit =
     val (splitYearExpression, splitYearEncoding) = Date.splitYear(model.observableDate.value)
     splitYearLabel.text = s"$splitYearExpression:"
@@ -131,9 +137,6 @@ final class DatePane(model: Model) extends VBox:
 
   // Date Diff section begin.
 
-  val dateDiffSeparator = new Separator:
-    orientation = Orientation.Horizontal
-
   val fromDate = ObjectProperty[LocalDate](this, "fromdate", model.observableDate.value)
   val toDate = ObjectProperty[LocalDate](this, "todate", model.observableDate.value)
 
@@ -158,7 +161,6 @@ final class DatePane(model: Model) extends VBox:
     text = "From Date:"
 
   val fromDatePicker = new DatePicker:
-    alignment = Pos.Center
     prefWidth = 110
     value = model.observableDate.value
     onAction = { _ =>
@@ -170,7 +172,6 @@ final class DatePane(model: Model) extends VBox:
     text = "To Date:"
 
   val toDatePicker = new DatePicker:
-    alignment = Pos.Center
     prefWidth = 110
     value = model.observableDate.value
     onAction = { _ =>
@@ -185,7 +186,12 @@ final class DatePane(model: Model) extends VBox:
 
   val dateDiffControlsGrid = ControlGrid(dateDiffControls)
 
+  val dateDiffTab = new Tab:
+    style = "-fx-font-weight: bold"
+    text = "Date Diff"
+    closable = false
+    content = dateDiffControlsGrid
+
   // Date Diff section end.
 
-  children = List(dateControlsGrid, encodingsSeparator, encodingsControlsGrid, dateDiffSeparator, dateDiffControlsGrid)
-  VBox.setVgrow(this, Priority.Always)
+  tabs = List(dateTab, encodingsTab, dateDiffTab)
