@@ -4,11 +4,11 @@ import scalafx.scene.Scene
 import scalafx.scene.layout.VBox
 
 final class View(context: Context, model: Model):
-  val rootBox = new VBox:
+  val vbox = new VBox:
     prefWidth = context.windowWidth
     prefHeight = context.windowHeight
-    children = List( DatePane(model), NumbersPane(model), EncodingsPane(model), EnterPane(model) )
+    children = List(DatePane(model), NumbersPane(model), EncodingsPane(model), EnterPane(model))
 
   val scene = new Scene:
-    root = rootBox
+    root = vbox
     stylesheets = List("/style.css")

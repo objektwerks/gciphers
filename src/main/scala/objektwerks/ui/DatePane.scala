@@ -12,7 +12,6 @@ import objektwerks.Date
 final class DatePane(model: Model) extends VBox:
   spacing = 6
   padding = Insets(6)
-  prefWidth = 275
 
   // Date section begin.
 
