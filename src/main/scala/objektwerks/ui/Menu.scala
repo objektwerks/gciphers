@@ -19,7 +19,7 @@ final class Menu(context: Context) extends MenuBar:
   gridPaneAbout.add(textAreaAbout, 0, 0)
 
   val menuItemAbout = new MenuItem:
-    text = "About"
+    text = context.menuAbout
     onAction = (_: ActionEvent) =>
       new Alert(AlertType.Information):
         initOwner(App.stage)
@@ -29,11 +29,11 @@ final class Menu(context: Context) extends MenuBar:
       .showAndWait()
 
   val menuItemExit = new MenuItem:
-    text = "Exit"
+    text = context.menuExit
     onAction = (_: ActionEvent) => Platform.exit()
 
   val menuRoot = new MenuRoot():
-    text = "Menu"
+    text = context.menuMenu
     items = List(menuItemAbout, SeparatorMenuItem(), menuItemExit)
 
   menus = List(menuRoot)
