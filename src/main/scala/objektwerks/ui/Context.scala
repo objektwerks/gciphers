@@ -23,6 +23,7 @@ final class Context(config: Config):
   val labelTo = config.getString("label.to")
   val labelDiff = config.getString("label.diff")
   val labelNumbers = config.getString("label.numbers")
+  val labelEncodings = config.getString("label.encodings")
 
   val columnNumber = config.getString("column.number")
   val columnPrimeRank = config.getString("column.PrimeRank")
