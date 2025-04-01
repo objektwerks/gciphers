@@ -3,16 +3,18 @@ package objektwerks.ui
 import java.time.LocalDate
 
 import scalafx.beans.property.ObjectProperty
-import scalafx.geometry.Pos
+import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.Node
 import scalafx.scene.control.{DatePicker, Label, Tab, TabPane}
+import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.Date
 
-final class DatePane(model: Model) extends TabPane:
-  prefHeight = 260
+final class DatePane(model: Model) extends VBox:
+  spacing = 6
+  padding = Insets(6)
 
-  // Date section begin.
+  // Date tab begin.
 
   val dateLabel = new Label:
     alignment = Pos.CenterLeft
@@ -57,9 +59,9 @@ final class DatePane(model: Model) extends TabPane:
     closable = false
     content = dateControlsGrid
 
-  // Date section end.
+  // Date tab end.
 
-  // Encodings section begin.
+  // Encodings tab begin.
 
   val splitYearLabel = new Label:
     alignment = Pos.CenterLeft
@@ -133,9 +135,9 @@ final class DatePane(model: Model) extends TabPane:
   }
   setEncodings
 
-  // Encodings section end.
+  // Encodings tab end.
 
-  // Date Diff section begin.
+  // Date Diff tab begin.
 
   val fromDate = ObjectProperty[LocalDate](this, "fromdate", model.observableDate.value)
   val toDate = ObjectProperty[LocalDate](this, "todate", model.observableDate.value)
@@ -192,6 +194,10 @@ final class DatePane(model: Model) extends TabPane:
     closable = false
     content = dateDiffControlsGrid
 
-  // Date Diff section end.
+  // Date Diff tab end.
 
-  tabs = List(dateTab, encodingsTab, dateDiffTab)
+  val tabPane = new TabPane:
+    tabs = List(dateTab, encodingsTab, dateDiffTab)
+  
+  children = List(tabPane)
+  VBox.setVgrow(this, Priority.Always)
