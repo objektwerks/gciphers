@@ -1,6 +1,6 @@
 name := "ciphers"
 organization := "objektwerks"
-version := "2.6-SNAPSHOT"
+version := "2.6"
 scalaVersion := "3.6.4" // 3.7.0-RC1 breaks ScalaFx!
 mainClass := Some("objektwerks.App")
 libraryDependencies ++= {
