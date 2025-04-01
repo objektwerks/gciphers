@@ -24,6 +24,8 @@ final class Context(config: Config):
   val labelDiff = config.getString("label.diff")
   val labelNumbers = config.getString("label.numbers")
 
+  val columnNumber = config.getString("column.number")
+
   val tabDate = config.getString("tab.date")
   val tabDateEncodings = config.getString("tab.dateEncodings")
   val tabDateDif = config.getString("tab.dateDiff")
