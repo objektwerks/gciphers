@@ -7,7 +7,7 @@ import scalafx.scene.control.Alert.AlertType
 import scalafx.scene.input.{KeyCode, KeyEvent}
 import scalafx.scene.layout.{HBox, Priority}
 
-final class EnterPane(model: Model) extends HBox:
+final class EnterPane(context: Context, model: Model) extends HBox:
   spacing = 6
   padding = Insets(6)
   
@@ -23,7 +23,7 @@ final class EnterPane(model: Model) extends HBox:
   val numberLabel = new Label:
     alignment = Pos.CenterLeft
     style = "-fx-font-weight: bold"
-    text = "Number:"
+    text = context.labelNumber
 
   val numberField = new TextField:
     prefWidth = 100

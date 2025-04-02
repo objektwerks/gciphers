@@ -14,7 +14,7 @@ final class View(context: Context, model: Model):
       DatePane(context, model),
       NumbersPane(context, model),
       EncodingsPane(context, model),
-      EnterPane(model)
+      EnterPane(context, model)
     )
 
   val scene = new Scene:
