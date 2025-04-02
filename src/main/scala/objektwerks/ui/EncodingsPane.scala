@@ -29,7 +29,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.ordinalProperty
       ,
       new TableColumn[Encodings, Int]:
-        text = "Reverse\nOrdinal"
+        text = context.columnReverseOrdinal
         cellValueFactory = _.value.reverseOrdinalProperty
       ,
       new TableColumn[Encodings, Int]:
