@@ -39,7 +39,7 @@ final class DatePane(context: Context, model: Model) extends VBox:
 
   val remainingDaysInYearLabel = new Label:
     alignment = Pos.CenterLeft
-    text = "Remaining Days in Year:"
+    text = context.labelRemainingDaysInYear
 
   val remainingDaysInYearText = new Label:
     alignment = Pos.Center
