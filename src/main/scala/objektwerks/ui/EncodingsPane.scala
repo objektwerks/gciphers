@@ -65,7 +65,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.reverseStandardProperty
       ,
       new TableColumn[Encodings, Int]:
-        text = "Sumerian"
+        text = context.columnSumerian
         cellValueFactory = _.value.sumerianProperty
       ,
       new TableColumn[Encodings, Int]:
