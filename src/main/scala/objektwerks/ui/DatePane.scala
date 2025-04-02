@@ -31,7 +31,7 @@ final class DatePane(context: Context, model: Model) extends VBox:
 
   val dayOfYearLabel = new Label:
     alignment = Pos.CenterLeft
-    text = "Day of Year:"
+    text = context.labelDayOfYear
 
   val dayOfYearText = new Label:
     alignment = Pos.Center
