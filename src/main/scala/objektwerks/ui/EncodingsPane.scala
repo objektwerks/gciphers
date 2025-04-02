@@ -45,7 +45,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.latinProperty
       ,
       new TableColumn[Encodings, Int]:
-        text = "Chaldean"
+        text = context.columnChaldean
         cellValueFactory = _.value.chaldeanProperty
       ,
       new TableColumn[Encodings, Int]:
