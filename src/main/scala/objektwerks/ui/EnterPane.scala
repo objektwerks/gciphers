@@ -14,7 +14,7 @@ final class EnterPane(context: Context, model: Model) extends HBox:
   val textLabel = new Label:
     alignment = Pos.CenterLeft
     style = "-fx-font-weight: bold"
-    text = "Text:"
+    text = context.labelText
 
   val textField = new TextField:
     hgrow = Priority.Always
