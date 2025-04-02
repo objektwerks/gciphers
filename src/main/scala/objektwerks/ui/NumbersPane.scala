@@ -6,21 +6,21 @@ import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.Number
 
-final class NumbersPane(model: Model) extends VBox:
+final class NumbersPane(context: Context, model: Model) extends VBox:
   spacing = 6
   padding = Insets(6)
 
   val title = new Label:
     padding = Insets(6)
     style = "-fx-font-weight: bold"
-    text = "Numbers"
+    text = context.labelNumbers
 
   val yesOrNo = (bool: Boolean) => if bool then "Yes" else "No"
 
   val tableView = new TableView[Number]():
     columns ++= List(
       new TableColumn[Number, Int]:
-        text = "Number"
+        text = context.columnNumber
         cellValueFactory = _.value.numberProperty
       ,
       new TableColumn[Number, Int]:
