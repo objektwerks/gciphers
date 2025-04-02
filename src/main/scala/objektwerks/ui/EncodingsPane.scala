@@ -77,7 +77,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.primesProperty
       ,
       new TableColumn[Encodings, Int]:
-        text = "Reverse\nPrimes"
+        text = context.columnReversePrimes
         cellValueFactory = _.value.reversePrimesProperty
       ,
       new TableColumn[Encodings, Int]:
