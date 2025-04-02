@@ -33,7 +33,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.reverseOrdinalProperty
       ,
       new TableColumn[Encodings, Int]:
-        text = "Reduction"
+        text = context.columnReduction
         cellValueFactory = _.value.reductionProperty
       ,
       new TableColumn[Encodings, Int]:
