@@ -81,7 +81,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.reversePrimesProperty
       ,
       new TableColumn[Encodings, Int]:
-        text = "Fibonacci"
+        text = context.columnFibonacci
         cellValueFactory = _.value.fibonacciProperty
       ,
       new TableColumn[Encodings, Int]:
