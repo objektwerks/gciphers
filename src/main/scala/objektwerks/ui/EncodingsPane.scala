@@ -49,7 +49,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.chaldeanProperty
       ,
       new TableColumn[Encodings, Int]:
-        text = "Septenary"
+        text = context.columnSeptenary
         cellValueFactory = _.value.septenaryProperty
       ,
       new TableColumn[Encodings, Int]:
