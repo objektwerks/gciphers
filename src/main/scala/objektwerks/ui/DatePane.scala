@@ -190,7 +190,7 @@ final class DatePane(context: Context, model: Model) extends VBox:
 
   val dateDiffTab = new Tab:
     style = "-fx-font-weight: bold"
-    text = "Date Diff"
+    text = context.tabDateDif
     closable = false
     content = dateDiffControlsGrid
 
