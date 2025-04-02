@@ -150,7 +150,7 @@ final class DatePane(context: Context, model: Model) extends VBox:
 
   val fromDateLabel = new Label:
     alignment = Pos.CenterLeft
-    text = context.labelFrom
+    text = context.labelFromDate
 
   val fromDatePicker = new DatePicker:
     prefWidth = 110
@@ -161,7 +161,7 @@ final class DatePane(context: Context, model: Model) extends VBox:
 
   val toDateLabel = new Label:
     alignment = Pos.CenterLeft
-    text = context.labelTo
+    text = context.labelToDate
 
   val toDatePicker = new DatePicker:
     prefWidth = 110
@@ -172,7 +172,7 @@ final class DatePane(context: Context, model: Model) extends VBox:
 
   val dateDiffLabel = new Label:
     alignment = Pos.CenterLeft
-    text = context.labelDiff
+    text = context.labelDateDiff
 
   val dateDiffText = new Label:
     alignment = Pos.Center
