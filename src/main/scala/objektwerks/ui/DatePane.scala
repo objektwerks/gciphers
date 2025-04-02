@@ -55,7 +55,7 @@ final class DatePane(context: Context, model: Model) extends VBox:
 
   val dateTab = new Tab:
     style = "-fx-font-weight: bold"
-    text = "Date"
+    text = context.tabDate
     closable = false
     content = dateControlsGrid
 
@@ -105,7 +105,7 @@ final class DatePane(context: Context, model: Model) extends VBox:
 
   val encodingsTab = new Tab:
     style = "-fx-font-weight: bold"
-    text = "Date Encodings"
+    text = context.tabDateEncodings
     closable = false
     content = encodingsControlsGrid
 
