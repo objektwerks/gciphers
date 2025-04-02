@@ -32,7 +32,7 @@ final class NumbersPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.fibbonaciRankProperty
       ,
       new TableColumn[Number, Boolean]:
-        text = "Star"
+        text = context.columnStar
         cellValueFactory = _.value.isStarProperty
         cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
       ,
