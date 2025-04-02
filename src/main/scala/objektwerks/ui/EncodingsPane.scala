@@ -20,7 +20,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
   val tableView = new TableView[Encodings]():
     columns ++= List(
       new TableColumn[Encodings, String]:
-        text = "Text"
+        text = context.columnText
         prefWidth = 200
         cellValueFactory = _.value.textProperty
       ,
