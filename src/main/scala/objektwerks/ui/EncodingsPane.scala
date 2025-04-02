@@ -25,7 +25,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.textProperty
       ,
       new TableColumn[Encodings, Int]:
-        text = "Ordinal"
+        text = context.columnOrdinal
         cellValueFactory = _.value.ordinalProperty
       ,
       new TableColumn[Encodings, Int]:
