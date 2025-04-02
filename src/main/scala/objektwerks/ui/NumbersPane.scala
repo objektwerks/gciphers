@@ -28,7 +28,7 @@ final class NumbersPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.primeRankProperty
       ,
       new TableColumn[Number, Int]:
-        text = "Fibonacci\nRank"
+        text = context.columnFibonacciRank
         cellValueFactory = _.value.fibbonaciRankProperty
       ,
       new TableColumn[Number, Boolean]:
