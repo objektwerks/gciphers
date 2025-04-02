@@ -93,7 +93,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.reverseSquaresProperty
       ,
       new TableColumn[Encodings, Int]:
-        text = "Trigonal"
+        text = context.columnTrigonal
         cellValueFactory = _.value.trigonalProperty
       ,
       new TableColumn[Encodings, Int]:
