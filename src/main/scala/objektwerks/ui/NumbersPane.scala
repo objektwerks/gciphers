@@ -42,7 +42,7 @@ final class NumbersPane(context: Context, model: Model) extends VBox:
         cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
       ,
       new TableColumn[Number, String]:
-        text = "Factors"
+        text = context.columnFactors
         cellValueFactory = _.value.factorsProperty
     )
     items = model.observableNumbers
