@@ -24,7 +24,7 @@ final class NumbersPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.numberProperty
       ,
       new TableColumn[Number, Int]:
-        text = "Prime\nRank"
+        text = context.columnPrimeRank
         cellValueFactory = _.value.primeRankProperty
       ,
       new TableColumn[Number, Int]:
