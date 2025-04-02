@@ -41,7 +41,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.reverseReductionProperty
       ,
       new TableColumn[Encodings, Int]:
-        text = "Latin"
+        text = context.columnLatin
         cellValueFactory = _.value.latinProperty
       ,
       new TableColumn[Encodings, Int]:
