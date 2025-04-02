@@ -34,8 +34,8 @@ final class EnterPane(context: Context, model: Model) extends HBox:
         if isListed then
           new Alert(AlertType.Information) {
             initOwner(App.stage)
-            title = "Numbers"
-            headerText = "Number Listed"
+            title = context.labelNumbers
+            headerText = context.labelNumberListed
             contentText = s"$number is listed."
           }.showAndWait()
 
