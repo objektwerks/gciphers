@@ -37,7 +37,7 @@ final class NumbersPane(context: Context, model: Model) extends VBox:
         cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
       ,
       new TableColumn[Number, Boolean]:
-        text = "Triangular"
+        text = context.columnTriangular
         cellValueFactory = _.value.isTriangularProperty
         cellFactory = (cell, bool) => cell.text = yesOrNo(bool)
       ,
