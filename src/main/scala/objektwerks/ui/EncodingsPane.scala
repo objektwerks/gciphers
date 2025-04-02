@@ -8,14 +8,14 @@ import scala.util.Try
 
 import objektwerks.Encodings
 
-final class EncodingsPane(model: Model) extends VBox:
+final class EncodingsPane(context: Context, model: Model) extends VBox:
   spacing = 6
   padding = Insets(6)
 
   val title = new Label:
     padding = Insets(6)
     style = "-fx-font-weight: bold"
-    text = "Encodings"
+    text = context.labelEncodings
 
   val tableView = new TableView[Encodings]():
     columns ++= List(

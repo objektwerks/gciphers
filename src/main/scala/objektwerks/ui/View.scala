@@ -13,7 +13,7 @@ final class View(context: Context, model: Model):
       menu,
       DatePane(context, model),
       NumbersPane(context, model),
-      EncodingsPane(model),
+      EncodingsPane(context, model),
       EnterPane(model)
     )
 
