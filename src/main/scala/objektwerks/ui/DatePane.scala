@@ -1,7 +1,5 @@
 package objektwerks.ui
 
-import java.time.LocalDate
-
 import scalafx.beans.property.ObjectProperty
 import scalafx.geometry.{Insets, Pos}
 import scalafx.scene.Node
@@ -139,8 +137,8 @@ final class DatePane(context: Context, model: Model) extends VBox:
 
   // Date Diff tab begin.
 
-  val fromDate = ObjectProperty[LocalDate](this, "fromdate", model.observableDate.value)
-  val toDate = ObjectProperty[LocalDate](this, "todate", model.observableDate.value)
+  val fromDate = ObjectProperty(model.observableDate.value)
+  val toDate = ObjectProperty(model.observableDate.value)
 
   fromDate.onChange { (_, _, _) =>
     dateDiffText.text = Date.dateDiff( fromDate.value, toDate.value ).toString
