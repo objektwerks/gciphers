@@ -10,7 +10,7 @@ import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.Date
 
-final class DatePane(model: Model) extends VBox:
+final class DatePane(context: Context, model: Model) extends VBox:
   spacing = 6
   padding = Insets(6)
   minHeight = 155
@@ -19,7 +19,7 @@ final class DatePane(model: Model) extends VBox:
 
   val dateLabel = new Label:
     alignment = Pos.CenterLeft
-    text = "Date:"
+    text = context.labelDate
 
   val datePicker = new DatePicker:
     prefWidth = 110
