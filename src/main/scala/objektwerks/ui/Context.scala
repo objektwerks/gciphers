@@ -44,7 +44,7 @@ final class Context(config: Config):
   val columnChaldean = config.getString("column.chaldean")
   val columnSeptenary = config.getString("column.septenary")
   val columnKeypad = config.getString("column.keypad")
-  val columnStandard = config.getString("columnStandard")
+  val columnStandard = config.getString("column.standard")
   val columnSumerian = config.getString("column.sumerian")
   val columnReverseSumerian = config.getString("column.reverseSumerian")
   val columnPrimes = config.getString("column.primes")
