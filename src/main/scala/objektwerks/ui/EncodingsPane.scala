@@ -53,7 +53,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.septenaryProperty
       ,
       new TableColumn[Encodings, Int]:
-        text = "Keypad"
+        text = context.columnKeypad
         cellValueFactory = _.value.keypadProperty
       ,
       new TableColumn[Encodings, Int]:
