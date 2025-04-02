@@ -22,6 +22,7 @@ final class Context(config: Config):
   val labelFromDate = config.getString("label.fromDate")
   val labelToDate = config.getString("label.toDate")
   val labelDateDiff = config.getString("label.dateDiff")
+  val labelText = config.getString("label.text")
   val labelNumber = config.getString("label.number")
   val labelNumbers = config.getString("label.numbers")
   val labelNumberListed = config.getString("label.numberListed")
