@@ -9,7 +9,13 @@ final class View(context: Context, model: Model):
   val vbox = new VBox:
     prefWidth = context.windowWidth
     prefHeight = context.windowHeight
-    children = List(menu, DatePane(context, model), NumbersPane(context, model), EncodingsPane(model), EnterPane(model))
+    children = List(
+      menu,
+      DatePane(context, model),
+      NumbersPane(context, model),
+      EncodingsPane(model),
+      EnterPane(model)
+    )
 
   val scene = new Scene:
     root = vbox
