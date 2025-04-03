@@ -8,3 +8,4 @@ final case class CipherTexts(cipher: Cipher,
                              texts: Set[String]) derives CanEqual, JsonSupport:
   val cipherProperty = ObjectProperty(cipher)
   val textsProperty = ObjectProperty(texts)
+  val fileProperty = ObjectProperty(s"${cipher.value}.json")
