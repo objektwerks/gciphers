@@ -1,6 +1,6 @@
 Ciphers
 -------
->Cipher analysis app using ScalaFx and Scala 3.
+>Cipher analysis app using ScalaFx, Os-Lib, Ox, uPickle and Scala 3.
 
 Ciphers
 -------
