@@ -9,4 +9,7 @@ import ox.*
 import upickle.default.{read => readJson, write => writeJson}
 
 final class Store extends LazyLogging:
-  
+  val ciphersStorePath = os.home / ".ciphers" / "store"
+
+  os.makeDir.all( ciphersStorePath )
+  logger.info("Initialized store.")
