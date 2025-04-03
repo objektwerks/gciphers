@@ -8,4 +8,5 @@ import ox.*
 
 import upickle.default.{read => readJson, write => writeJson}
 
-final class Store
+final class Store extends LazyLogging:
+  
