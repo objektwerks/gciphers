@@ -36,5 +36,5 @@ final class Store extends LazyLogging:
     supervised:
       assertNotInFxThread
       val cipherTextsAsJson = writeJson(cipherTexts)
-      os.write.over(ciphersStorePath / s"${cipherTexts.cipher.value.toString}.json", cipherTextsAsJson)
+      os.write.over(ciphersStorePath / cipherTexts.fileProperty.value, cipherTextsAsJson)
       logger.info(s"Write cipher texts: ${cipherTexts.cipher.getClass.getSimpleName}")
