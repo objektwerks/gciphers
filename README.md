@@ -58,12 +58,6 @@ Execute
 >or:
 1. ```java -jar .assembly/ciphers-2.11-SNAPSHOT.jar```
 
-Deploy
-------
->Consider these options:
-1. [jDeploy](https://www.npmjs.com/package/jdeploy)
-2. [Conveyor](https://hydraulic.software/index.html)
-
 License
 -------
 >Copyright (c) [2023, 2024, 2025] [Objektwerks]
