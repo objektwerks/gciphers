@@ -2,7 +2,6 @@ package objektwerks
 
 import com.typesafe.scalalogging.LazyLogging
 
-import os.Path
 import ox.*
 
 import scalafx.application.Platform
@@ -32,3 +31,10 @@ final class Store extends LazyLogging:
       val cipherTextsAsJson = os.read(ciphersStorePath / file)
       logger.info(s"Read ciper texts: $file")
       readJson[CipherTexts](cipherTextsAsJson)
+
+  def writeCipherTexts(cipherTexts: CipherTexts): Unit =
+    supervised:
+      assertNotInFxThread
+      val cipherTextsAsJson = writeJson(cipherTexts)
+      os.write.over(ciphersStorePath / s"${cipherTexts.cipher.value.toString}.json", cipherTextsAsJson)
+      logger.info(s"Write cipher texts: ${cipherTexts.cipher.getClass.getSimpleName}")
