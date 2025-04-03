@@ -6,6 +6,7 @@ mainClass := Some("objektwerks.App")
 libraryDependencies ++= {
   Seq(
     "org.scalafx" %% "scalafx" % "23.0.1-R34",
+    "com.lihaoyi" %% "upickle" % "4.1.0",
     "com.lihaoyi" %% "os-lib" % "0.11.4",
     "com.typesafe" % "config" % "1.4.3",
     "com.typesafe.scala-logging" %% "scala-logging" % "3.9.5",
