@@ -1,4 +1,4 @@
 package objektwerks
 
 final case class CipherWords(cipher: Cipher,
-                             words: List[String]) derives CanEqual
+                             words: Set[String]) derives CanEqual
