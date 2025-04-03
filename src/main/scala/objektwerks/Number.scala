@@ -5,9 +5,10 @@ import scalafx.beans.property.ObjectProperty
 import Numbers.*
 
 object Number:
-  def apply(primes: List[(Rank, Prime)],
-            fibonaccis: List[(Rank, Fibonacci)],
-            number: Int): Number =
+  def apply(number: Int,
+            primes: List[(Rank, Prime)],
+            fibonaccis: List[(Rank, Fibonacci)]
+            ): Number =
     Number(number,
            findPrimeRank(primes, number),
            findFibonacciRank(fibonaccis, number),
