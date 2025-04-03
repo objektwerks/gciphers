@@ -13,7 +13,7 @@ final class Store extends LazyLogging:
 
   private def assertNotInFxThread: Unit = assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
 
-  os.makeDir.all( storePath )
+  os.makeDir.all(storePath)
   logger.info("Initialized store.")
 
   def listCipherTexts(): List[CipherTexts] =
