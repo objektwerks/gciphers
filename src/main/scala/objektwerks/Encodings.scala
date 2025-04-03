@@ -27,7 +27,7 @@ final case class Encodings(text: String,
                            chaldean: Chaldean,
                            septenary: Septenary,
                            satanic: Satanic,
-                           reverseSatanic: ReverseSatanic):
+                           reverseSatanic: ReverseSatanic) derives CanEqual:
   val textProperty = ObjectProperty(text)
   val ordinalProperty = ObjectProperty(ordinal.value)
   val reverseOrdinalProperty = ObjectProperty(reverseOrdinal.value)
