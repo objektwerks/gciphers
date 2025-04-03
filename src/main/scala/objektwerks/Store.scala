@@ -16,7 +16,7 @@ final class Store extends LazyLogging:
   os.makeDir.all( storePath )
   logger.info("Initialized store.")
 
-  def listCipherTexts: List[CipherTexts] =
+  def listCipherTexts(): List[CipherTexts] =
     supervised:
       assertNotInFxThread
       logger.info(s"List cipher texts.")
