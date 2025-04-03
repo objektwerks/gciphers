@@ -3,8 +3,9 @@ package objektwerks
 import com.typesafe.scalalogging.LazyLogging
 
 import os.Path
-
 import ox.*
+
+import scalafx.application.Platform
 
 import upickle.default.{read => readJson, write => writeJson}
 
@@ -22,5 +23,12 @@ final class Store extends LazyLogging:
       logger.info(s"List cipher texts.")
       os.list(ciphersStorePath)
         .filter { path => path.baseName.nonEmpty }
-        .map { path => readRecipe(s"${path.baseName}.json") }
+        .map { path => readCipherTexts(s"${path.baseName}.json") }
         .toList
+
+  def readCipherTexts(file: String): CipherTexts =
+    supervised:
+      assertNotInFxThread
+      val cipherTextsAsJson = os.read(ciphersStorePath / file)
+      logger.info(s"Read ciper texts: $file")
+      readJson[CipherTexts](cipherTextsAsJson)
