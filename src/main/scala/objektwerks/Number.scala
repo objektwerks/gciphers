@@ -20,7 +20,7 @@ final case class Number(number: Int,
                         fibonacciRank: Int,
                         isStar: Boolean,
                         isTriangular: Boolean,
-                        factors: List[Int]):
+                        factors: List[Int]) derives CanEqual:
   val numberProperty = ObjectProperty[Int](this, "number", number)
   val primeRankProperty = ObjectProperty[Int](this, "primerank", primeRank)
   val fibbonaciRankProperty = ObjectProperty[Int](this, "fibonaccirank", fibonacciRank)
