@@ -11,7 +11,8 @@ import upickle.default.{read => readJson, write => writeJson}
 final class Store extends LazyLogging:
   val storePath = os.home / ".ciphers" / "store"
 
-  private def assertNotInFxThread: Unit = assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
+  private def assertNotInFxThread: Unit =
+    assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
 
   os.makeDir.all(storePath)
   logger.info("Initialized store.")
