@@ -1,6 +1,8 @@
 package objektwerks
 
-sealed trait Cipher
+import upickle.default.ReadWriter as JsonSupport
+
+sealed trait Cipher derives CanEqual, JsonSupport
 
 final case class Ordinal(value: Int) extends Cipher
 val ordinalCipher =
