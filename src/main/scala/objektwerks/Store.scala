@@ -9,18 +9,18 @@ import scalafx.application.Platform
 import upickle.default.{read => readJson, write => writeJson}
 
 final class Store extends LazyLogging:
-  val ciphersStorePath = os.home / ".ciphers" / "store"
+  val storePath = os.home / ".ciphers" / "store"
 
   private def assertNotInFxThread: Unit = assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
 
-  os.makeDir.all( ciphersStorePath )
+  os.makeDir.all( storePath )
   logger.info("Initialized store.")
 
   def listCipherTexts: List[CipherTexts] =
     supervised:
       assertNotInFxThread
       logger.info(s"List cipher texts.")
-      os.list(ciphersStorePath)
+      os.list(storePath)
         .filter { path => path.baseName.nonEmpty }
         .map { path => readCipherTexts(s"${path.baseName}.json") }
         .toList
@@ -28,7 +28,7 @@ final class Store extends LazyLogging:
   def readCipherTexts(file: String): CipherTexts =
     supervised:
       assertNotInFxThread
-      val cipherTextsAsJson = os.read(ciphersStorePath / file)
+      val cipherTextsAsJson = os.read(storePath / file)
       logger.info(s"Read ciper texts: $file")
       readJson[CipherTexts](cipherTextsAsJson)
 
@@ -36,5 +36,5 @@ final class Store extends LazyLogging:
     supervised:
       assertNotInFxThread
       val cipherTextsAsJson = writeJson(cipherTexts)
-      os.write.over(ciphersStorePath / cipherTexts.fileProperty.value, cipherTextsAsJson)
+      os.write.over(storePath / cipherTexts.fileProperty.value, cipherTextsAsJson)
       logger.info(s"Write cipher texts: ${cipherTexts.cipher.getClass.getSimpleName}")
