@@ -17,25 +17,25 @@ final class Store extends LazyLogging:
   os.makeDir.all(storePath)
   logger.info("Initialized store.")
 
-  def listCipherTexts(): List[CipherTexts] =
+  def listTexts(): List[Texts] =
     supervised:
       assertNotInFxThread
       logger.info(s"List cipher texts.")
       os.list(storePath)
         .filter { path => path.baseName.nonEmpty }
-        .map { path => readCipherTexts(s"${path.baseName}.json") }
+        .map { path => readTexts(s"${path.baseName}.json") }
         .toList
 
-  def readCipherTexts(file: String): CipherTexts =
+  def readTexts(file: String): Texts =
     supervised:
       assertNotInFxThread
-      val cipherTextsAsJson = os.read(storePath / file)
+      val textsAsJson = os.read(storePath / file)
       logger.info(s"Read ciper texts: $file")
-      readJson[CipherTexts](cipherTextsAsJson)
+      readJson[Texts](textsAsJson)
 
-  def writeCipherTexts(cipherTexts: CipherTexts): Unit =
+  def writeTexts(texts: Texts): Unit =
     supervised:
       assertNotInFxThread
-      val cipherTextsAsJson = writeJson(cipherTexts)
-      os.write.over(storePath / cipherTexts.fileProperty.value, cipherTextsAsJson)
-      logger.info(s"Write cipher texts: ${cipherTexts.cipher.getClass.getSimpleName}")
+      val cipherTextsAsJson = writeJson(texts)
+      os.write.over(storePath / texts.fileProperty.value, cipherTextsAsJson)
+      logger.info(s"Write cipher texts: $texts")
