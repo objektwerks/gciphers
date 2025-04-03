@@ -18,10 +18,12 @@ final class Model():
   def addNumber(number: Int): Boolean =
     val candidate = Number(number, primes, fibonaccis)
     val isCandidateObservable = observableNumbers.contains(candidate)
-    if !isCandidateObservable then observableNumbers.prepend( Number(number, primes, fibonaccis) )
+    if !isCandidateObservable then
+      observableNumbers.prepend( Number(number, primes, fibonaccis) )
     isCandidateObservable
 
-  def addEncoding(text: String): Unit = observableEncodings.prepend( Encodings.encode(text) )
+  def addEncoding(text: String): Unit =
+    observableEncodings.prepend( Encodings.encode(text) )
   
   def clear(): Unit =
     observableNumbers.clear()
