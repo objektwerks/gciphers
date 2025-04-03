@@ -36,6 +36,10 @@ Features
 4. **Enter:** Text and number data entry.
 5. **Clear:** Clears all data entry and analysis.
 
+Number > Texts Model
+--------------------
+* Number 1 -> * Text
+
 Build
 -----
 1. ```sbt clean compile```
