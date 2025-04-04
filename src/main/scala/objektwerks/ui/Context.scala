@@ -25,6 +25,7 @@ final class Context(config: Config):
   val labelText = config.getString("label.text")
   val labelNumber = config.getString("label.number")
   val labelNumbers = config.getString("label.numbers")
+  val labelTexts = config.getString("label.texts")
   val labelNumberListed = config.getString("label.numberListed")
   val labelEncodings = config.getString("label.encodings")
 
