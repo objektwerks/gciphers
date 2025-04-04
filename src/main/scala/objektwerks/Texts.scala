@@ -6,5 +6,5 @@ import scalafx.beans.property.ObjectProperty
 
 final case class Texts(number: Int, texts: Set[String]) derives CanEqual, JsonSupport:
   val numberProperty = ObjectProperty(number)
-  val textsProperty = ObjectProperty(texts)
+  val textsProperty = ObjectProperty(texts.mkString(", "))
   val fileProperty = ObjectProperty(s"$number.json")
