@@ -127,7 +127,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
       tablePosition.getTableColumn().getCellData(cellRow) match
         case i: Int =>
           model.addNumber(i)
-          model.addTexts(i, "") // Todo!
+          // model.addTexts(i, "") // Todo!
         case _ =>
   }
 
