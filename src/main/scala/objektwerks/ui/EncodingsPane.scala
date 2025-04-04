@@ -125,9 +125,9 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
       val tablePosition = selectedCells.get(0)
       val cellRow = tablePosition.getRow()
       tablePosition.getTableColumn().getCellData(cellRow) match
-        case i: Int =>
-          model.addNumber(i)
-          // model.addTexts(i, "") // Todo!
+        case number: Int =>
+          model.addNumber(number)
+          model.addTexts(number, tableViewSelectionModel.selectedItem.value.text)
         case _ =>
   }
 
