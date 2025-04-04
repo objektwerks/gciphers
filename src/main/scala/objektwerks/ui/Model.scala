@@ -12,7 +12,7 @@ final class Model(store: Store):
   val observableEncodings = ObservableBuffer[Encodings]()
   val observableNumbers = ObservableBuffer[Number]()
   val observableTexts = ObservableBuffer[Texts]()
-  val observableDate = ObjectProperty[LocalDate](this, "date", LocalDate.now)
+  val observableDate = ObjectProperty(LocalDate.now)
   
   val primes = Numbers.listPrimes(0 to 1000)
   val fibonaccis = Numbers.listFibonaccis(0 to 15)
