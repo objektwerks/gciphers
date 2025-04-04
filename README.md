@@ -58,6 +58,36 @@ Execute
 >or:
 1. ```java -jar .assembly/ciphers-3.1-SNAPSHOT.jar```
 
+Deploy
+------
+1. edit build.sbt ( jarVersion + version )
+2. edit package.json ( version + jdeploy / jar )
+3. edit app.conf ( about > alert > contentText )
+4. sbt clean test assembly copyAssemblyJar
+5. perform github release ( from https://github.com/objektwerks/brewmeister )
+6. npm login
+7. jdeploy publish ( to https://www.jdeploy.com/~brewmeister )
+8. check email for npm message
+>See [jDeploy Docs](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
+
+>The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with
+>assembly output copied to ./target/... by default. Also much of the *old* sbt assembly plugin code
+>is no longer required. See build.sbt for details.
+
+jDeploy Install
+---------------
+1. Setup npm account at npmjs.com
+2. Install node, which installs npm, which bundles npx.
+3. Install jdeploy via npm - *npm install -g jdeploy*
+4. Add icon.png ( 256x256 or 512x512 ) to project root and resources/image.
+5. Edit jDeploy *package.json* as required.
+6. Add *jdeploy* and *jdeploy-bundle* to .gitignore
+>See [jDeploy Docs](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
+
+NPM Registry
+------------
+>Ciphers is deployed to: https://www.npmjs.com/package/ciphers
+
 License
 -------
 >Copyright (c) [2023, 2024, 2025] [Objektwerks]
