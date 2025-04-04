@@ -12,6 +12,7 @@ final class View(context: Context, model: Model):
     children = List(
       menu,
       DatePane(context, model),
+      TextsPane(context, model),
       NumbersPane(context, model),
       EncodingsPane(context, model),
       EnterPane(context, model)
