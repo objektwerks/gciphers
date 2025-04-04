@@ -2,6 +2,7 @@ package objektwerks.ui
 
 import java.time.LocalDate
 
+import scala.collection.mutable
 import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 
@@ -28,8 +29,8 @@ final class Model():
 
   def addTexts(number: Int, value: String): Unit =
     observableTexts.find(texts => texts.number == number) match
-      case Some(texts) =>
-      case None =>
+      case Some(texts) => texts.values.add(value)
+      case None => observableTexts.prepend( Texts(number, mutable.Set(value)) )
 
   def clear(): Unit =
     observableNumbers.clear()
