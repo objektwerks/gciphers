@@ -25,4 +25,4 @@ final class TextsPane(context: Context, model: Model) extends VBox:
         text = context.columnTexts
         cellValueFactory = _.value.textsProperty
     )
-    items = model.observableNumbers
+    items = model.observableTexts

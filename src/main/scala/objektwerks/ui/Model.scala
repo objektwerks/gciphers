@@ -5,11 +5,12 @@ import java.time.LocalDate
 import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 
-import objektwerks.{Encodings, Number, Numbers}
+import objektwerks.{Encodings, Number, Numbers, Texts}
 
 final class Model():
   val observableEncodings = ObservableBuffer[Encodings]()
   val observableNumbers = ObservableBuffer[Number]()
+  val observableTexts = ObservableBuffer[Texts]()
   val observableDate = ObjectProperty[LocalDate](this, "date", LocalDate.now)
   
   val primes = Numbers.listPrimes(0 to 1000)
