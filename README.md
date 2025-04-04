@@ -54,9 +54,9 @@ Assembly
 
 Execute
 -------
-1. ```java -jar target/scala-3.6.4/ciphers-2.15-SNAPSHOT.jar```
+1. ```java -jar target/scala-3.6.4/ciphers-3.1-SNAPSHOT.jar```
 >or:
-1. ```java -jar .assembly/ciphers-2.15-SNAPSHOT.jar```
+1. ```java -jar .assembly/ciphers-3.1-SNAPSHOT.jar```
 
 License
 -------
