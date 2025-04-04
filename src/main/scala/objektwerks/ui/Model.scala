@@ -29,7 +29,11 @@ final class Model(store: Store):
 
   def addTexts(number: Int, value: String): Unit =
     observableTexts.find(texts => texts.number == number) match
-      case Some(texts) => texts.values.add(value)
+      case Some(texts) =>
+        if texts.values.add(value) then
+          store.writeTexts(texts)
+          val index = observableTexts.indexOf(texts)
+          if index > -1 then observableTexts.update(index, texts)
       case None =>
         val texts = Texts(number, mutable.Set(value))
         store.writeTexts(texts)
