@@ -7,11 +7,12 @@ import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 
 import objektwerks.{Encodings, Number, Numbers, Store, Texts}
+import objektwerks.Texts.given
 
 final class Model(store: Store):
   val observableEncodings = ObservableBuffer[Encodings]()
   val observableNumbers = ObservableBuffer[Number]()
-  val observableTexts = ObservableBuffer.from( store.listTexts() )
+  val observableTexts = ObservableBuffer.from( store.listTexts().sorted )
   val observableDate = ObjectProperty(LocalDate.now)
   
   val primes = Numbers.listPrimes(0 to 1000)
