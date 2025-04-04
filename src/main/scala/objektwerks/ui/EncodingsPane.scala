@@ -4,7 +4,6 @@ import scalafx.Includes.*
 import scalafx.geometry.Insets
 import scalafx.scene.control.{Label, TableColumn, TableView}
 import scalafx.scene.layout.{Priority, VBox}
-import scala.util.Try
 
 import objektwerks.Encodings
 
@@ -125,9 +124,11 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
     if selectedCells.nonEmpty then 
       val tablePosition = selectedCells.get(0)
       val cellRow = tablePosition.getRow()
-      Try {
-        model.addNumber( tablePosition.getTableColumn().getCellData(cellRow).asInstanceOf[Int] )
-      }
+      tablePosition.getTableColumn().getCellData(cellRow) match
+        case i: Int =>
+          model.addNumber(i)
+          model.addTexts(i, "") // Todo!
+        case _ =>
   }
 
   children = List(title, tableView)
