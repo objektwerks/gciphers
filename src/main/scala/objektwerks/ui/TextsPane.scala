@@ -23,7 +23,7 @@ final class TextsPane(context: Context, model: Model) extends VBox:
       ,
       new TableColumn[Texts, String]:
         text = context.columnTexts
-        cellValueFactory = _.value.textsProperty
+        cellValueFactory = _.value.valuesProperty
     )
     items = model.observableTexts
 

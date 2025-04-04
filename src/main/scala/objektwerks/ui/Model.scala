@@ -26,7 +26,7 @@ final class Model():
       observableNumbers.prepend( Number(number, primes, fibonaccis) )
     isCandidateObservable
 
-  def addTexts(number: Int, text: String): Unit =
+  def addTexts(number: Int, value: String): Unit =
     observableTexts.find(texts => texts.number == number) match
       case Some(texts) =>
       case None =>
