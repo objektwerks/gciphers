@@ -26,8 +26,11 @@ final class Model():
       observableNumbers.prepend( Number(number, primes, fibonaccis) )
     isCandidateObservable
 
-  def addTexts(number: Int, text: String): Unit = ???
-  
+  def addTexts(number: Int, text: String): Unit =
+    observableTexts.find(texts => texts.number == number) match
+      case Some(texts) =>
+      case None =>
+
   def clear(): Unit =
     observableNumbers.clear()
     observableEncodings.clear()

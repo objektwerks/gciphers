@@ -4,7 +4,7 @@ import upickle.default.ReadWriter as JsonSupport
 
 import scalafx.beans.property.ObjectProperty
 
-final case class Texts(number: Int, texts: Set[String]) derives CanEqual, JsonSupport:
+final case class Texts(number: Int, values: Set[String]) derives CanEqual, JsonSupport:
   val numberProperty = ObjectProperty(number)
-  val textsProperty = ObjectProperty(texts.mkString(", "))
+  val textsProperty = ObjectProperty(values.mkString(", "))
   val fileProperty = ObjectProperty(s"$number.json")
