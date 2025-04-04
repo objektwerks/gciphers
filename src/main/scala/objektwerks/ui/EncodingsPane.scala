@@ -125,7 +125,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
     if selectedCells.nonEmpty then 
       val tablePosition = selectedCells.get(0)
       val cellRow = tablePosition.getRow()
-      Try{
+      Try {
         model.addNumber( tablePosition.getTableColumn().getCellData(cellRow).asInstanceOf[Int] )
       }
   }
