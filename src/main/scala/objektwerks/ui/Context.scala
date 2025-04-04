@@ -32,6 +32,7 @@ final class Context(config: Config):
   val buttonClear = config.getString("button.clear")
 
   val columnNumber = config.getString("column.number")
+  val columnTexts = config.getString("column.texts")
   val columnPrimeRank = config.getString("column.primeRank")
   val columnFibonacciRank = config.getString("column.fibonacciRank")
   val columnStar = config.getString("column.star")
