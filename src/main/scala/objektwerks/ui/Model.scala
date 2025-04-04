@@ -30,7 +30,10 @@ final class Model():
   def addTexts(number: Int, value: String): Unit =
     observableTexts.find(texts => texts.number == number) match
       case Some(texts) => texts.values.add(value)
-      case None => observableTexts.prepend( Texts(number, mutable.Set(value)) )
+      case None =>
+        val texts = Texts(number, mutable.Set(value))
+        // Todo! Persist texts!
+        observableTexts.prepend(texts)
 
   def clear(): Unit =
     observableNumbers.clear()
