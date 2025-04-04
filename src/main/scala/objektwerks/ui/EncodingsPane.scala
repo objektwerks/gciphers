@@ -117,7 +117,7 @@ final class EncodingsPane(context: Context, model: Model) extends VBox:
     )
     items = model.observableEncodings
 
-  val tableViewSelectionModel = tableView.selectionModel.apply()
+  val tableViewSelectionModel = tableView.selectionModel()
   tableViewSelectionModel.setCellSelectionEnabled(true)
   val selectedCells = tableViewSelectionModel.getSelectedCells()
   selectedCells.onChange {
