@@ -11,4 +11,4 @@ final class TextsPane(context: Context, model: Model) extends VBox:
   val title = new Label:
     padding = Insets(6)
     style = "-fx-font-weight: bold"
-    text = context.labelNumbers
+    text = context.labelTexts
