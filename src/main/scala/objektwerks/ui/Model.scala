@@ -11,7 +11,7 @@ import objektwerks.{Encodings, Number, Numbers, Store, Texts}
 final class Model(store: Store):
   val observableEncodings = ObservableBuffer[Encodings]()
   val observableNumbers = ObservableBuffer[Number]()
-  val observableTexts = ObservableBuffer[Texts]()
+  val observableTexts = ObservableBuffer.from( store.listTexts() )
   val observableDate = ObjectProperty(LocalDate.now)
   
   val primes = Numbers.listPrimes(0 to 1000)
