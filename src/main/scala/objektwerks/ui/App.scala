@@ -9,11 +9,14 @@ import java.awt.Taskbar.Feature
 import scalafx.application.JFXApp3
 import scalafx.scene.image.Image
 
+import objektwerks.Store
+
 object App extends JFXApp3 with LazyLogging:
   logger.info("Starting app ...")
 
   val context = Context(ConfigFactory.load("app.conf"))
-  val model = Model()
+  val store = Store()
+  val model = Model(store)
 
   override def start(): Unit =
     stage = new JFXApp3.PrimaryStage:
