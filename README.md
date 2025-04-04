@@ -61,13 +61,12 @@ Execute
 Deploy
 ------
 1. edit build.sbt ( jarVersion + version )
-2. edit package.json ( version + jdeploy / jar )
-3. edit app.conf ( about > alert > contentText )
-4. sbt clean test assembly copyAssemblyJar
-5. perform github release ( from https://github.com/objektwerks/brewmeister )
-6. npm login
-7. jdeploy publish ( to https://www.jdeploy.com/~brewmeister )
-8. check email for npm message
+2. edit app.conf ( about > alert > contentText )
+3. sbt clean test assembly copyAssemblyJar
+4. perform github release ( from https://github.com/objektwerks/brewmeister )
+5. npm login
+6. jdeploy publish ( to https://www.jdeploy.com/~brewmeister )
+7. check email for npm message
 >See [jDeploy Docs](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
 
 >The build.sbt tasks, *createAssemblyDir* and *copyAssemblyJar*, are not absolutely required, with
