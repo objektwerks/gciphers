@@ -30,10 +30,13 @@ final class Model(store: Store):
   def addTexts(number: Int, value: String): Unit =
     observableTexts.find(texts => texts.number == number) match
       case Some(texts) =>
-        if texts.values.add(value) then
-          store.writeTexts(texts)
-          val index = observableTexts.indexOf(texts)
-          if index > -1 then observableTexts.update(index, texts)
+        println(s"before: $texts")
+        texts.values.add(value)
+        println(s"after: $texts")
+        store.writeTexts(texts)
+        val index = observableTexts.indexOf(texts)
+        println(s"observable texts index: $index")
+        if index > -1 then observableTexts.update(index, texts)
       case None =>
         val texts = Texts(number, mutable.Set(value))
         store.writeTexts(texts)
