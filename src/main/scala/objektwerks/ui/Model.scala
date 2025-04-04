@@ -6,9 +6,9 @@ import scala.collection.mutable
 import scalafx.beans.property.ObjectProperty
 import scalafx.collections.ObservableBuffer
 
-import objektwerks.{Encodings, Number, Numbers, Texts}
+import objektwerks.{Encodings, Number, Numbers, Store, Texts}
 
-final class Model():
+final class Model(store: Store):
   val observableEncodings = ObservableBuffer[Encodings]()
   val observableNumbers = ObservableBuffer[Number]()
   val observableTexts = ObservableBuffer[Texts]()
@@ -32,7 +32,7 @@ final class Model():
       case Some(texts) => texts.values.add(value)
       case None =>
         val texts = Texts(number, mutable.Set(value))
-        // Todo! Persist texts!
+        store.writeTexts(texts)
         observableTexts.prepend(texts)
 
   def clear(): Unit =
