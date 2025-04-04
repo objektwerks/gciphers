@@ -2,7 +2,7 @@ package objektwerks.ui
 
 import scalafx.geometry.Insets
 import scalafx.scene.control.{Label, TableColumn, TableView}
-import scalafx.scene.layout.VBox
+import scalafx.scene.layout.{Priority, VBox}
 
 import objektwerks.Texts
 
@@ -26,3 +26,6 @@ final class TextsPane(context: Context, model: Model) extends VBox:
         cellValueFactory = _.value.textsProperty
     )
     items = model.observableTexts
+
+  children = List(title, tableView)
+  VBox.setVgrow(this, Priority.Always)
