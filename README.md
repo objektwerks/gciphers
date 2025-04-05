@@ -31,10 +31,11 @@ Ciphers
 Features
 --------
 1. **Date:** Date properties, encodings and date diff.
-2. **Numbers:** Math properties per selected encoded number.
-3. **Encodings:** Encoded numbers across multiple ciphers.
-4. **Enter:** Text and number data entry.
-5. **Clear:** Clears all data entry and analysis.
+2. **Texts:** Number to Texts mappings.
+3. **Numbers:** Math properties per selected encoded number.
+4. **Encodings:** Encoded numbers across multiple ciphers.
+5. **Enter:** Text and number data entry.
+6. **Clear:** Clears all data entry and analysis.
 
 Build
 -----
