@@ -17,7 +17,7 @@
         "jar": ".assembly/gciphers-3.1.0.jar",
         "javafx": true,
         "javafxVersion": "23.0.2",
-        "title": "Ciphers"
+        "title": "GCiphers"
     },
     "dependencies": {
         "command-exists-promise": "^2.0.2",
