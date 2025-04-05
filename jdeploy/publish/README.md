@@ -54,9 +54,9 @@ Assembly
 
 Execute
 -------
-1. ```java -jar target/scala-3.6.4/ciphers-3.1.0.jar```
+1. ```java -jar target/scala-3.6.4/gciphers-3.1.0.jar```
 >or:
-1. ```java -jar .assembly/ciphers-3.1.0.jar```
+1. ```java -jar .assembly/gciphers-3.1.0.jar```
 
 Deploy
 ------
@@ -64,9 +64,9 @@ Deploy
 2. edit app.conf ( about > alert > contentText )
 3. edit package.json ( version + jdeploy / jar )
 4. sbt clean test assembly copyAssemblyJar
-5. perform github release ( from https://github.com/objektwerks/ciphers )
+5. perform github release ( from https://github.com/objektwerks/gciphers )
 6. npm login
-7. jdeploy publish ( to https://www.jdeploy.com/~ciphers )
+7. jdeploy publish ( to https://www.jdeploy.com/~gciphers )
 8. check email for npm message
 >See [jDeploy Docs](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
 
@@ -82,7 +82,7 @@ jDeploy Install
 
 NPM Registry
 ------------
->Ciphers is deployed to: https://www.npmjs.com/package/ciphers
+>Ciphers is deployed to: https://www.npmjs.com/package/gciphers
 
 License
 -------
