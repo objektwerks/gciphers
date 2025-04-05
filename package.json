@@ -27,7 +27,7 @@
         "shelljs": "^0.8.4"
     },
     "license": "Apache 2.0",
-    "name": "ciphers",
+    "name": "gciphers",
     "files": [
         "jdeploy-bundle"
     ],
