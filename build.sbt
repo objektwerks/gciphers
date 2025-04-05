@@ -1,4 +1,4 @@
-name := "ciphers"
+name := "gciphers"
 organization := "objektwerks"
 version := "3.1.0"
 scalaVersion := "3.6.4" // 3.7.0-RC1 breaks ScalaFx!
