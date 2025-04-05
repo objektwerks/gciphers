@@ -14,7 +14,7 @@
     "jdeploy": {
         "jdk": false,
         "javaVersion": "23",
-        "jar": ".assembly/ciphers-3.0.0.jar",
+        "jar": ".assembly/ciphers-3.1.0.jar",
         "javafx": true,
         "javafxVersion": "23.0.2",
         "title": "Ciphers"
