@@ -64,12 +64,12 @@ Deploy
 1. edit build.sbt ( jarVersion + version )
 2. edit app.conf ( about > alert > contentText )
 3. edit package.json ( version + jdeploy / jar )
+4. edit readme
 5. sbt clean test assembly copyAssemblyJar
 6. perform github release ( from https://github.com/objektwerks/gciphers )
 7. npm login
 8. jdeploy publish ( to https://www.jdeploy.com/~gciphers )
-9. edit readme
-10. check email for npm message
+9. check email for npm message
 >See [jDeploy Docs](https://www.jdeploy.com/docs/manual/#_getting_started) for details.
 
 jDeploy Install
