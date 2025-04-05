@@ -9,7 +9,7 @@ import scalafx.application.Platform
 import upickle.default.{read => readJson, write => writeJson}
 
 final class Store extends LazyLogging:
-  val storePath = os.home / ".ciphers" / "store"
+  val storePath = os.home / ".gciphers" / "store"
 
   private def assertNotInFxThread: Unit =
     assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
