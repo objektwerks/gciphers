@@ -3,21 +3,21 @@
         "brewmeister": "jdeploy-bundle/jdeploy.js"
     },
     "author": "Objektwerks",
-    "description": "Beer brewing simulator that allows brewers to build recipes and brew batches using the classic 13-step beer brewing process.",
+    "description": "Analytical app for 23 ciphers",
     "main": "index.js",
     "preferGlobal": true,
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/objektwerks/brewmeister.git"
+        "url": "git+https://github.com/objektwerks/ciphers.git"
     },
-    "version": "2.7.0",
+    "version": "3.0.0",
     "jdeploy": {
         "jdk": false,
         "javaVersion": "23",
-        "jar": ".assembly/brewmeister-2.7.0.jar",
+        "jar": ".assembly/ciphers-3.0.0.jar",
         "javafx": true,
         "javafxVersion": "23.0.2",
-        "title": "Brewmeister"
+        "title": "Ciphers"
     },
     "dependencies": {
         "command-exists-promise": "^2.0.2",
@@ -27,12 +27,12 @@
         "shelljs": "^0.8.4"
     },
     "license": "Apache 2.0",
-    "name": "brewmeister",
+    "name": "ciphers",
     "files": [
         "jdeploy-bundle"
     ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "homepage": "https://github.com/objektwerks/brewmeister"
+    "homepage": "https://github.com/objektwerks/ciphers"
 }
