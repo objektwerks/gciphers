@@ -1,5 +1,5 @@
-Ciphers
--------
+GCiphers
+--------
 >Analytical app for 23 ciphers, using ScalaFx, Os-Lib, Ox, uPickle and Scala 3.
 
 Ciphers
