@@ -84,7 +84,7 @@ jDeploy Install
 
 NPM Registry
 ------------
->Ciphers is deployed to: https://www.npmjs.com/package/gciphers
+>GCiphers is deployed to: https://www.npmjs.com/package/gciphers
 
 License
 -------
