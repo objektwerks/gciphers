@@ -3,7 +3,7 @@
         "brewmeister": "jdeploy-bundle/jdeploy.js"
     },
     "author": "Objektwerks",
-    "description": "Analytical app for 23 ciphers",
+    "description": "Analytical app for 23 ciphers.",
     "main": "index.js",
     "preferGlobal": true,
     "repository": {
