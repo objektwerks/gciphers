@@ -1,7 +1,7 @@
 name := "gciphers"
 organization := "objektwerks"
 version := "3.3.0"
-scalaVersion := "3.6.4" // Scala 3.7.0-RC4 breaks ScalaFx!
+scalaVersion := "3.6.4" // Scala 3.7.1-RC1 breaks ScalaFx!
 mainClass := Some("objektwerks.ui.App")
 libraryDependencies ++= {
   Seq(
