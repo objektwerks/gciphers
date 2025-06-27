@@ -1,6 +1,6 @@
 GCiphers
 --------
->Analytical app for 23 ciphers, using ScalaFx, Os-Lib, Ox, uPickle and Scala 3.
+>Analytical app for 23 ciphers, using ScalaFx, Os-Lib, Ox, uPickle, jDeploy and Scala 3.
 
 Ciphers
 -------
