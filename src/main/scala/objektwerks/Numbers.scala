@@ -29,7 +29,7 @@ object Numbers:
       .map( (prime, rank) => (rank + 1, prime) )
 
   def findPrimeRank(primes: List[(Rank, Prime)], targetPrime: Prime): Rank =
-    val (rank, prime) = primes
+    val (rank, _) = primes
       .filter{ (_, prime) => prime == targetPrime }
       .headOption
       .getOrElse( defaultRankPrime )
@@ -51,7 +51,7 @@ object Numbers:
       .map( (number, rank) => (rank + 1, fibonacci(number)) )
 
   def findFibonacciRank(fibonaccis: List[(Rank, Fibonacci)], targetFibonacci: Fibonacci): Rank =
-    val (rank, fibbonaci) = fibonaccis
+    val (rank, _) = fibonaccis
       .filter{ (_, fibbonaci) => fibbonaci == targetFibonacci }
       .headOption
       .getOrElse( defaultRankFibonacci )
