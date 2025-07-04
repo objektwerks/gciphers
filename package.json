@@ -10,13 +10,13 @@
         "type": "git",
         "url": "git+https://github.com/objektwerks/gciphers.git"
     },
-    "version": "3.3.0",
+    "version": "3.4.0",
     "jdeploy": {
         "jdk": false,
-        "javaVersion": "23",
-        "jar": ".assembly/gciphers-3.3.0.jar",
+        "javaVersion": "24",
+        "jar": ".assembly/gciphers-3.4.0.jar",
         "javafx": true,
-        "javafxVersion": "23.0.2",
+        "javafxVersion": "24.0.1",
         "title": "GCiphers"
     },
     "dependencies": {
