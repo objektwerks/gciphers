@@ -2,6 +2,8 @@ GCiphers
 --------
 >Analytical app for 23 ciphers, using ScalaFx, Os-Lib, Ox, uPickle, jDeploy and Scala 3.
 
+>Also see: [Native GCiphers](https://github.com/objektwerks/gciphers.native.cli)
+
 Install
 -------
 1. Select [GCiphers](https://www.jdeploy.com/~gciphers)
