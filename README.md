@@ -66,7 +66,7 @@ Assembly
 
 Execute
 -------
-1. ```java -jar .assembly/gciphers-4.0.0.jar```
+1. ```java -jar .assembly/gciphers-4.1.0.jar```
 
 Deploy
 ------
