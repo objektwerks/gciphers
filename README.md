@@ -66,14 +66,13 @@ Assembly
 
 Execute
 -------
-1. ```java -jar .assembly/gciphers-4.1.0.jar```
+1. ```java -jar .assembly/gciphers-$version.jar```
 
 Deploy
 ------
 1. edit build.sbt ( jarVersion + version )
 2. edit app.conf ( about > alert > contentText )
 3. edit package.json ( version + jdeploy / jar )
-4. edit readme
 5. sbt clean test assembly copyAssemblyJar
 6. perform github release ( from https://github.com/objektwerks/gciphers )
 7. npm login
