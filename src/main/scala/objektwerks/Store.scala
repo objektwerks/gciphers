@@ -15,7 +15,7 @@ final class Store extends LazyLogging:
     assert( !Platform.isFxApplicationThread, "Store operation called on Fx thread!" )
 
   os.makeDir.all(storePath)
-  logger.info("Initialized store.")
+  logger.info("Store initialized.")
 
   def listTexts(): List[Texts] =
     supervised:
