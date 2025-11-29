@@ -1,7 +1,7 @@
 name := "gciphers"
 organization := "objektwerks"
 version := "5.0.0"
-scalaVersion := "3.8.0-RC1"
+scalaVersion := "3.8.0-RC2"
 mainClass := Some("objektwerks.ui.App")
 libraryDependencies ++= {
   Seq(
